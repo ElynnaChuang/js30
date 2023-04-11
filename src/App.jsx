@@ -1,6 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { HomePage } from './Pages';
+import { DrumPage, HomePage } from './Pages';
 
 const basename = '';
 
@@ -9,6 +9,7 @@ const App = () => (
     <BrowserRouter basename={basename}>
       <Routes>
         <Route path='home' element={<HomePage />} />
+        <Route path='01' element={<DrumPage />} />
       </Routes>
     </BrowserRouter>
   </div>
