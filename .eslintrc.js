@@ -6,6 +6,13 @@ module.exports = {
     'airbnb',
     'prettier',
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
   rules: {
     'global-require': 0,
     'import/prefer-default-export': 0,
