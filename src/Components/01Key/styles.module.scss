@@ -1,0 +1,66 @@
+$default-primary: #91869ca3;
+$active-primary: #ff9844;
+$text: #fff;
+$bg: #171b1a4a;
+
+%key {
+  width: 5rem;
+  padding: 0.5rem 0;
+
+  color: $text;
+  text-align: center;
+
+  background-color: $bg;
+  border-radius: 0.5rem;
+
+  kbd {
+    pointer-events: none;
+
+    height: fit-content;
+
+    font-family: monospace;
+    font-size: 40px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  span {
+    pointer-events: none;
+
+    display: block;
+
+    margin-top: 0.5rem;
+
+    font-size: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+  }
+}
+
+.default_key {
+  @extend %key;
+
+  transform: translateY(0);
+
+  text-shadow: 0 0 0 $active-primary, 0 0 0 $active-primary;
+
+  border: 1px solid $default-primary;
+  box-shadow: 0 4px 0 2px $default-primary;
+
+  transition: all 0.1s;
+}
+
+.active_key {
+  @extend %key;
+
+  transform: translateY(2px);
+
+  text-shadow: 0 0 0.5rem $active-primary, 0 0 2rem $active-primary;
+
+  border: 1px solid $active-primary;
+  box-shadow: 0 2px 0 2px $active-primary, 0 0 12px 0 $active-primary;
+
+  transition: all 0.1s;
+}
