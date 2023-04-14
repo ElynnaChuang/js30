@@ -1,0 +1,129 @@
+$clock_size: 100%;
+$pointer_width: $clock_size * 0.02;
+$shadow_color: rgb(0 0 0 / 20%);
+$scales_color: #fff;
+$hour_pointer_color: #868686;
+$min_pointer_color: #b1b1b1;
+$sec_pointer_color: rgb(210 248 255);
+
+.clock {
+  position: relative;
+
+  width: $clock_size;
+  height: $clock_size;
+  padding: $clock_size * 0.04;
+
+  backdrop-filter: brightness(100%) blur(0.4rem);
+  border-radius: 50%;
+  box-shadow: inset 0 0 2rem 0.5rem #fff, inset 0 0 0 0.8rem #fff,
+    0 0 0.8rem 0 $shadow_color;
+
+  &_face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: $clock_size * 0.04;
+      height: $clock_size * 0.04;
+
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+}
+
+%pointer {
+  position: absolute;
+  left: calc(50% - $pointer_width / 2);
+  transform-origin: bottom center;
+
+  width: $pointer_width;
+
+  border-radius: 40% 40% 10% 10%;
+
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.31, 1.19, 0.65, 1.24);
+}
+
+.hour_pointer {
+  @extend %pointer;
+
+  top: 20%;
+  height: 30%;
+  background: $hour_pointer_color;
+}
+
+.min_pointer {
+  @extend %pointer;
+
+  top: 10%;
+  height: 40%;
+  background: $min_pointer_color;
+}
+
+.sec_pointer {
+  @extend %pointer;
+
+  top: 5%;
+  height: 45%;
+  background: $sec_pointer_color;
+}
+
+.scales {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hour_scale {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(0deg);
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  &::before {
+    @extend %hour_scale_el;
+
+    top: 4%;
+  }
+
+  &::after {
+    @extend %hour_scale_el;
+
+    bottom: 4%;
+  }
+}
+
+%hour_scale_el {
+  content: '';
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: 1.5%;
+  height: 6%;
+
+  background-color: $scales_color;
+  border-radius: 99rem;
+}
+
+@for $i from 1 to 6 {
+  .hour_scale:nth-child(#{$i}) {
+    transform: translate(-50%, 0) rotate(#{$i * 30}deg); // 1小時線轉30度
+  }
+}
