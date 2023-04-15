@@ -1,11 +1,24 @@
+import { useState } from 'react';
+import { Panel } from 'Components';
+import { panels } from './data';
 import styles from './styles.module.scss';
 
 export const ImageGalleryPage = () => {
-  console.log('05');
+  const [activePanelId, setActivePanel] = useState(0);
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
-        <h1>page 05</h1>
+        {panels.map(panel => (
+          <Panel
+            key={panel.id}
+            id={panel.id}
+            text={panel.text}
+            style={panel.style}
+            isActive={activePanelId === panel.id}
+            handleActive={setActivePanel}
+          />
+        ))}
       </div>
     </section>
   );
