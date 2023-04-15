@@ -1,6 +1,7 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
+  AjaxTypePage,
   ArrayCardioPage01,
   ClockPage,
   CssPlaygroundPage,
@@ -21,6 +22,7 @@ const App = () => (
         <Route path='03' element={<CssPlaygroundPage />} />
         <Route path='04' element={<ArrayCardioPage01 />} />
         <Route path='05' element={<ImageGalleryPage />} />
+        <Route path='06' element={<AjaxTypePage />} />
       </Routes>
     </BrowserRouter>
   </div>
