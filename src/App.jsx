@@ -6,6 +6,7 @@ import {
   CssPlaygroundPage,
   DrumPage,
   HomePage,
+  ImageGalleryPage,
 } from './Pages';
 
 const basename = '';
@@ -19,6 +20,7 @@ const App = () => (
         <Route path='02' element={<ClockPage />} />
         <Route path='03' element={<CssPlaygroundPage />} />
         <Route path='04' element={<ArrayCardioPage01 />} />
+        <Route path='05' element={<ImageGalleryPage />} />
       </Routes>
     </BrowserRouter>
   </div>
