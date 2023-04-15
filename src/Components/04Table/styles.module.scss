@@ -1,0 +1,33 @@
+.title {
+  margin-bottom: 1rem;
+  margin-left: 2%;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 140%;
+  color: #6e8fa6;
+}
+
+.table_container {
+  position: relative;
+
+  width: 100%;
+  max-height: 240px;
+
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0 rgba($color: #000, $alpha: 20%);
+
+  &::-webkit-scrollbar {
+    position: absolute;
+    appearance: none;
+    background-color: #f7f7f7;
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c8dfef;
+    border: 2px solid #f7f7f7;
+    border-radius: 1rem;
+  }
+}

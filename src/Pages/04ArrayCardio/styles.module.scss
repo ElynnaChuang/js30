@@ -1,0 +1,26 @@
+$primary: #56739b;
+
+.page {
+  min-height: 100%;
+  padding: 2rem;
+  background: #fff;
+}
+
+.title {
+  margin-bottom: 2rem;
+
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 160%;
+  color: $primary;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  max-width: 800px;
+  margin: 0 auto;
+}
