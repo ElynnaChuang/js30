@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   AjaxTypePage,
   ArrayCardioPage01,
+  ArrayCardioPage02,
   ClockPage,
   CssPlaygroundPage,
   DrumPage,
@@ -23,6 +24,7 @@ const App = () => (
         <Route path='04' element={<ArrayCardioPage01 />} />
         <Route path='05' element={<ImageGalleryPage />} />
         <Route path='06' element={<AjaxTypePage />} />
+        <Route path='07' element={<ArrayCardioPage02 />} />
       </Routes>
     </BrowserRouter>
   </div>
