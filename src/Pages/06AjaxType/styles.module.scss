@@ -1,0 +1,70 @@
+@import 'https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap';
+
+.page {
+  display: flex;
+  height: auto;
+  min-height: 100%;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  width: 100%;
+  padding: 5rem 2rem;
+
+  background-color: #efbf13;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.search_form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  padding: 1rem;
+
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 2rem;
+  color: #efbf13;
+  text-align: center;
+
+  border: 10px solid #f7f7f7;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px rgb(0 0 0 / 12%), inset 0 0 2px rgb(0 0 0 / 19%);
+
+  &::placeholder {
+    color: #c5c5c5;
+  }
+}
+
+.suggestions {
+  padding: 0 2rem 2rem;
+
+  & li {
+    box-shadow: 0 0 10px rgb(0 0 0 / 14%);
+
+    &:nth-child(odd) {
+      transform: perspective(100px) rotateX(-3deg) translateY(-0);
+      background: linear-gradient(to top, #fff 0%, #efefef 100%);
+    }
+
+    &:nth-child(even) {
+      transform: perspective(100px) rotateX(3deg) translateY(-1.6px);
+      background: linear-gradient(to bottom, #fff 0%, #efefef 100%);
+    }
+  }
+}
