@@ -1,3 +1,4 @@
+import {} from './data';
 import styles from './styles.module.scss';
 
 export const ArrayCardioPage02 = () => {
@@ -11,3 +12,9 @@ export const ArrayCardioPage02 = () => {
     </section>
   );
 };
+
+// Array.prototype.some() // is at least one person 19?
+// Array.prototype.every() // is everyone 19?
+// find the comment with the ID of 823423
+// Find the comment with this ID
+// delete the comment with the ID of 823423
