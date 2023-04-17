@@ -1,8 +1,8 @@
 export const people = [
-  { name: 'Wes', year: 1988 },
-  { name: 'Kait', year: 1986 },
-  { name: 'Irv', year: 1970 },
-  { name: 'Lux', year: 2015 },
+  { id: 1, name: 'Wes', year: 1988 },
+  { id: 2, name: 'Kait', year: 1986 },
+  { id: 3, name: 'Irv', year: 1970 },
+  { id: 4, name: 'Lux', year: 2015 },
 ];
 
 export const comments = [
