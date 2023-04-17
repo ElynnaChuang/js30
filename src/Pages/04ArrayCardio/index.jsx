@@ -1,4 +1,5 @@
 import { StyledTable } from 'Components';
+import { Link } from 'react-router-dom';
 import { inventors, people, transportation } from './data';
 import styles from './styles.module.scss';
 
@@ -25,17 +26,28 @@ export const ArrayCardioPage01 = () => {
     return { id: i + 1, way, times };
   });
 
+  const prinaryColor = '#72b8cb';
+
   return (
     <section className={styles.page}>
-      <h2 className={styles.title}>ArrayCardio v1</h2>
+      <div className={styles.title} style={{ color: prinaryColor }}>
+        ArrayCardio v1
+        <Link to='/07' className={styles.link}>
+          Go to ArrayCardio v2 page
+        </Link>
+      </div>
       <div className={styles.container}>
         <StyledTable
           title='01. All inventors'
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...inventors].sort((a, b) => a.id - b.id)}
         />
 
         <StyledTable
           title='02. Inventors first and last names'
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...inventors].map(inventor => ({
             id: inventor.id,
             first: inventor.first,
@@ -45,6 +57,8 @@ export const ArrayCardioPage01 = () => {
 
         <StyledTable
           title={`03. The list of inventors for those who were born in the 1500's`}
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...inventors].filter(
             inventor => inventor.year >= 1500 && inventor.year < 1600,
           )}
@@ -52,11 +66,15 @@ export const ArrayCardioPage01 = () => {
 
         <StyledTable
           title='04. Sort the inventors by birthdate, oldest to youngest'
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...inventors].sort((a, b) => a.year - b.year)}
         />
 
         <StyledTable
           title={`05. Sort the inventors by years lived (total: ${total} years)`}
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...inventors]
             .map(inventor => ({
               ...inventor,
@@ -67,6 +85,8 @@ export const ArrayCardioPage01 = () => {
 
         <StyledTable
           title='06. Sort the people alphabetically by last name'
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={[...people]
             .map((person, i) => {
               const name = person.split(',');
@@ -81,6 +101,8 @@ export const ArrayCardioPage01 = () => {
 
         <StyledTable
           title='07. Sum up the instances of each of transportation'
+          titleColor={prinaryColor}
+          headerColor={prinaryColor}
           data={transArr.sort((a, b) => b.times - a.times)}
         />
       </div>
