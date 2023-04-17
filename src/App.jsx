@@ -17,7 +17,7 @@ const App = () => (
     <BrowserRouter basename={basename}>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='drum' element={<DrumPage />} />
+        <Route path='01' element={<DrumPage />} />
         <Route path='02' element={<ClockPage />} />
         <Route path='03' element={<CssPlaygroundPage />} />
         <Route path='04' element={<ArrayCardioPage01 />} />
