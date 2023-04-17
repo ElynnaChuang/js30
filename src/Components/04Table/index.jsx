@@ -8,13 +8,13 @@ import TableRow from '@mui/material/TableRow';
 
 import styles from './styles.module.scss';
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+const StyledTableCell = styled(TableCell)(({ theme, headercolor }) => ({
   width: 20,
   maxWidth: 20,
   fontSize: 16,
 
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: '#5a94af',
+    backgroundColor: headercolor || '#777',
     color: theme.palette.common.white,
     fontWeight: 'bold',
   },
@@ -33,19 +33,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export const StyledTable = ({ title, data }) => {
+export const StyledTable = ({ title, data, headerColor, titleColor }) => {
   if (!data.length) return '';
   const tableItems = Object.keys(data[0]);
 
   return (
     <div>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title} style={{ color: titleColor || '#777' }}>
+        {title}
+      </h2>
       <TableContainer className={styles.table_container}>
         <Table stickyHeader>
           <TableHead>
             <TableRow>
               {tableItems.map(el => (
-                <StyledTableCell key={el}>{el}</StyledTableCell>
+                <StyledTableCell key={el} headercolor={headerColor}>
+                  {el}
+                </StyledTableCell>
               ))}
             </TableRow>
           </TableHead>

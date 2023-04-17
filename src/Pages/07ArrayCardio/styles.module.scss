@@ -33,3 +33,14 @@
   max-width: 800px;
   margin: 0 auto 3rem;
 }
+
+.hr {
+  width: 100%;
+  padding-top: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #a2a9b6 0 3px,
+    transparent 0 calc(3px + 10px)
+  );
+  border: 0;
+}

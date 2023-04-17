@@ -5,7 +5,8 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 140%;
-  color: #6e8fa6;
+
+  // color: #6e8fa6;
 }
 
 .table_container {
@@ -26,7 +27,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #c8dfef;
+    background-color: #ddd;
     border: 2px solid #f7f7f7;
     border-radius: 1rem;
   }
