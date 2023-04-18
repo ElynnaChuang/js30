@@ -4,6 +4,7 @@ import {
   AjaxTypePage,
   ArrayCardioPage01,
   ArrayCardioPage02,
+  CanvasPage,
   ClockPage,
   CssPlaygroundPage,
   DrumPage,
@@ -25,6 +26,7 @@ const App = () => (
         <Route path='05' element={<ImageGalleryPage />} />
         <Route path='06' element={<AjaxTypePage />} />
         <Route path='07' element={<ArrayCardioPage02 />} />
+        <Route path='08' element={<CanvasPage />} />
       </Routes>
     </BrowserRouter>
   </div>
