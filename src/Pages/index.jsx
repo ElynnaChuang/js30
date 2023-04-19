@@ -6,3 +6,4 @@ export { ArrayCardioPage01 } from './04ArrayCardio';
 export { ImageGalleryPage } from './05ImageGallery';
 export { AjaxTypePage } from './06AjaxType';
 export { ArrayCardioPage02 } from './07ArrayCardio';
+export { CanvasPage } from './08Canvas';
