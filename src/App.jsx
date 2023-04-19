@@ -7,6 +7,7 @@ import {
   CanvasPage,
   ClockPage,
   CssPlaygroundPage,
+  DevtoolTricksPage,
   DrumPage,
   HomePage,
   ImageGalleryPage,
@@ -27,6 +28,7 @@ const App = () => (
         <Route path='06' element={<AjaxTypePage />} />
         <Route path='07' element={<ArrayCardioPage02 />} />
         <Route path='08' element={<CanvasPage />} />
+        <Route path='09' element={<DevtoolTricksPage />} />
       </Routes>
     </BrowserRouter>
   </div>
