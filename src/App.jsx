@@ -13,11 +13,11 @@ import {
   ImageGalleryPage,
 } from './Pages';
 
-const basename = process.env.PUBLIC_URL;
+// const basename = process.env.PUBLIC_URL;
 
 const App = () => (
   <div className='app'>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename='/js30'>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='01' element={<DrumPage />} />

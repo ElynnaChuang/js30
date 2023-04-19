@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import dayjs from 'Helpers/dayjs';
+import dayjs from '/src/Helpers/dayjs';
 import styles from './styles.module.scss';
 
 export const Clock = ({ timezone }) => {

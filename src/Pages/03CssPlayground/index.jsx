@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ColorInput, RangeInput } from 'Components';
+import { ColorInput, RangeInput } from '/src/Components';
 import styles from './styles.module.scss';
 
 export const CssPlaygroundPage = () => {

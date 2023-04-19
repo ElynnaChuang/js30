@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Key } from 'Components';
-import { clap, hihat, kick, openhat, boom, ride, snare, tom, tink } from 'Assets/01Drum';
+import { Key } from '/src/Components/index';
+import {
+  clap,
+  hihat,
+  kick,
+  openhat,
+  boom,
+  ride,
+  snare,
+  tom,
+  tink,
+} from '/src//Assets/01Drum';
 import styles from './styles.module.scss';
 
 const keys = [

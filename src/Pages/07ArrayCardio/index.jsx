@@ -1,5 +1,5 @@
-import { StyledTable } from 'Components';
 import { Link } from 'react-router-dom';
+import { StyledTable } from '/src/Components';
 import { people, comments } from './data';
 import styles from './styles.module.scss';
 
