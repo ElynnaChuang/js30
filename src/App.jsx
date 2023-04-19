@@ -29,6 +29,7 @@ const App = () => (
         <Route path='07' element={<ArrayCardioPage02 />} />
         <Route path='08' element={<CanvasPage />} />
         <Route path='09' element={<DevtoolTricksPage />} />
+        <Route path='*' element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   </div>
