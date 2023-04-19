@@ -1,0 +1,117 @@
+@import '../../scss/media';
+@import 'https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@200;300;400;500;600;700;800&display=swap';
+
+.page {
+  position: relative;
+  min-height: 100%;
+  font-family: 'Permanent Marker', cursive;
+  font-family: Poppins, sans-serif;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url('../../Assets/09DevtoolTricks/bg.jpg') center / cover;
+    filter: brightness(125%);
+  }
+}
+
+.container {
+  @include desktop {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  width: 100%;
+  height: 100%;
+  padding: 3rem 5rem;
+}
+
+.title {
+  z-index: 3;
+
+  font-size: 2rem;
+  font-weight: 700;
+  color: #55476b;
+  text-align: center;
+}
+
+.trick {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  background-color: rgba($color: #fff, $alpha: 20%);
+  backdrop-filter: blur(1.5rem) brightness(110%);
+  border-radius: 2rem;
+
+  & > h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #55476b;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: 100%;
+    padding: 0.8rem;
+
+    line-height: 160%;
+    color: #5e5868;
+    letter-spacing: 0.3px;
+
+    background-color: rgba($color: #fff, $alpha: 70%);
+    border-radius: 0.5rem;
+
+    & p {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    & span {
+      color: #8687d4;
+    }
+  }
+
+  & > button {
+    position: relative;
+
+    margin-top: 1rem;
+    padding: 1rem;
+
+    font-size: 0.5rem 1rem;
+    font-weight: 500;
+    color: #8687d4;
+
+    background-color: rgba($color: #fff, $alpha: 100%);
+    border-radius: 0.5rem;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      inset: -5px;
+      transform: translate(0, 4px);
+
+      opacity: 0.6;
+      background: linear-gradient(to right, #e88ce9, #4fd1e3);
+      filter: blur(1rem);
+    }
+  }
+}
