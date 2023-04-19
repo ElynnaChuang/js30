@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/js30/static/css/main.644f79cc.css",
+    "main.js": "/js30/static/js/main.b0ffacb3.js",
+    "static/js/787.e850374e.chunk.js": "/js30/static/js/787.e850374e.chunk.js",
+    "static/media/bg.jpg": "/js30/static/media/bg.e4c90d9c00712754637f.jpg",
+    "static/media/default.jpg": "/js30/static/media/default.93d7d891ba6a0ddba06d.jpg",
+    "static/media/ride.wav": "/js30/static/media/ride.44e6385400f6b7c38f7c.wav",
+    "static/media/japan.jpg": "/js30/static/media/japan.dbf630c622c906215dd1.jpg",
+    "static/media/london.jpg": "/js30/static/media/london.f0cc3b8439d6b5813ba1.jpg",
+    "static/media/taiwan.jpg": "/js30/static/media/taiwan.0ca1c7b0e1535fd61f3f.jpg",
+    "static/media/openhat.wav": "/js30/static/media/openhat.482e523113fddc21f663.wav",
+    "static/media/boom.wav": "/js30/static/media/boom.d89f41a5296c9cc8d21e.wav",
+    "static/media/tom.wav": "/js30/static/media/tom.52db9c2303efd5360380.wav",
+    "static/media/clap.wav": "/js30/static/media/clap.eb738e5291d099fc97b4.wav",
+    "static/media/hihat.wav": "/js30/static/media/hihat.0273528cafd1985aa0e4.wav",
+    "static/media/snare.wav": "/js30/static/media/snare.3aa3f94341c18d1e00d1.wav",
+    "static/media/kick.wav": "/js30/static/media/kick.1d842c5565abcec54198.wav",
+    "static/media/tink.wav": "/js30/static/media/tink.5b878d5df85f3294ee04.wav",
+    "index.html": "/js30/index.html",
+    "main.644f79cc.css.map": "/js30/static/css/main.644f79cc.css.map",
+    "main.b0ffacb3.js.map": "/js30/static/js/main.b0ffacb3.js.map",
+    "787.e850374e.chunk.js.map": "/js30/static/js/787.e850374e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.644f79cc.css",
+    "static/js/main.b0ffacb3.js"
+  ]
+}
