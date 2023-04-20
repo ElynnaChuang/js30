@@ -1,0 +1,31 @@
+%base_item {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #f1f1f1;
+
+  & > input {
+    margin: 20px;
+  }
+
+  & > label {
+    flex: 1;
+    padding: 20px;
+    font-size: 1rem;
+    border-left: 2px solid #f1f1f1;
+  }
+}
+
+.default {
+  @extend %base_item;
+}
+
+.checked {
+  @extend %base_item;
+
+  background-color: #f6f6f6;
+
+  & > label {
+    color: #6c6c6c;
+    text-decoration: line-through;
+  }
+}

@@ -5,6 +5,7 @@ import {
   ArrayCardioPage01,
   ArrayCardioPage02,
   CanvasPage,
+  CheckboxPage,
   ClockPage,
   CssPlaygroundPage,
   DevtoolTricksPage,
@@ -29,6 +30,7 @@ const App = () => (
         <Route path='07' element={<ArrayCardioPage02 />} />
         <Route path='08' element={<CanvasPage />} />
         <Route path='09' element={<DevtoolTricksPage />} />
+        <Route path='10' element={<CheckboxPage />} />
         <Route path='*' element={<HomePage />} />
       </Routes>
     </BrowserRouter>
