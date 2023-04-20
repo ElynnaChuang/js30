@@ -8,3 +8,4 @@ export { AjaxTypePage } from './06AjaxType';
 export { ArrayCardioPage02 } from './07ArrayCardio';
 export { CanvasPage } from './08Canvas';
 export { DevtoolTricksPage } from './09DevtoolTricks';
+export { CheckboxPage } from './10Checkbox';
