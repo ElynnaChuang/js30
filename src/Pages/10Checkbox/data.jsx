@@ -1,0 +1,16 @@
+export const data = [
+  { id: 1, content: 'This is an inbox layout', isCheck: false },
+  { id: 2, content: 'This is an inbox layout', isCheck: false },
+  { id: 3, content: 'This is an inbox layout', isCheck: false },
+  { id: 4, content: 'This is an inbox layout', isCheck: false },
+  { id: 6, content: 'This is an inbox layout', isCheck: false },
+  { id: 7, content: 'This is an inbox layout', isCheck: false },
+  { id: 8, content: 'This is an inbox layout', isCheck: false },
+  { id: 9, content: 'This is an inbox layout', isCheck: false },
+  { id: 10, content: 'This is an inbox layout', isCheck: false },
+  { id: 11, content: 'This is an inbox layout', isCheck: false },
+  { id: 12, content: 'This is an inbox layout', isCheck: false },
+  { id: 13, content: 'This is an inbox layout', isCheck: false },
+  { id: 14, content: 'This is an inbox layout', isCheck: false },
+  { id: 15, content: 'This is an inbox layout', isCheck: false },
+];
