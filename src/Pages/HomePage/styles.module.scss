@@ -1,0 +1,157 @@
+@import '../../scss/media';
+@import 'https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap';
+
+.homepage {
+  overflow-y: scroll;
+
+  height: 100%;
+  padding: 4rem 2rem;
+
+  background: (
+    radial-gradient(closest-side, rgb(25 99 161), rgb(110 221 255 / 0%)),
+    radial-gradient(closest-side, rgb(114 222 255), rgb(110 221 255 / 0%)),
+    radial-gradient(closest-side, rgb(158 184 255), rgb(178 137 255 / 0%)),
+    radial-gradient(closest-side, rgb(219 197 255), rgb(255 128 121 / 0%))
+  );
+  background-color: rgb(255 241 211);
+  background-repeat: no-repeat;
+  background-position: (
+    -50vmax -60vmax,
+    1vmax -60vmax,
+    25vmax 40vmax,
+    -50vmax 30vmax,
+    10vmax 1vmax
+  );
+  background-size: (
+    100vmax 100vmax,
+    120vmax 120vmax,
+    105vmax 105vmax,
+    90vmax 90vmax,
+    105vmax 105vmax
+  );
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: blur(20px);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  padding: 2rem 1.2rem;
+
+  background-color: rgb(255 255 255 / 30%);
+  backdrop-filter: brightness(120%);
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+
+  & h1 {
+    @include desktop {
+      font-size: 4rem;
+    }
+
+    @include pad {
+      font-size: 3rem;
+    }
+
+    font-family: Kalam, cursive;
+    font-size: 2rem;
+    line-height: 120%;
+    color: #537ea4;
+    text-align: center;
+  }
+
+  & h2 {
+    font-family: Barlow, sans-serif;
+    font-size: 1.2rem;
+    line-height: 140%;
+    color: #2e4961;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  & ul {
+    @include desktop {
+      font-size: 1rem;
+    }
+
+    @include pad {
+      font-size: 1rem;
+    }
+
+    display: flex;
+    justify-content: center;
+
+    font-family: Barlow, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 140%;
+    color: #93a2ae;
+    letter-spacing: 2px;
+  }
+
+  & li {
+    cursor: pointer;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    padding: 0 1rem;
+
+    border-right: 1px solid #93a2ae;
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
+
+.cards {
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include pad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  display: grid;
+  grid-gap: 2rem 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  justify-content: space-between;
+
+  width: 100%;
+  margin: 0 auto;
+}

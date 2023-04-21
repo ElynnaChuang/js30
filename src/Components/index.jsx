@@ -6,3 +6,5 @@ export { Panel } from './05ImagePanel';
 export { ListItem } from './06ListItem';
 export { CanvasArea } from './08Canvas';
 export { CheckboxInput } from './10Checkbox';
+
+export { Card } from './Card';
