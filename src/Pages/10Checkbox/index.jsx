@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { data } from './data';
-import { CheckboxInput } from '/src/Components/10Checkbox';
+import { CheckboxInput } from '@/Components/10Checkbox';
 
 export const CheckboxPage = () => {
   const [inputData, setInputData] = useState(data);

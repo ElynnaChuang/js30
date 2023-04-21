@@ -1,8 +1,8 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
-import { Clock } from '/src/Components';
-import { defaultBg, japan, london, taiwan } from '/src/Assets/02Clock';
-import dayjs from '/src/Helpers/dayjs';
+import { Clock } from '@/Components';
+import { defaultBg, japan, london, taiwan } from '@/Assets/02Clock';
+import dayjs from '@/Helpers/dayjs';
 import styles from './styles.module.scss';
 
 const countries = {

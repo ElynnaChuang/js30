@@ -1,4 +1,4 @@
-import { CanvasArea } from '/src/Components';
+import { CanvasArea } from '@/Components';
 import styles from './styles.module.scss';
 
 export const CanvasPage = () => {

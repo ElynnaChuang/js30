@@ -5,5 +5,8 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "stylelint.validate": ["css", "scss", "less", "postcss"]
+  "stylelint.validate": ["css", "scss", "less", "postcss"],
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}@"
+  }
 }

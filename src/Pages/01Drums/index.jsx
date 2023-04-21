@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Key } from '/src/Components/index';
+import { Key } from '@/Components/index';
 import {
   clap,
   hihat,
@@ -10,7 +10,7 @@ import {
   snare,
   tom,
   tink,
-} from '/src/Assets/01Drum';
+} from '@/Assets/01Drum';
 import styles from './styles.module.scss';
 
 const keys = [

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Panel } from '/src/Components';
+import { Panel } from '@/Components';
 import { panels } from './data';
 import styles from './styles.module.scss';
 

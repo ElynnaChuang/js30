@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ListItem } from '/src/Components';
+import { ListItem } from '@/Components';
 import styles from './styles.module.scss';
 import { getData } from './api';
 

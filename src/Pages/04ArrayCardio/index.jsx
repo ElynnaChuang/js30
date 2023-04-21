@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StyledTable } from '/src/Components';
+import { StyledTable } from '@/Components';
 import { inventors, people, transportation } from './data';
 import styles from './styles.module.scss';
 
