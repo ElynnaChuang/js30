@@ -1,0 +1,85 @@
+.control_container {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.top_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.5rem 1rem;
+
+  font-size: 1.5rem;
+  color: #fff;
+
+  border: 1px solid #fff;
+}
+
+.mid_container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  & .icon__btn svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.bottom_container {
+  & .progress_container {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+
+    .progress {
+      color: #9556cc;
+    }
+  }
+
+  & .controls_container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    .play {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .valume {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      width: 30%;
+
+      .volumeSlider {
+        margin-left: 8px;
+        color: #9556cc;
+      }
+
+      .volumeValue {
+        color: #9556cc;
+      }
+    }
+  }
+}
+
+.icon__btn {
+  cursor: pointer;
+  display: flex;
+  color: #7b2cbf;
+}
