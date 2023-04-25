@@ -18,7 +18,7 @@ export const Key = ({ keyName, soundTag, currentKey, onClick }) => {
       tabIndex='0'
       className={className}
       onClick={() => {
-        onClick?.(keyName);
+        onClick?.();
         handleStyle();
       }}
     >
