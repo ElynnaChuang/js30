@@ -26,7 +26,7 @@ export const ArrayCardioPage01 = () => {
     return { id: i + 1, way, times };
   });
 
-  const prinaryColor = '#72b8cb';
+  const prinaryColor = '#2796b5';
 
   return (
     <section className={styles.page}>

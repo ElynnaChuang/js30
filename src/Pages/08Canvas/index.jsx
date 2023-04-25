@@ -11,7 +11,9 @@ export const CanvasPage = () => {
           {title}
           <div>{title}</div>
         </h2>
-        <CanvasArea />
+        <div className={styles.canvas_area}>
+          <CanvasArea />
+        </div>
       </div>
     </section>
   );

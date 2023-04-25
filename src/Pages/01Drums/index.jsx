@@ -39,28 +39,27 @@ const sounds = {
 
 export const DrumPage = () => {
   const [currentKey, setCurrentKey] = useState('');
+
   const handlePlaySound = key => {
     if (!sounds[key]) return;
     sounds[key].currentTime = 0;
     sounds[key].play();
   };
+
   useEffect(() => {
     window.addEventListener('keydown', e => {
-      handlePlaySound(e.key);
-      setCurrentKey(e.key);
-      setTimeout(() => setCurrentKey(''), 100);
+      const locationArr = window.location.pathname.split('/');
+      const url = locationArr[locationArr.length - 1];
+
+      // 避免在其他頁面觸發
+      if (url === '01') {
+        handlePlaySound(e.key);
+        setCurrentKey(e.key);
+        setTimeout(() => setCurrentKey(''), 100);
+      }
     });
   }, []);
 
-  const allKeys = keys.map(key => (
-    <Key
-      key={key.keyNum}
-      keyName={key.keyName}
-      soundTag={key.soundTag}
-      currentKey={currentKey}
-      onClick={handlePlaySound}
-    />
-  ));
   return (
     <section className={styles.page}>
       <div className={styles.backdrop} />
@@ -68,7 +67,17 @@ export const DrumPage = () => {
         <h1 className={styles.caption}>
           Press your keyboard or tap the keys on the screen!
         </h1>
-        <div className={styles.keys}>{allKeys}</div>
+        <div className={styles.keys}>
+          {keys.map(({ keyNum, keyName, soundTag }) => (
+            <Key
+              key={keyNum}
+              keyName={keyName}
+              soundTag={soundTag}
+              onClick={() => handlePlaySound(keyName)}
+              currentKey={currentKey}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
