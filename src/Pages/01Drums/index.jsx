@@ -10,7 +10,7 @@ import {
   snare,
   tom,
   tink,
-} from '@/Assets/01Drum';
+} from '@/Assets/01Sounds';
 import styles from './styles.module.scss';
 
 const keys = [
