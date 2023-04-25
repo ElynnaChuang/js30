@@ -1,13 +1,23 @@
 @import 'https://fonts.googleapis.com/css?family=Amatic+SC';
+@import '../../scss/media';
 
 .page {
-  height: 100%;
+  height: 100vh;
   background: #b1b1b1;
 }
 
 .container {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
+
   width: 100%;
-  height: 100%;
+  height: 100vh;
+
   background-color: #fff;
 }
