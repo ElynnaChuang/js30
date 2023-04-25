@@ -1,4 +1,7 @@
-$tarnsition: 0.7s cubic-bezier(0.98, -0.3, 0.65, 1.22);
+$tarnsition_sec: 0.4s;
+$tarnsition_delay: 0.1s;
+$tarnsition_duration: 0.7s;
+$tarnsition: $tarnsition_sec cubic-bezier(0.98, -0.3, 0.65, 1.22);
 
 %base_panel {
   position: relative;
@@ -22,7 +25,7 @@ $tarnsition: 0.7s cubic-bezier(0.98, -0.3, 0.65, 1.22);
 
     backdrop-filter: blur(2px) brightness(70%);
 
-    transition: backdrop-filter 0.7s ease-out;
+    transition: backdrop-filter $tarnsition_sec ease-out;
 
     & > * {
       display: flex;
@@ -72,8 +75,8 @@ $tarnsition: 0.7s cubic-bezier(0.98, -0.3, 0.65, 1.22);
 
       &:first-child {
         transform: translateY(0);
-        transition-delay: 0.2s;
-        transition-duration: 1s;
+        transition-delay: $tarnsition_delay;
+        transition-duration: $tarnsition_duration;
       }
 
       &:nth-child(2) {
@@ -82,8 +85,8 @@ $tarnsition: 0.7s cubic-bezier(0.98, -0.3, 0.65, 1.22);
 
       &:last-child {
         transform: translateY(0);
-        transition-delay: 0.2s;
-        transition-duration: 1s;
+        transition-delay: $tarnsition_delay;
+        transition-duration: $tarnsition_duration;
       }
     }
   }
