@@ -1,0 +1,29 @@
+@import '../../scss/media';
+
+.page {
+  height: 100%;
+}
+
+.container {
+  @include desktop {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  width: 100%;
+  height: 100%;
+  padding: 3rem 0;
+
+  background-color: #fff;
+  border: 1px solid #ea1f1f;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}

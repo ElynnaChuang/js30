@@ -12,9 +12,8 @@ import {
   DrumPage,
   HomePage,
   ImageGalleryPage,
+  VideoPlayerPage,
 } from './Pages';
-
-// const basename = process.env.PUBLIC_URL;
 
 const App = () => (
   <div className='app'>
@@ -31,6 +30,7 @@ const App = () => (
         <Route path='08' element={<CanvasPage />} />
         <Route path='09' element={<DevtoolTricksPage />} />
         <Route path='10' element={<CheckboxPage />} />
+        <Route path='11' element={<VideoPlayerPage />} />
         <Route path='*' element={<HomePage />} />
       </Routes>
     </BrowserRouter>
