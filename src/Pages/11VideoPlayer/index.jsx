@@ -18,11 +18,14 @@ export const VideoPlayerPage = () => {
     played: 0,
     seeking: false,
     Buffer: true,
+    ended: false,
   });
   const { playing, muted, seeking, volume } = videoState;
   const handlers = {
-    handlePlayPause: () => {
-      setVideoState({ ...videoState, playing: !playing });
+    handlePlayPauseReplay: ended => {
+      if (ended) return setVideoState({ ...videoState, playing: true, ended: false });
+
+      return setVideoState({ ...videoState, playing: !playing });
     },
     handleMuted: () => {
       setVideoState({ ...videoState, muted: !muted });
@@ -54,6 +57,15 @@ export const VideoPlayerPage = () => {
     if (!seeking) setVideoState({ ...videoState, ...state });
   };
 
+  const handleOnEnd = () => {
+    setVideoState({
+      ...videoState,
+      playing: false,
+      seeking: false,
+      ended: true,
+    });
+  };
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
@@ -68,6 +80,7 @@ export const VideoPlayerPage = () => {
             volume={volume}
             muted={muted}
             onProgress={handleOnProgress}
+            onEnded={handleOnEnd}
           />
           <PlayerControl
             videoState={videoState}

@@ -6,6 +6,7 @@ import {
   PlayArrow,
   VolumeUp,
   VolumeOff,
+  Replay,
 } from '@mui/icons-material';
 import { Slider } from '@mui/material';
 
@@ -13,9 +14,9 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
 export const PlayerControl = ({ videoState, handlers, currentTime, duration }) => {
-  const { playing, volume, muted, played } = videoState; // volume 數值為 0 ~ 1
+  const { playing, volume, muted, played, ended } = videoState; // volume 數值為 0 ~ 1
   const {
-    handlePlayPause,
+    handlePlayPauseReplay,
     handleMuted,
     handleRewind,
     handleFastFoward,
@@ -72,8 +73,17 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
           <FastRewind fontSize='medium' />
         </button>
 
-        <button className={styles.icon__btn} onClick={() => handlePlayPause?.()}>
-          {playing ? <Pause fontSize='medium' /> : <PlayArrow fontSize='medium' />}
+        <button
+          className={styles.icon__btn}
+          onClick={() => handlePlayPauseReplay?.(ended)}
+        >
+          {ended ? (
+            <Replay fontSize='medium' />
+          ) : playing ? (
+            <Pause fontSize='medium' />
+          ) : (
+            <PlayArrow fontSize='medium' />
+          )}
         </button>
 
         <button className={styles.icon__btn} onDoubleClick={() => handleFastFoward?.()}>
@@ -98,8 +108,17 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
         </div>
         <div className={styles.controls_container}>
           <div className={styles.play}>
-            <button className={styles.icon__btn} onClick={() => handlePlayPause?.()}>
-              {playing ? <Pause fontSize='medium' /> : <PlayArrow fontSize='medium' />}
+            <button
+              className={styles.icon__btn}
+              onClick={() => handlePlayPauseReplay?.(ended)}
+            >
+              {ended ? (
+                <Replay fontSize='medium' />
+              ) : playing ? (
+                <Pause fontSize='medium' />
+              ) : (
+                <PlayArrow fontSize='medium' />
+              )}
             </button>
 
             <div className={styles.icon__btn}>
