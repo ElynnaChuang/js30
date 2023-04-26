@@ -12,7 +12,7 @@ import { Slider } from '@mui/material';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
-export const PlayerControl = ({ videoState, handlers }) => {
+export const PlayerControl = ({ videoState, handlers, currentTime, duration }) => {
   const { playing, volume, muted, played } = videoState; // volume 數值為 0 ~ 1
   const {
     handlePlayPause,
@@ -83,6 +83,10 @@ export const PlayerControl = ({ videoState, handlers }) => {
 
       <div className={styles.bottom_container}>
         <div className={styles.progress_container}>
+          <div className={styles.time}>
+            {currentTime} / {duration}
+          </div>
+
           <Slider
             className={styles.progress}
             min={0}

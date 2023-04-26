@@ -4,9 +4,13 @@ import video from '../../Assets/11video.mp4';
 import styles from './styles.module.scss';
 
 import { PlayerControl } from '@/Components/11PlayerControls';
+import { formatTime } from '@/Helpers/formatVideoTime';
 
 export const VideoPlayerPage = () => {
   const videoPlayerRef = useRef(null);
+  const currentTime = formatTime(videoPlayerRef.current?.getCurrentTime());
+  const duration = formatTime(videoPlayerRef.current?.getDuration());
+
   const [videoState, setVideoState] = useState({
     playing: false,
     muted: false,
@@ -65,7 +69,12 @@ export const VideoPlayerPage = () => {
             muted={muted}
             onProgress={handleOnProgress}
           />
-          <PlayerControl videoState={videoState} handlers={handlers} />
+          <PlayerControl
+            videoState={videoState}
+            handlers={handlers}
+            currentTime={currentTime}
+            duration={duration}
+          />
         </div>
       </div>
     </section>
