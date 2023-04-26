@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import {
-  SkipNext,
   Pause,
   FastForward,
   FastRewind,
@@ -10,11 +10,11 @@ import {
 } from '@mui/icons-material';
 import { Slider } from '@mui/material';
 
-import { useEffect, useState } from 'react';
+import { SpeedBtn } from './SpeedBtn';
 import styles from './styles.module.scss';
 
 export const PlayerControl = ({ videoState, handlers, currentTime, duration }) => {
-  const { playing, volume, muted, played, ended } = videoState; // volume 數值為 0 ~ 1
+  const { playing, volume, muted, played, ended, playbackRate } = videoState; // volume 數值為 0 ~ 1
   const {
     handlePlayPauseReplay,
     handleMuted,
@@ -22,6 +22,7 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
     handleFastFoward,
     handleProgressChange,
     handleVolumeChange,
+    handleSpeedChange,
   } = handlers;
 
   // ------- 進度條 ----------//
@@ -69,12 +70,12 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
       </div>
 
       <div className={styles.mid_container}>
-        <button className={styles.icon__btn} onDoubleClick={() => handleRewind?.()}>
+        <button className={styles.icon_btn} onDoubleClick={() => handleRewind?.()}>
           <FastRewind fontSize='medium' />
         </button>
 
         <button
-          className={styles.icon__btn}
+          className={styles.icon_btn}
           onClick={() => handlePlayPauseReplay?.(ended)}
         >
           {ended ? (
@@ -86,7 +87,7 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
           )}
         </button>
 
-        <button className={styles.icon__btn} onDoubleClick={() => handleFastFoward?.()}>
+        <button className={styles.icon_btn} onDoubleClick={() => handleFastFoward?.()}>
           <FastForward fontSize='medium' />
         </button>
       </div>
@@ -109,7 +110,7 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
         <div className={styles.controls_container}>
           <div className={styles.play}>
             <button
-              className={styles.icon__btn}
+              className={styles.icon_btn}
               onClick={() => handlePlayPauseReplay?.(ended)}
             >
               {ended ? (
@@ -120,14 +121,10 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
                 <PlayArrow fontSize='medium' />
               )}
             </button>
-
-            <div className={styles.icon__btn}>
-              <SkipNext fontSize='medium' />
-            </div>
           </div>
 
           <div className={styles.valume}>
-            <button className={styles.icon__btn} onClick={() => handleMuted?.()}>
+            <button className={styles.icon_btn} onClick={() => handleMuted?.()}>
               {!muted ? <VolumeUp fontSize='medium' /> : <VolumeOff fontSize='medium' />}
             </button>
             <Slider
@@ -142,6 +139,7 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
               {volumeValue} / {volumeSliderMax}
             </span>
           </div>
+          <SpeedBtn currentSpeed={playbackRate} onSpeedChange={handleSpeedChange} />
         </div>
       </div>
     </div>

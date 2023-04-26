@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
 
-  & .icon__btn svg {
+  & .icon_btn svg {
     width: 3rem;
     height: 3rem;
   }
@@ -88,8 +88,9 @@
   }
 }
 
-.icon__btn {
+.icon_btn {
   cursor: pointer;
   display: flex;
+  margin: 0 8px;
   color: #7b2cbf;
 }

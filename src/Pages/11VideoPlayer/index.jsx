@@ -19,8 +19,9 @@ export const VideoPlayerPage = () => {
     seeking: false,
     Buffer: true,
     ended: false,
+    playbackRate: 1,
   });
-  const { playing, muted, seeking, volume } = videoState;
+  const { playing, muted, seeking, volume, playbackRate } = videoState;
   const handlers = {
     handlePlayPauseReplay: ended => {
       if (ended) return setVideoState({ ...videoState, playing: true, ended: false });
@@ -51,6 +52,9 @@ export const VideoPlayerPage = () => {
         muted: newVolume === 0,
       });
     },
+    handleSpeedChange: value => {
+      setVideoState(prev => ({ ...prev, playbackRate: value }));
+    },
   };
 
   const handleOnProgress = state => {
@@ -79,6 +83,7 @@ export const VideoPlayerPage = () => {
             playing={playing}
             volume={volume}
             muted={muted}
+            playbackRate={playbackRate}
             onProgress={handleOnProgress}
             onEnded={handleOnEnd}
           />

@@ -1,0 +1,27 @@
+.icon_btn {
+  cursor: pointer;
+  display: flex;
+  margin: 0 8px;
+  color: #7b2cbf;
+}
+
+.speed_list {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  padding: 0.5rem;
+}
+
+%base_option {
+  padding: 0.5rem;
+}
+
+.speed_option {
+  @extend %base_option;
+}
+
+.speed_option_active {
+  @extend %base_option;
+
+  background-color: #dcdcdc;
+}
