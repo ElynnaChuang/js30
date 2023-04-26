@@ -56,6 +56,7 @@ module.exports = {
     'no-restricted-exports': 0,
     'no-console': 'warn',
     'no-param-reassign': ['error', { props: false }],
+    'no-nested-ternary': 0,
     'arrow-body-style': 0,
   },
 };

@@ -1,0 +1,30 @@
+@import '../color';
+
+.icon_btn {
+  cursor: pointer;
+  display: flex;
+  margin: 0 8px;
+  color: $white;
+}
+
+.speed_list {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+%base_option {
+  padding: 0.5rem;
+  font-weight: 600;
+  color: $secondary;
+}
+
+.speed_option {
+  @extend %base_option;
+}
+
+.speed_option_active {
+  @extend %base_option;
+
+  background-color: rgba($color: $primary, $alpha: 60%);
+}
