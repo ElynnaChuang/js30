@@ -89,39 +89,41 @@ export const VideoPlayerPage = () => {
     <section className={styles.page}>
       <div className={styles.container}>
         <h2 className={styles.title}>Video Player</h2>
-        <div
-          className={styles.player_container}
-          ref={videoContainerRef}
-          onMouseEnter={() => setControlShow(true)}
-          onMouseLeave={() => setControlShow(false)}
-          onMouseMove={handleMouseMove}
-          role='button'
-          tabIndex={0}
-        >
-          <ReactPlayer
-            url={video}
-            width='100%'
-            height='100%'
-            style={{ display: 'flex' }}
-            ref={videoPlayerRef}
-            playing={playing}
-            volume={volume}
-            muted={muted}
-            playbackRate={playbackRate}
-            onProgress={handleOnProgress}
-            onEnded={handleOnEnd}
-          />
-          <PlayerControl
-            show={controlShow}
-            videoState={videoState}
-            handlers={handlers}
-            videoInfo={{
-              name: 'Sample Video',
-              currentTime,
-              duration,
-              fullscreenDOM: videoContainerRef.current,
-            }}
-          />
+        <div className={styles.content_container}>
+          <div
+            ref={videoContainerRef}
+            onMouseEnter={() => setControlShow(true)}
+            onMouseLeave={() => setControlShow(false)}
+            onMouseMove={handleMouseMove}
+            role='button'
+            tabIndex={0}
+          >
+            <ReactPlayer
+              url={video}
+              width='100%'
+              height='100%'
+              style={{ display: 'flex' }}
+              ref={videoPlayerRef}
+              playing={playing}
+              volume={volume}
+              muted={muted}
+              playbackRate={playbackRate}
+              onProgress={handleOnProgress}
+              onEnded={handleOnEnd}
+            />
+            <PlayerControl
+              show={controlShow}
+              videoState={videoState}
+              handlers={handlers}
+              videoInfo={{
+                name: 'Sample Video',
+                currentTime,
+                duration,
+                fullscreenDOM: videoContainerRef.current,
+              }}
+            />
+          </div>
+          <div className={styles.border} />
         </div>
       </div>
     </section>
