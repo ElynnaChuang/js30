@@ -13,7 +13,14 @@ import { Slider } from '@mui/material';
 import { SpeedBtn } from './SpeedBtn';
 import styles from './styles.module.scss';
 
-export const PlayerControl = ({ videoState, handlers, currentTime, duration }) => {
+export const PlayerControl = ({
+  show,
+  videoName,
+  videoState,
+  handlers,
+  currentTime,
+  duration,
+}) => {
   const { playing, volume, muted, played, ended, playbackRate } = videoState; // volume 數值為 0 ~ 1
   const {
     handlePlayPauseReplay,
@@ -64,9 +71,9 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
   };
 
   return (
-    <div className={styles.control_container}>
+    <div className={show ? styles.control_container_show : styles.control_container_hide}>
       <div className={styles.top_container}>
-        <h2>Video PLayer</h2>
+        <h2>{videoName}</h2>
       </div>
 
       <div className={styles.mid_container}>
@@ -105,6 +112,13 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
             value={progressValue}
             onChange={onProgressChange}
             onChangeCommitted={onProgressChange}
+            sx={{
+              height: 6,
+              '& .MuiSlider-thumb': {
+                width: 16,
+                height: 16,
+              },
+            }}
           />
         </div>
         <div className={styles.controls_container}>
@@ -123,23 +137,34 @@ export const PlayerControl = ({ videoState, handlers, currentTime, duration }) =
             </button>
           </div>
 
-          <div className={styles.valume}>
+          <div className={styles.volume}>
             <button className={styles.icon_btn} onClick={() => handleMuted?.()}>
               {!muted ? <VolumeUp fontSize='medium' /> : <VolumeOff fontSize='medium' />}
             </button>
             <Slider
-              className={styles.volumeSlider}
+              className={styles.volume_slider}
               min={0}
               max={volumeSliderMax}
               value={volumeValue}
               onChange={onVolumeChange}
               onChangeCommitted={onVolumeChange}
+              sx={{
+                height: 4,
+                '& .MuiSlider-thumb': {
+                  width: 12,
+                  height: 12,
+                },
+              }}
             />
-            <span className={styles.volumeValue}>
+            <span className={styles.volume_value}>
               {volumeValue} / {volumeSliderMax}
             </span>
           </div>
-          <SpeedBtn currentSpeed={playbackRate} onSpeedChange={handleSpeedChange} />
+          <SpeedBtn
+            show={show}
+            currentSpeed={playbackRate}
+            onSpeedChange={handleSpeedChange}
+          />
         </div>
       </div>
     </div>

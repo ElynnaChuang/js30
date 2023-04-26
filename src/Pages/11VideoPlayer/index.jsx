@@ -21,6 +21,8 @@ export const VideoPlayerPage = () => {
     ended: false,
     playbackRate: 1,
   });
+  const [controlShow, setControlShow] = useState(false);
+
   const { playing, muted, seeking, volume, playbackRate } = videoState;
   const handlers = {
     handlePlayPauseReplay: ended => {
@@ -74,7 +76,13 @@ export const VideoPlayerPage = () => {
     <section className={styles.page}>
       <div className={styles.container}>
         <h2 className={styles.title}>11 Page</h2>
-        <div className={styles.player_container}>
+        <div
+          className={styles.player_container}
+          onMouseEnter={() => setControlShow(true)}
+          onMouseLeave={() => setControlShow(false)}
+          role='button'
+          tabIndex={0}
+        >
           <ReactPlayer
             url={video}
             width='100%'
@@ -88,6 +96,8 @@ export const VideoPlayerPage = () => {
             onEnded={handleOnEnd}
           />
           <PlayerControl
+            show={controlShow}
+            videoName='Sample Video'
             videoState={videoState}
             handlers={handlers}
             currentTime={currentTime}

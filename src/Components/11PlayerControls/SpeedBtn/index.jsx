@@ -15,6 +15,7 @@ const speedOptions = [
 export const SpeedBtn = ({ currentSpeed, onSpeedChange }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  let timeOutId;
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -47,7 +48,13 @@ export const SpeedBtn = ({ currentSpeed, onSpeedChange }) => {
           horizontal: 'right',
         }}
       >
-        <Typography className={styles.speed_list}>
+        <Typography
+          className={styles.speed_list}
+          onMouseEnter={() => clearTimeout(timeOutId)}
+          onMouseLeave={() => {
+            timeOutId = setTimeout(() => handleClose(), 100);
+          }}
+        >
           {speedOptions.map(option => {
             const className =
               option.speed === currentSpeed
