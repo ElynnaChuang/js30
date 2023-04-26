@@ -7,20 +7,17 @@ import {
   VolumeUp,
   VolumeOff,
   Replay,
+  Fullscreen,
+  FullscreenExit,
 } from '@mui/icons-material';
 import { Slider } from '@mui/material';
+import screenfull from 'screenfull';
 
 import { SpeedBtn } from './SpeedBtn';
 import styles from './styles.module.scss';
 
-export const PlayerControl = ({
-  show,
-  videoName,
-  videoState,
-  handlers,
-  currentTime,
-  duration,
-}) => {
+export const PlayerControl = ({ show, videoInfo, videoState, handlers }) => {
+  const { name, currentTime, duration, fullscreenDOM } = videoInfo;
   const { playing, volume, muted, played, ended, playbackRate } = videoState; // volume 數值為 0 ~ 1
   const {
     handlePlayPauseReplay,
@@ -70,10 +67,19 @@ export const PlayerControl = ({
     }
   };
 
+  // --- 全螢幕 --- //
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const handleFullScreen = () => {
+    if (screenfull.isEnabled) {
+      screenfull.toggle(fullscreenDOM);
+      setIsFullScreen(!isFullScreen);
+    }
+  };
+
   return (
     <div className={show ? styles.control_container_show : styles.control_container_hide}>
       <div className={styles.top_container}>
-        <h2>{videoName}</h2>
+        <h2>{name}</h2>
       </div>
 
       <div className={styles.mid_container}>
@@ -165,6 +171,9 @@ export const PlayerControl = ({
             currentSpeed={playbackRate}
             onSpeedChange={handleSpeedChange}
           />
+          <button className={styles.icon_btn} onClick={handleFullScreen}>
+            {isFullScreen ? <FullscreenExit /> : <Fullscreen />}
+          </button>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import { formatTime } from '@/Helpers/formatVideoTime';
 
 export const VideoPlayerPage = () => {
   const videoPlayerRef = useRef(null);
+  const videoContainerRef = useRef(null);
   const currentTime = formatTime(videoPlayerRef.current?.getCurrentTime());
   const duration = formatTime(videoPlayerRef.current?.getDuration());
 
@@ -72,14 +73,28 @@ export const VideoPlayerPage = () => {
     });
   };
 
+  // --- 滑鼠自動消失 -- //
+  const cursorTimeoutRef = useRef(null);
+  const handleMouseMove = () => {
+    document.body.style.cursor = 'auto';
+    setControlShow(true);
+    clearTimeout(cursorTimeoutRef.current);
+    cursorTimeoutRef.current = setTimeout(() => {
+      document.body.style.cursor = 'none';
+      setControlShow(false);
+    }, 1000);
+  };
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
-        <h2 className={styles.title}>11 Page</h2>
+        <h2 className={styles.title}>Video Player</h2>
         <div
           className={styles.player_container}
+          ref={videoContainerRef}
           onMouseEnter={() => setControlShow(true)}
           onMouseLeave={() => setControlShow(false)}
+          onMouseMove={handleMouseMove}
           role='button'
           tabIndex={0}
         >
@@ -87,6 +102,7 @@ export const VideoPlayerPage = () => {
             url={video}
             width='100%'
             height='100%'
+            style={{ display: 'flex' }}
             ref={videoPlayerRef}
             playing={playing}
             volume={volume}
@@ -97,11 +113,14 @@ export const VideoPlayerPage = () => {
           />
           <PlayerControl
             show={controlShow}
-            videoName='Sample Video'
             videoState={videoState}
             handlers={handlers}
-            currentTime={currentTime}
-            duration={duration}
+            videoInfo={{
+              name: 'Sample Video',
+              currentTime,
+              duration,
+              fullscreenDOM: videoContainerRef.current,
+            }}
           />
         </div>
       </div>
