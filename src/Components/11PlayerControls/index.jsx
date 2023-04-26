@@ -13,15 +13,17 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
 export const PlayerControl = ({ videoState, handlers }) => {
-  const { playing, muted, played } = videoState;
+  const { playing, volume, muted, played } = videoState; // volume 數值為 0 ~ 1
   const {
     handlePlayPause,
     handleMuted,
     handleRewind,
     handleFastFoward,
     handleProgressChange,
+    handleVolumeChange,
   } = handlers;
 
+  // ------- 進度條 ----------//
   const progressSliderMax = 100;
   const [progressValue, setProgressValue] = useState(played * progressSliderMax); // played數值為 0 ~ 1，1為播完全部
 
@@ -39,6 +41,23 @@ export const PlayerControl = ({ videoState, handlers }) => {
     } else if (type === 'mousemove') {
       setProgressValue(moveValue);
       handleProgressChange?.(moveValue);
+    }
+  };
+
+  // ------- 音量 ----------//
+  const volumeSliderMax = 100;
+  const [volumeValue, setVolumeValue] = useState(volume * volumeSliderMax);
+
+  const onVolumeChange = (event, moveValue) => {
+    const { type } = event;
+
+    if (type === 'mousedown') {
+      const clickValue = event.target.value;
+      setVolumeValue(clickValue);
+      handleVolumeChange(clickValue);
+    } else if (type === 'mousemove') {
+      setVolumeValue(moveValue);
+      handleVolumeChange(moveValue);
     }
   };
 
@@ -88,8 +107,17 @@ export const PlayerControl = ({ videoState, handlers }) => {
             <button className={styles.icon__btn} onClick={() => handleMuted?.()}>
               {!muted ? <VolumeUp fontSize='medium' /> : <VolumeOff fontSize='medium' />}
             </button>
-            <Slider className={styles.volumeSlider} />
-            <span className={styles.volumeValue}>5/20</span>
+            <Slider
+              className={styles.volumeSlider}
+              min={0}
+              max={volumeSliderMax}
+              value={volumeValue}
+              onChange={onVolumeChange}
+              onChangeCommitted={onVolumeChange}
+            />
+            <span className={styles.volumeValue}>
+              {volumeValue} / {volumeSliderMax}
+            </span>
           </div>
         </div>
       </div>

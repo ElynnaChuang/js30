@@ -15,7 +15,7 @@ export const VideoPlayerPage = () => {
     seeking: false,
     Buffer: true,
   });
-  const { playing, muted, seeking } = videoState;
+  const { playing, muted, seeking, volume } = videoState;
   const handlers = {
     handlePlayPause: () => {
       setVideoState({ ...videoState, playing: !playing });
@@ -35,6 +35,15 @@ export const VideoPlayerPage = () => {
       setVideoState({ ...videoState, seeking: false });
       videoPlayerRef.current.seekTo(value / 100);
     },
+    handleVolumeChange: value => {
+      const newVolume = parseFloat(value) / 100;
+
+      setVideoState({
+        ...videoState,
+        volume: newVolume,
+        muted: newVolume === 0,
+      });
+    },
   };
 
   const handleOnProgress = state => {
@@ -52,6 +61,7 @@ export const VideoPlayerPage = () => {
             height='100%'
             ref={videoPlayerRef}
             playing={playing}
+            volume={volume}
             muted={muted}
             onProgress={handleOnProgress}
           />
