@@ -76,11 +76,11 @@ export const VideoPlayerPage = () => {
   // --- 滑鼠自動消失 -- //
   const cursorTimeoutRef = useRef(null);
   const handleMouseMove = () => {
-    document.body.style.cursor = 'auto';
+    videoContainerRef.current.style.cursor = 'default';
     setControlShow(true);
     clearTimeout(cursorTimeoutRef.current);
     cursorTimeoutRef.current = setTimeout(() => {
-      document.body.style.cursor = 'none';
+      videoContainerRef.current.style.cursor = 'none';
       setControlShow(false);
     }, 1000);
   };
