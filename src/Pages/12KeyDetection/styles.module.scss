@@ -1,29 +1,120 @@
-@import "../../scss/media";
+@import '../../scss/media';
+@import 'https://fonts.googleapis.com/css2?family=Concert+One&display=swap';
+
+$primary: #ff9d3c;
+$shadow: darken($primary, 20%);
+$highlight: rgba(
+  $color: $primary,
+  $alpha: 40%,
+);
+$text: #797979;
+$bg_color_outside: #7aa4ce; // 8481bf
+$bg_color_inside: #fff;
+$border: 10px solid
+  rgba(
+    $color: $primary,
+    $alpha: 70%,
+  );
 
 .page {
+  position: relative;
   height: 100%;
-  background: #b1b1b1;
+  font-family: 'Concert One', cursive;
+  background-color: $bg_color_outside;
 }
 
-.container {
+.info {
   @include desktop {
-    max-width: 900px;
-    margin: 0 auto;
+    font-size: 3rem;
   }
+
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  max-width: 800px;
+  padding: 4rem 3rem 5rem;
 
-  background-color: #fff;
-  border: 1px solid #ea1f1f;
-}
-
-.title {
   font-size: 2rem;
   font-weight: 700;
+  color: $text;
   text-align: center;
-  border: 1px solid #000;
+
+  background-color: $bg_color_inside;
+  border: $border;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 1rem 0 rgb(0 57 90 / 33.6%);
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      @include desktop {
+        font-size: 2.5rem;
+      }
+
+      display: block;
+
+      height: 100%;
+      padding: 0.3rem 1rem 0.7rem;
+
+      font-size: 2rem;
+
+      background-color: $highlight;
+      border-radius: 0.75rem;
+    }
+
+    & button {
+      @include desktop {
+        font-size: 2rem;
+      }
+
+      padding: 0.5rem 1rem 0.7rem;
+
+      font-size: 1.5rem;
+      color: #fff;
+
+      background-color: $primary;
+      border-radius: 0.75rem;
+      box-shadow: 0 3px 0 1px $shadow;
+
+      &:active {
+        transform: translate(0, 3px);
+        box-shadow: 0 0 0 1px $shadow;
+      }
+    }
+  }
+}
+
+.canvas_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  height: 100%;
+  opacity: 1;
+  background-color: rgb(255 255 255 / 0%);
+
+  &_show {
+    opacity: 1;
+    transition: all ease-out 1s;
+  }
+
+  &_hide {
+    opacity: 0;
+    transition: all ease-out 1s;
+  }
 }
