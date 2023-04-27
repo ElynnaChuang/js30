@@ -3,16 +3,10 @@
 }
 
 %base_float_item {
+  position: relative;
   width: 300px;
   height: 300px;
   background: #fff0;
-
-  & img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
 }
 
 .float_left {
@@ -29,6 +23,53 @@
   float: right;
   margin-top: 0.4rem;
   margin-left: 1rem;
+}
+
+$slide_transition: all cubic-bezier(0, 0, 0.32, 1.01) 0.8s;
+
+%base_img {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: $slide_transition;
+}
+
+.image_left_hide {
+  @extend %base_img;
+
+  right: 60%;
+  opacity: 0;
+  transition: $slide_transition;
+}
+
+.image_left_show {
+  @extend %base_img;
+
+  right: 0%;
+  opacity: 1;
+  transition: $slide_transition;
+}
+
+.image_right_hide {
+  @extend %base_img;
+
+  left: 60%;
+  opacity: 0;
+  transition: $slide_transition;
+}
+
+.image_right_show {
+  @extend %base_img;
+
+  left: 0%;
+  opacity: 1;
+  transition: $slide_transition;
 }
 
 .text {
