@@ -12,6 +12,7 @@ import {
   DrumPage,
   HomePage,
   ImageGalleryPage,
+  KeyDetectionPage,
   VideoPlayerPage,
 } from './Pages';
 
@@ -31,6 +32,7 @@ const App = () => (
         <Route path='09' element={<DevtoolTricksPage />} />
         <Route path='10' element={<CheckboxPage />} />
         <Route path='11' element={<VideoPlayerPage />} />
+        <Route path='12' element={<KeyDetectionPage />} />
         <Route path='*' element={<HomePage />} />
       </Routes>
     </BrowserRouter>
