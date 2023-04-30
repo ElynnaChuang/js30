@@ -87,7 +87,7 @@ export const data = [
   },
   {
     id: 14,
-    title: 'Object and Arrays - Reference VS Copy',
+    title: 'Copy in JS',
     img: bg14,
   },
   {
