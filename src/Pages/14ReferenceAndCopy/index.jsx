@@ -1,5 +1,5 @@
 import { Example } from '@/Components';
-import { textExamples, arrayExamples, objectExamples } from './data';
+import { textExamples, arrayExamples, objectExamples, deepCopyExamples } from './data';
 import styles from './styles.module.scss';
 
 export const ReferenceAndCopyPage = () => {
@@ -29,6 +29,13 @@ export const ReferenceAndCopyPage = () => {
           <h3>Object</h3>
           {objectExamples.map(({ id, title, info, code }) => (
             <Example key={id} title={title} info={info} code={code} />
+          ))}
+        </div>
+
+        <div className={styles.example_section}>
+          <h3>Notice!!</h3>
+          {deepCopyExamples.map(({ id, title, info, subInfo, code }) => (
+            <Example key={id} title={title} info={info} subInfo={subInfo} code={code} />
           ))}
         </div>
       </div>
