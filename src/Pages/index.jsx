@@ -11,3 +11,4 @@ export { DevtoolTricksPage } from './09DevtoolTricks';
 export { CheckboxPage } from './10Checkbox';
 export { VideoPlayerPage } from './11VideoPlayer';
 export { KeyDetectionPage } from './12KeyDetection';
+export { ScrollSlideInPage } from './13ScrollSlideIn';

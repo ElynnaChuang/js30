@@ -1,0 +1,56 @@
+@import '../../scss/media';
+
+.page {
+  height: 100%;
+  padding-top: 3rem;
+  background: #e2e2e2;
+}
+
+.container {
+  @include desktop {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  position: relative;
+
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+
+  background-color: #fff;
+  box-shadow: 0 0 1rem 0 rgba($color: #000, $alpha: 20%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+
+    position: fixed;
+    z-index: 999;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+
+    background-color: #fff0;
+    box-shadow: inset 0 20px 16px 0 rgba($color: #fff, $alpha: 100%);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fa9150;
+  text-align: center;
+}
