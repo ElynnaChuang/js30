@@ -13,6 +13,7 @@ import {
   HomePage,
   ImageGalleryPage,
   KeyDetectionPage,
+  LocalStoragePage,
   ReferenceAndCopyPage,
   ScrollSlideInPage,
   VideoPlayerPage,
@@ -37,6 +38,7 @@ const App = () => (
         <Route path='12' element={<KeyDetectionPage />} />
         <Route path='13' element={<ScrollSlideInPage />} />
         <Route path='14' element={<ReferenceAndCopyPage />} />
+        <Route path='15' element={<LocalStoragePage />} />
         <Route path='*' element={<HomePage />} />
       </Routes>
     </BrowserRouter>
