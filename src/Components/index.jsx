@@ -7,5 +7,6 @@ export { ListItem } from './06ListItem';
 export { CanvasArea } from './08Canvas';
 export { CheckboxInput } from './10Checkbox';
 export { Paragraph } from './13Paragraph';
+export { Example } from './14Example';
 
 export { Card } from './Card';
