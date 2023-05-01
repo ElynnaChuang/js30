@@ -28,6 +28,11 @@ export const LocalStoragePage = () => {
     );
   };
 
+  const handleClear = () => {
+    setListItems([]);
+    localStorage.removeItem('items');
+  };
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
@@ -37,6 +42,7 @@ export const LocalStoragePage = () => {
           <h2 className={styles.title}>LOCAL TAPAS</h2>
           <Form addItem={handleAddItem} />
           <List items={listItems} handleDone={handleDone} />
+          {!!listItems.length && <button onClick={handleClear}>Clear All</button>}
         </div>
       </div>
     </section>
