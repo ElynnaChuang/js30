@@ -92,7 +92,7 @@ export const data = [
   },
   {
     id: 15,
-    title: 'LocalStorage and Event Delegation',
+    title: 'LocalStorage',
     img: bg15,
   },
   {

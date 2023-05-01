@@ -1,0 +1,93 @@
+@import '../../scss/media';
+@import 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap';
+
+.page {
+  height: 100%;
+
+  font-family: Nunito, sans-serif;
+
+  background: #000;
+  background-image: url('../../Assets/15bg.jpeg');
+  background-size: cover;
+
+  &::after {
+    content: '';
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba($color: #000, $alpha: 40%);
+    backdrop-filter: blur(0.75rem) saturate(80%);
+  }
+}
+
+.container {
+  @include desktop {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  position: relative;
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 8vh 2.5rem 3rem;
+
+  & svg {
+    width: 20%;
+    min-width: 100px;
+    padding: 1rem;
+
+    border: 4px solid #fff;
+    border-radius: 50%;
+
+    fill: #fff;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+
+  background-color: rgba($color: #fff, $alpha: 40%);
+  border-radius: 1rem;
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  & button {
+    display: block;
+
+    margin-top: auto;
+    padding: 0.5rem;
+
+    font-weight: 600;
+    color: #fff;
+
+    background-color: #c67a67;
+    border-radius: 0.5rem;
+  }
+}
