@@ -5,17 +5,27 @@ import { Form, List } from '@/Components';
 import styles from './styles.module.scss';
 
 export const LocalStoragePage = () => {
-  const [listItems, setListItems] = useState([]);
+  const [listItems, setListItems] = useState(
+    JSON.parse(localStorage.getItem('items')) || [],
+  );
 
   const handleAddItem = value => {
     if (!value.trim().length) return;
 
     const id = uuidv4();
-    setListItems(prev => [...prev, { id, name: value, done: false }]);
+    const newItem = { id, name: value, done: false };
+    setListItems(prev => [...prev, newItem]);
+    localStorage.setItem('items', JSON.stringify([...listItems, newItem]));
   };
 
   const handleDone = id => {
     setListItems(prev => prev.map(el => (el.id === id ? { ...el, done: !el.done } : el)));
+    localStorage.setItem(
+      'items',
+      JSON.stringify(
+        listItems.map(item => (item.id === id ? { ...item, done: !item.done } : item)),
+      ),
+    );
   };
 
   return (
