@@ -33,7 +33,7 @@ export const HomePage = () => {
                 key={el.id}
                 linkTo={`/${num}`}
                 title={`${num}. ${el.title}`}
-                image={el.img}
+                images={el.images}
               />
             );
           })}

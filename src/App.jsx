@@ -1,23 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {
-  AjaxTypePage,
-  ArrayCardioPage01,
-  ArrayCardioPage02,
-  CanvasPage,
-  CheckboxPage,
-  ClockPage,
-  CssPlaygroundPage,
-  DevtoolTricksPage,
-  DrumPage,
-  HomePage,
-  ImageGalleryPage,
-  KeyDetectionPage,
-  LocalStoragePage,
-  ReferenceAndCopyPage,
-  ScrollSlideInPage,
-  VideoPlayerPage,
-} from './Pages';
+import { AjaxTypePage, ArrayCardioPage01, ArrayCardioPage02, CanvasPage, CheckboxPage, ClockPage, CssPlaygroundPage, DevtoolTricksPage, DrumPage, HomePage, ImageGalleryPage, KeyDetectionPage, LocalStoragePage, ReferenceAndCopyPage, ScrollSlideInPage, VideoPlayerPage } from './Pages';
 
 const App = () => (
   <div className='app'>
