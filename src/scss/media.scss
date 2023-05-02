@@ -1,15 +1,23 @@
-$desktop_min_width: 992px;
-$pad_max_width: 991px;
-$pad_min_width: 768px;
+$s_min: 576px;
+$s_max: 767px;
+$m_min: 768px;
+$m_max: 991px;
+$l_min: 992px;
 
-@mixin pad() {
-  @media screen and (min-width: $pad_min_width) and (max-width: $pad_max_width) {
+@mixin more576() {
+  @media screen and (min-width: $s_min) and (max-width: $s_max) {
     @content;
   }
 }
 
-@mixin desktop() {
-  @media screen and (min-width: $desktop_min_width) {
+@mixin more768() {
+  @media screen and (min-width: $m_min) and (max-width: $m_max) {
+    @content;
+  }
+}
+
+@mixin more992() {
+  @media screen and (min-width: $l_min) {
     @content;
   }
 }

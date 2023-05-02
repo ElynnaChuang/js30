@@ -8,7 +8,7 @@
 }
 
 .container {
-  @include desktop {
+  @include more992 {
     margin: 0 auto;
   }
 
@@ -24,7 +24,7 @@
 }
 
 .title {
-  @include desktop {
+  @include more992 {
     position: absolute;
     top: 10%;
     left: 10%;
@@ -41,7 +41,7 @@
 }
 
 .content_container {
-  @include desktop {
+  @include more992 {
     position: absolute;
     bottom: 15%;
     left: 10vw;
