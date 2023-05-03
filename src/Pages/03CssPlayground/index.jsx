@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ColorInput, RangeInput } from '@/Components';
 import styles from './styles.module.scss';
 
-export const CssPlaygroundPage = () => {
+const CssPlaygroundPage = () => {
   const [padding, setPadding] = useState(10);
   const [blur, setBlur] = useState(0);
   const [background, setBackground] = useState('#FACA7A');
@@ -58,3 +58,5 @@ export const CssPlaygroundPage = () => {
     </section>
   );
 };
+
+export default CssPlaygroundPage;

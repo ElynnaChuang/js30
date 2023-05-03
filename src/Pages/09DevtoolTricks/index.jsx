@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
 import { data } from './data';
 
-export const DevtoolTricksPage = () => (
+const DevtoolTricksPage = () => (
   <section className={styles.page}>
     <div className={styles.container}>
       <h2 className={styles.title}>Devtool Tricks</h2>
@@ -41,3 +41,5 @@ const Trick = ({ title, info, example, btnInfo, func }) => (
     </button>
   </div>
 );
+
+export default DevtoolTricksPage;

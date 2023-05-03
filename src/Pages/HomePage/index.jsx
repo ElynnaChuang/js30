@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { data } from './data';
 import { Card } from '@/Components';
 
-export const HomePage = () => {
+const HomePage = () => {
   const title = 'JavaScript30 React version';
   const subTitle = `This web contains all my JavaScript 30 practices built with the React framework, and these 30 challenges on Javascript is designed by Wes Bos`;
 
@@ -42,3 +42,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

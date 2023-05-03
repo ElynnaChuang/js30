@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { PlayerControl } from '@/Components/11PlayerControls';
 import { formatTime } from '@/Helpers/formatVideoTime';
 
-export const VideoPlayerPage = () => {
+const VideoPlayerPage = () => {
   const videoPlayerRef = useRef(null);
   const videoContainerRef = useRef(null);
   const currentTime = formatTime(videoPlayerRef.current?.getCurrentTime());
@@ -129,3 +129,5 @@ export const VideoPlayerPage = () => {
     </section>
   );
 };
+
+export default VideoPlayerPage;

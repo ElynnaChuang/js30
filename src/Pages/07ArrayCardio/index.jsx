@@ -3,7 +3,7 @@ import { StyledTable } from '@/Components';
 import { people, comments } from './data';
 import styles from './styles.module.scss';
 
-export const ArrayCardioPage02 = () => {
+const ArrayCardioPage02 = () => {
   const prinaryColor = '#9363ad';
   const thisYear = new Date().getFullYear();
 
@@ -74,3 +74,5 @@ export const ArrayCardioPage02 = () => {
     </section>
   );
 };
+
+export default ArrayCardioPage02;

@@ -40,7 +40,7 @@ const sounds = {
   l: new Audio(tink),
 };
 
-export const DrumPage = () => {
+const DrumPage = () => {
   const [currentKey, setCurrentKey] = useState('');
 
   const handlePlaySound = key => {
@@ -98,3 +98,5 @@ export const DrumPage = () => {
     </section>
   );
 };
+
+export default DrumPage;

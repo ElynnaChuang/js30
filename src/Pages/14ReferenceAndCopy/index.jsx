@@ -2,7 +2,7 @@ import { Example } from '@/Components';
 import { textExamples, arrayExamples, objectExamples, deepCopyExamples } from './data';
 import styles from './styles.module.scss';
 
-export const ReferenceAndCopyPage = () => {
+const ReferenceAndCopyPage = () => {
   return (
     <section className={styles.page}>
       <div className={styles.container}>
@@ -42,3 +42,5 @@ export const ReferenceAndCopyPage = () => {
     </section>
   );
 };
+
+export default ReferenceAndCopyPage;

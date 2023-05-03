@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { countries } from './contries';
 import { defaultImg } from '@/Assets/02bg';
 
-export const ClockPage = () => {
+const ClockPage = () => {
   const getUtcOffset = timezone => `${dayjs().tz(timezone).offsetName()}`;
 
   const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -57,3 +57,5 @@ export const ClockPage = () => {
     </section>
   );
 };
+
+export default ClockPage;
