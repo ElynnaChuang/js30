@@ -1,14 +1,22 @@
 .page {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
 
-  display: flex;
-  justify-content: center;
+.bg::after {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
 
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
-    url('../../Assets/01bg.jpg') center;
+  background-color: rgba($color: #000, $alpha: 40%);
+  backdrop-filter: blur(8px) saturate(0.8);
 }
 
 .container {
@@ -38,9 +46,4 @@
   color: rgb(255 255 255 / 80%);
   text-align: center;
   letter-spacing: 0.1rem;
-}
-
-.backdrop {
-  width: 100%;
-  backdrop-filter: blur(4px) saturate(0.8);
 }
