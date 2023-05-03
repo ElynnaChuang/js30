@@ -48,6 +48,12 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
   background-size: cover;
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .text_container {
   @include more992 {
     font-size: 2vw;

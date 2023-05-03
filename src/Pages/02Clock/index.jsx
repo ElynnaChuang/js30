@@ -1,44 +1,24 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
-import { Clock } from '@/Components';
-import { defaultBg, japan, london, taiwan } from '@/Assets/02bg';
+import { Clock, Image } from '@/Components';
 import dayjs from '@/Helpers/dayjs';
 import styles from './styles.module.scss';
-
-const countries = {
-  'Europe/London': {
-    name: 'London',
-    styles: {
-      backgroundImage: `url(${london})`,
-    },
-  },
-  'Asia/Taipei': {
-    name: 'Taiwan',
-    styles: {
-      backgroundImage: `url(${taiwan})`,
-    },
-  },
-  'Asia/Tokyo': {
-    name: 'Japan',
-    styles: {
-      backgroundImage: `url(${japan})`,
-    },
-  },
-};
+import { countries } from './contries';
+import { defaultImg } from '@/Assets/02bg';
 
 export const ClockPage = () => {
   const getUtcOffset = timezone => `${dayjs().tz(timezone).offsetName()}`;
 
   const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const localStyles = countries[localTimeZone]
-    ? countries[localTimeZone].styles
-    : { ackgroundImage: `url(${defaultBg})` };
-
   const [otherTimeZone, setOtherTimeZone] = useState('Europe/London');
 
   return (
     <section className={styles.page}>
-      <div className={styles.container} style={localStyles}>
+      <div className={styles.container}>
+        <Image
+          images={countries[localTimeZone]?.images || { base: defaultImg.base }}
+          className={styles.bg}
+        />
         <div className={styles.clock_container}>
           <div className={styles.clock}>
             <Clock timezone={localTimeZone} />
@@ -50,7 +30,8 @@ export const ClockPage = () => {
         </div>
       </div>
 
-      <div className={styles.container} style={countries[otherTimeZone].styles}>
+      <div className={styles.container}>
+        <Image images={countries[otherTimeZone].images} className={styles.bg} />
         <div className={styles.clock_container}>
           <div className={styles.clock}>
             <Clock timezone={otherTimeZone} />
