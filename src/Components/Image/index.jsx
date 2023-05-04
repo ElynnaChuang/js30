@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import phJpg from '@/Assets/Homepage/placeholder.jpg';
 import styles from './styles.module.scss';
 
-export const Image = ({ images, className }) => {
+export const Image = ({ images, className, imgStyle }) => {
   const { s1x, s2x, s3x, m1x, m2x, m3x, l1x, l2x, l3x, base } = images;
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -40,6 +40,7 @@ export const Image = ({ images, className }) => {
           alt='...'
           loading='lazy'
           className={styles.img}
+          style={imgStyle}
         />
       </picture>
     </div>
