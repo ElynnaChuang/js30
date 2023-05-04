@@ -12,6 +12,7 @@ const App = () => {
             if (i === 0) return <Route key={el.id} path={el.path} element={el.element} />;
             return (
               <Route
+                key={el.id}
                 path={el.path}
                 element={
                   <Suspense key={el.id} fallback={<div>Load</div>}>
