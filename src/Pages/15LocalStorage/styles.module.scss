@@ -7,7 +7,7 @@
   font-family: Nunito, sans-serif;
 
   background: #000;
-  background-image: url('../../Assets/15bg.jpeg');
+  background-image: url('../../Assets/15bg/base.webp');
   background-size: cover;
 
   &::after {
@@ -28,7 +28,7 @@
 }
 
 .container {
-  @include desktop {
+  @include more992 {
     max-width: 900px;
     margin: 0 auto;
   }

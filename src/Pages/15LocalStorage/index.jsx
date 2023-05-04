@@ -4,7 +4,7 @@ import { FishIcon } from '@/Assets/09Icons';
 import { Form, List } from '@/Components';
 import styles from './styles.module.scss';
 
-export const LocalStoragePage = () => {
+const LocalStoragePage = () => {
   const [listItems, setListItems] = useState(
     JSON.parse(localStorage.getItem('items')) || [],
   );
@@ -48,3 +48,5 @@ export const LocalStoragePage = () => {
     </section>
   );
 };
+
+export default LocalStoragePage;

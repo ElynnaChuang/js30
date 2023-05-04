@@ -4,7 +4,7 @@ $font_color: #444c51;
 $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 
 .page {
-  @include desktop {
+  @include more992 {
     flex-direction: row;
   }
 
@@ -18,7 +18,7 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
-  @include desktop {
+  @include more992 {
     flex-direction: column;
     gap: 2rem;
     justify-content: flex-start;
@@ -27,7 +27,7 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
     padding: 20vh 0 0;
   }
 
-  @include pad {
+  @include more768 {
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 2rem 4rem;
@@ -48,12 +48,18 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
   background-size: cover;
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .text_container {
-  @include desktop {
+  @include more992 {
     font-size: 2vw;
   }
 
-  @include pad {
+  @include more768 {
     margin-right: 2rem;
     margin-bottom: 0;
   }
@@ -78,11 +84,11 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .select_container {
-  @include desktop {
+  @include more992 {
     width: 50%;
   }
 
-  @include pad {
+  @include more768 {
     width: 35%;
     margin-right: 2rem;
     margin-bottom: 0;
@@ -113,7 +119,7 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
   }
 
   .select {
-    @include desktop {
+    @include more992 {
       font-size: 2vw;
     }
 
@@ -134,7 +140,7 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .clock_container {
-  @include desktop {
+  @include more992 {
     width: 60%;
     padding-bottom: 60%;
   }

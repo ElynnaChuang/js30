@@ -3,7 +3,7 @@ import { ListItem } from '@/Components';
 import styles from './styles.module.scss';
 import { getData } from './api';
 
-export const AjaxTypePage = () => {
+const AjaxTypePage = () => {
   const [baseData, setBaseData] = useState([]);
   const [result, setResult] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -79,3 +79,5 @@ const List = ({ result, inputValue }) => {
     </ul>
   );
 };
+
+export default AjaxTypePage;

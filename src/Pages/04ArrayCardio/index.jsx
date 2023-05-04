@@ -3,7 +3,7 @@ import { StyledTable } from '@/Components';
 import { inventors, people, transportation } from './data';
 import styles from './styles.module.scss';
 
-export const ArrayCardioPage01 = () => {
+const ArrayCardioPage01 = () => {
   // 05計數
   const total = [...inventors].reduce(
     (accumulator, currentInventor) =>
@@ -109,3 +109,5 @@ export const ArrayCardioPage01 = () => {
     </section>
   );
 };
+
+export default ArrayCardioPage01;

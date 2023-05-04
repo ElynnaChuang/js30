@@ -1,8 +1,15 @@
 import { useState } from 'react';
-import { ColorInput, RangeInput } from '@/Components';
+import { ColorInput, RangeInput, Image } from '@/Components';
+
+import imageBase from '@/Assets/03Image/base.jpg';
+import imageL1x from '@/Assets/03Image/image_l1x.webp';
+import imageL2x from '@/Assets/03Image/image_l2x.webp';
+import imageS1x from '@/Assets/03Image/image_s1x.webp';
+import imageS2x from '@/Assets/03Image/image_s2x.webp';
+import imageS3x from '@/Assets/03Image/image_s3x.webp';
 import styles from './styles.module.scss';
 
-export const CssPlaygroundPage = () => {
+const CssPlaygroundPage = () => {
   const [padding, setPadding] = useState(10);
   const [blur, setBlur] = useState(0);
   const [background, setBackground] = useState('#FACA7A');
@@ -45,16 +52,23 @@ export const CssPlaygroundPage = () => {
             handleCgange={setBackground}
           />
         </div>
-
-        <div className={styles.img_container}>
-          <img
-            src='https://source.unsplash.com/-G3rw6Y02D0/800x500'
-            alt='...'
-            style={imgStyle}
-            className={styles.example_img}
-          />
-        </div>
+        <Image
+          className={styles.example_img}
+          images={{
+            base: imageBase,
+            l1x: imageL1x,
+            l2x: imageL2x,
+            m1x: imageL1x,
+            m2x: imageL2x,
+            s1x: imageS1x,
+            s2x: imageS2x,
+            s3x: imageS3x,
+          }}
+          imgStyle={imgStyle}
+        />
       </div>
     </section>
   );
 };
+
+export default CssPlaygroundPage;

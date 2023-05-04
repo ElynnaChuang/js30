@@ -2,7 +2,7 @@ import { Paragraph } from '@/Components';
 import { data } from './data';
 import styles from './styles.module.scss';
 
-export const ScrollSlideInPage = () => {
+const ScrollSlideInPage = () => {
   return (
     <section className={styles.page}>
       <div className={styles.container}>
@@ -14,3 +14,5 @@ export const ScrollSlideInPage = () => {
     </section>
   );
 };
+
+export default ScrollSlideInPage;

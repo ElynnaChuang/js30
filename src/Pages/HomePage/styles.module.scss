@@ -76,11 +76,11 @@
   border-radius: 0.5rem;
 
   & h1 {
-    @include desktop {
+    @include more992 {
       font-size: 4rem;
     }
 
-    @include pad {
+    @include more768 {
       font-size: 3rem;
     }
 
@@ -101,11 +101,11 @@
   }
 
   & ul {
-    @include desktop {
+    @include more992 {
       font-size: 1rem;
     }
 
-    @include pad {
+    @include more768 {
       font-size: 1rem;
     }
 
@@ -138,11 +138,15 @@
 }
 
 .cards {
-  @include desktop {
+  @include more992 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include pad {
+  @include more768 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include more576 {
     grid-template-columns: repeat(2, 1fr);
   }
 

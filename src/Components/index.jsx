@@ -12,3 +12,4 @@ export { Form } from './15Form';
 export { List } from './15List';
 
 export { Card } from './Card';
+export { Image } from './Image';

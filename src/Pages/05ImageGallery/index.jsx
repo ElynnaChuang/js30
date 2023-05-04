@@ -3,7 +3,7 @@ import { Panel } from '@/Components';
 import { panels } from './data';
 import styles from './styles.module.scss';
 
-export const ImageGalleryPage = () => {
+const ImageGalleryPage = () => {
   const [activePanelId, setActivePanel] = useState(0);
 
   return (
@@ -14,7 +14,7 @@ export const ImageGalleryPage = () => {
             key={panel.id}
             id={panel.id}
             text={panel.text}
-            style={panel.style}
+            images={panel.images}
             isActive={activePanelId === panel.id}
             handleActive={setActivePanel}
           />
@@ -23,3 +23,5 @@ export const ImageGalleryPage = () => {
     </section>
   );
 };
+
+export default ImageGalleryPage;

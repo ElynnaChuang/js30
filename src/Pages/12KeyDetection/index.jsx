@@ -6,7 +6,7 @@ import confettiSetting from './confettiSetting';
 const SECRET_CODE = 'yay';
 let jsConfetti;
 
-export const KeyDetectionPage = () => {
+const KeyDetectionPage = () => {
   const canvasRef = useRef(null);
   const pressed = [];
 
@@ -68,3 +68,5 @@ export const KeyDetectionPage = () => {
     </section>
   );
 };
+
+export default KeyDetectionPage;

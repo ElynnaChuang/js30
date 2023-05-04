@@ -1,7 +1,7 @@
 import { CanvasArea } from '@/Components';
 import styles from './styles.module.scss';
 
-export const CanvasPage = () => {
+const CanvasPage = () => {
   const title = 'Start painting what you want!';
 
   return (
@@ -18,3 +18,5 @@ export const CanvasPage = () => {
     </section>
   );
 };
+
+export default CanvasPage;

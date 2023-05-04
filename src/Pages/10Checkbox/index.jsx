@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import { data } from './data';
 import { CheckboxInput } from '@/Components/10Checkbox';
 
-export const CheckboxPage = () => {
+const CheckboxPage = () => {
   const [inputData, setInputData] = useState(data);
   let lastCheckedId;
 
@@ -54,3 +54,5 @@ export const CheckboxPage = () => {
     </section>
   );
 };
+
+export default CheckboxPage;

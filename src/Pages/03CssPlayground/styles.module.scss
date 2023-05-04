@@ -30,26 +30,14 @@
 
   min-height: 75px;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #7ed8ff;
 }
 
-.img_container {
-  overflow: hidden;
-  flex: 1;
-
-  width: 100%;
+.example_img {
   max-width: 800px;
   max-height: 500px;
   margin: 0 auto;
-
-  border-radius: 1.5rem;
-}
-
-.example_img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   border-radius: 1.5rem;
 }

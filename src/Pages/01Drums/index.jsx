@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Key } from '@/Components/index';
+
+import { Key, Image } from '@/Components/index';
 import {
   clap,
   hihat,
@@ -11,6 +12,8 @@ import {
   tom,
   tink,
 } from '@/Assets/01Sounds';
+import baseImg from '@/Assets/01bg/base.jpg';
+import webpImg from '@/Assets/01bg/base.webp';
 import styles from './styles.module.scss';
 
 const keys = [
@@ -37,7 +40,7 @@ const sounds = {
   l: new Audio(tink),
 };
 
-export const DrumPage = () => {
+const DrumPage = () => {
   const [currentKey, setCurrentKey] = useState('');
 
   const handlePlaySound = key => {
@@ -62,7 +65,20 @@ export const DrumPage = () => {
 
   return (
     <section className={styles.page}>
-      <div className={styles.backdrop} />
+      <Image
+        images={{
+          base: baseImg,
+          l1x: webpImg,
+          l2x: webpImg,
+          m1x: webpImg,
+          m2x: webpImg,
+          s1x: webpImg,
+          s2x: webpImg,
+          s3x: webpImg,
+        }}
+        className={styles.bg}
+      />
+
       <div className={styles.container}>
         <h1 className={styles.caption}>
           Press your keyboard or tap the keys on the screen!
@@ -82,3 +98,5 @@ export const DrumPage = () => {
     </section>
   );
 };
+
+export default DrumPage;

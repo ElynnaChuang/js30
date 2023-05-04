@@ -37,7 +37,12 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/extensions': 0,
 
-    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+      },
+    ],
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
     'react/button-has-type': 0,
@@ -58,5 +63,15 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'no-nested-ternary': 0,
     'arrow-body-style': 0,
+    // 'object-curly-newline':
+    //   [
+    //     'error',
+    //     {
+    //       ImportDeclaration:
+    //         'never',
+    //       ExportDeclaration:
+    //         'never',
+    //     },
+    //   ],
   },
 };
