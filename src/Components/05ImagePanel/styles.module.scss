@@ -58,6 +58,12 @@ $tarnsition: $tarnsition_sec cubic-bezier(0.98, -0.3, 0.65, 1.22);
   }
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .base_panel {
   @extend %base_panel;
 }

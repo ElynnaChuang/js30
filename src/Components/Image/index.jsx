@@ -11,10 +11,10 @@ export const Image = ({ images, className, imgStyle }) => {
   return (
     <div className={`${styles.img_container} ${className}`}>
       <picture>
-        {(l1x || l2x || l3x) && (
+        {(s1x || s2x || s3x) && (
           <source
-            media='(min-width: 992px)'
-            srcSet={inView ? `${l1x} 1x, ${l2x} 2x, ${l3x} 3x` : ''}
+            media='(max-width: 575px)'
+            srcSet={inView ? `${s1x} 1x, ${s2x} 2x, ${s3x} 3x` : ''}
             type='image/webp'
           />
         )}
@@ -27,13 +27,14 @@ export const Image = ({ images, className, imgStyle }) => {
           />
         )}
 
-        {(s1x || s2x || s3x) && (
+        {(l1x || l2x || l3x) && (
           <source
-            media='(max-width: 575px)'
-            srcSet={inView ? `${s1x} 1x, ${s2x} 2x, ${s3x} 3x` : ''}
+            media='(min-width: 992px)'
+            srcSet={inView ? `${l1x} 1x, ${l2x} 2x, ${l3x} 3x` : ''}
             type='image/webp'
           />
         )}
+
         <img
           ref={ref}
           src={inView ? base : phJpg}

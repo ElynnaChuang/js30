@@ -14,7 +14,7 @@ const ImageGalleryPage = () => {
             key={panel.id}
             id={panel.id}
             text={panel.text}
-            style={panel.style}
+            images={panel.images}
             isActive={activePanelId === panel.id}
             handleActive={setActivePanel}
           />
