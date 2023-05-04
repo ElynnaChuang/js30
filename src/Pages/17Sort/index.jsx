@@ -3,7 +3,15 @@ import { itemsData } from './data';
 import { Image } from '@/Components';
 import { images } from '@/Assets/17bg';
 
+const noAriticle = word => {
+  return word.replace(/^(a |an |the )/i, '');
+};
+
 const SortPage = () => {
+  const sortedData = itemsData.sort((a, b) =>
+    noAriticle(a.name) > noAriticle(b.name) ? 1 : -1,
+  );
+
   return (
     <section className={styles.page}>
       <Image images={images} className={styles.bg} />
@@ -12,7 +20,7 @@ const SortPage = () => {
           <h1>Sorted Bands</h1>
           <p>sorting by name without articles</p>
         </div>
-        <List items={itemsData} />
+        <List items={sortedData} />
       </div>
     </section>
   );
