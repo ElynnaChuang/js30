@@ -18,7 +18,8 @@ const LocalStoragePage = () => {
     localStorage.setItem('items', JSON.stringify([...listItems, newItem]));
   };
 
-  const handleDone = id => {
+  const handleDone = e => {
+    const { id } = e.target;
     setListItems(prev => prev.map(el => (el.id === id ? { ...el, done: !el.done } : el)));
     localStorage.setItem(
       'items',
@@ -41,7 +42,7 @@ const LocalStoragePage = () => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>LOCAL TAPAS</h2>
           <Form addItem={handleAddItem} />
-          <List items={listItems} handleDone={handleDone} />
+          <List items={listItems} onClick={handleDone} />
           {!!listItems.length && <button onClick={handleClear}>Clear All</button>}
         </div>
       </div>
