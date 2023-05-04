@@ -220,7 +220,7 @@ export const data = [
   },
   {
     id: 16,
-    title: 'CSS Text Shadow Mouse Move Effect',
+    title: 'Text Shadow Mouse Move Effect',
     images: {
       base: base16,
       s1x: s1x16,
@@ -234,7 +234,7 @@ export const data = [
   },
   {
     id: 17,
-    title: 'Sorting Band Names without articles',
+    title: 'Sorting without articles',
     images: {
       base: base17,
       s1x: s1x17,
