@@ -1,4 +1,4 @@
-import{r as g,a as o}from"./index-3dbc6af9.js";const f="_page_2morb_1",y="_container_2morb_6",s={page:f,container:y},v=()=>{const[t,n]=g.useState({x:0,y:0}),r={textShadow:`
+import{r as g,a as o}from"./index-9c3751fa.js";const f="_page_2morb_1",y="_container_2morb_6",s={page:f,container:y},v=()=>{const[t,n]=g.useState({x:0,y:0}),r={textShadow:`
     ${-t.x}px ${-t.y}px 0px rgba(0, 255, 229, 0.8),
     ${t.x}px ${-t.y}px 0px rgba(255, 247, 0, 0.8),
     ${-t.x}px ${t.y}px 0px rgba(255, 55, 178, 0.8),
