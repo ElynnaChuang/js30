@@ -59,6 +59,8 @@ const ReduceTimePage = () => {
             sx={{
               bgcolor: '#fff',
               gap: '16px',
+              maxHeight: '500px',
+              overflowY: 'scroll',
             }}
           >
             <ul className={styles.videos} ref={ref}>
