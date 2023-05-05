@@ -8,8 +8,10 @@ const App = () => {
     <div className='app'>
       <BrowserRouter basename='/js30'>
         <Routes>
-          {routes.map((el, i) => {
-            if (i === 0) return <Route key={el.id} path={el.path} element={el.element} />;
+          {routes.map(el => {
+            if (el.id === 0) {
+              return <Route key={el.id} path={el.path} element={el.element} />;
+            }
             return (
               <Route
                 key={el.id}
