@@ -21,6 +21,7 @@ export const data = [
       l1x: l1x01,
       l2x: l2x01,
     },
+    focus: 'Keydown Event',
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ export const data = [
       l1x: l1x02,
       l2x: l2x02,
     },
+    focus: 'Day.js / setInterval api',
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ export const data = [
       l1x: l1x03,
       l2x: l2x03,
     },
+    focus: 'Range input',
   },
   {
     id: 4,
@@ -63,6 +66,7 @@ export const data = [
       l1x: l1x04,
       l2x: l2x04,
     },
+    focus: 'Array method - sort/filter',
   },
   {
     id: 5,
@@ -77,6 +81,7 @@ export const data = [
       l1x: l1x05,
       l2x: l2x05,
     },
+    focus: 'CSS transition',
   },
   {
     id: 6,
@@ -91,6 +96,7 @@ export const data = [
       l1x: l1x06,
       l2x: l2x06,
     },
+    focus: 'Fetch api / String method - match',
   },
   {
     id: 7,
@@ -105,6 +111,7 @@ export const data = [
       l1x: l1x07,
       l2x: l2x07,
     },
+    focus: 'Array method - some/every',
   },
   {
     id: 8,
@@ -119,6 +126,7 @@ export const data = [
       l1x: l1x08,
       l2x: l2x08,
     },
+    focus: 'Canvas tag / event offset',
   },
   {
     id: 9,
@@ -133,6 +141,7 @@ export const data = [
       l1x: l1x09,
       l2x: l2x09,
     },
+    focus: 'Console in devtool',
   },
   {
     id: 10,
@@ -147,6 +156,7 @@ export const data = [
       l1x: l1x10,
       l2x: l2x10,
     },
+    focus: 'ShiftKey event',
   },
   {
     id: 11,
@@ -161,6 +171,7 @@ export const data = [
       l1x: l1x11,
       l2x: l2x11,
     },
+    focus: 'Package - react-player',
   },
   {
     id: 12,
@@ -175,6 +186,7 @@ export const data = [
       l1x: l1x12,
       l2x: l2x12,
     },
+    focus: 'Package - js-confetti',
   },
   {
     id: 13,
@@ -189,6 +201,7 @@ export const data = [
       l1x: l1x13,
       l2x: l2x13,
     },
+    focus: 'IntersectionObserver api',
   },
   {
     id: 14,
@@ -203,6 +216,7 @@ export const data = [
       l1x: l1x14,
       l2x: l2x14,
     },
+    focus: 'Package - react-syntax-highlighter',
   },
   {
     id: 15,
@@ -217,6 +231,7 @@ export const data = [
       l1x: l1x15,
       l2x: l2x15,
     },
+    focus: 'LocalStorage / JSON.parse & stringify',
   },
   {
     id: 16,
@@ -231,6 +246,7 @@ export const data = [
       l1x: l1x16,
       l2x: l2x16,
     },
+    focus: 'Mouse move event',
   },
   {
     id: 17,
@@ -245,6 +261,7 @@ export const data = [
       l1x: l1x17,
       l2x: l2x17,
     },
+    focus: 'String method - replace',
   },
   {
     id: 18,
@@ -259,6 +276,7 @@ export const data = [
       l1x: l1x18,
       l2x: l2x18,
     },
+    focus: 'Package - MUI',
   },
   {
     id: 19,
@@ -273,6 +291,7 @@ export const data = [
       l1x: l1x19,
       l2x: l2x19,
     },
+    focus: '-',
   },
   {
     id: 20,
@@ -287,6 +306,7 @@ export const data = [
       l1x: l1x20,
       l2x: l2x20,
     },
+    focus: '-',
   },
   {
     id: 21,
@@ -301,6 +321,7 @@ export const data = [
       l1x: l1x21,
       l2x: l2x21,
     },
+    focus: '-',
   },
   {
     id: 22,
@@ -315,6 +336,7 @@ export const data = [
       l1x: l1x22,
       l2x: l2x22,
     },
+    focus: '-',
   },
   {
     id: 23,
@@ -329,6 +351,7 @@ export const data = [
       l1x: l1x23,
       l2x: l2x23,
     },
+    focus: '-',
   },
   {
     id: 24,
@@ -343,6 +366,7 @@ export const data = [
       l1x: l1x24,
       l2x: l2x24,
     },
+    focus: '-',
   },
   {
     id: 25,
@@ -357,6 +381,7 @@ export const data = [
       l1x: l1x25,
       l2x: l2x25,
     },
+    focus: '-',
   },
   {
     id: 26,
@@ -371,6 +396,7 @@ export const data = [
       l1x: l1x26,
       l2x: l2x26,
     },
+    focus: '-',
   },
   {
     id: 27,
@@ -385,6 +411,7 @@ export const data = [
       l1x: l1x27,
       l2x: l2x27,
     },
+    focus: '-',
   },
   {
     id: 28,
@@ -399,6 +426,7 @@ export const data = [
       l1x: l1x28,
       l2x: l2x28,
     },
+    focus: '-',
   },
   {
     id: 29,
@@ -413,6 +441,7 @@ export const data = [
       l1x: l1x29,
       l2x: l2x29,
     },
+    focus: '-',
   },
   {
     id: 30,
@@ -427,5 +456,6 @@ export const data = [
       l1x: l1x30,
       l2x: l2x30,
     },
+    focus: '-',
   },
 ];

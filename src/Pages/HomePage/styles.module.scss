@@ -134,7 +134,7 @@
 }
 
 .cards {
-  @include more576 {
+  @include more768 {
     grid-template-columns: repeat(2, 1fr);
   }
 
