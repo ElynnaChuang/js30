@@ -5,13 +5,13 @@ $m_max: 991px;
 $l_min: 992px;
 
 @mixin more576() {
-  @media screen and (min-width: $s_min) and (max-width: $s_max) {
+  @media screen and (min-width: $s_min) {
     @content;
   }
 }
 
 @mixin more768() {
-  @media screen and (min-width: $m_min) and (max-width: $m_max) {
+  @media screen and (min-width: $m_min) {
     @content;
   }
 }

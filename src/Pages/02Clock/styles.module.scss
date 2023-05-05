@@ -18,6 +18,12 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
+  @include more768 {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+  }
+
   @include more992 {
     flex-direction: column;
     gap: 2rem;
@@ -25,12 +31,6 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 
     min-height: 740px;
     padding: 20vh 0 0;
-  }
-
-  @include more768 {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding: 2rem 4rem;
   }
 
   position: relative;
@@ -55,13 +55,13 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .text_container {
-  @include more992 {
-    font-size: 2vw;
-  }
-
   @include more768 {
     margin-right: 2rem;
     margin-bottom: 0;
+  }
+
+  @include more992 {
+    font-size: 2vw;
   }
 
   display: flex;
@@ -84,14 +84,14 @@ $font: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }
 
 .select_container {
-  @include more992 {
-    width: 50%;
-  }
-
   @include more768 {
     width: 35%;
     margin-right: 2rem;
     margin-bottom: 0;
+  }
+
+  @include more992 {
+    width: 50%;
   }
 
   position: relative;
