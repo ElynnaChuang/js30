@@ -5,7 +5,8 @@ import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import styles from './styles.module.scss';
 
 const ReduceTimePage = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
+  const [totalTime, setTotalTime] = useState({ hour: 0, min: 0, sec: 0 });
   const ref = useRef(null);
 
   const handleClick = () => {
@@ -13,16 +14,34 @@ const ReduceTimePage = () => {
   };
 
   useEffect(() => {
-    if (ref.current) {
-      const times = [...ref.current.childNodes].map(node => node.dataset.time);
-      console.log(times);
-    }
-  }, []);
+    if (!ref.current) return;
+    const totalSec = [...ref.current.childNodes]
+      .map(node => {
+        const { time } = node.dataset;
+        const [min, sec] = time.split(':');
+        return parseFloat(min) * 60 + parseFloat(sec);
+      })
+      .reduce((total, vidSec) => total + vidSec);
+
+    let remainSec = totalSec;
+    const hour = Math.floor(remainSec / 3600);
+    remainSec %= 3600;
+    const min = Math.floor(remainSec / 60);
+    remainSec %= 60;
+
+    if (totalTime.hour === hour || totalTime.min === min || totalTime.sec === remainSec)
+      return;
+
+    setTotalTime({ hour, min, sec: remainSec });
+  }, [ref.current]);
 
   return (
     <section className={styles.page}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Total Time</h2>
+        <div className={styles.title}>
+          <h2>Total Time</h2>
+          <p>{`${totalTime.hour}:${totalTime.min}:${totalTime.sec}`}</p>
+        </div>
 
         <List
           sx={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}
