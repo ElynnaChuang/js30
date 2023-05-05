@@ -18,6 +18,7 @@ const ReferenceAndCopyPage = lazy(() => import('./Pages/14ReferenceAndCopy'));
 const LocalStoragePage = lazy(() => import('./Pages/15LocalStorage'));
 const MouseMovePage = lazy(() => import('./Pages/16MouseMove'));
 const SortPage = lazy(() => import('./Pages/17Sort'));
+const ReduceTimePage = lazy(() => import('./Pages/18Reduce'));
 
 export const routes = [
   { id: 0, path: '/', element: <HomePage /> },
@@ -38,4 +39,5 @@ export const routes = [
   { id: 15, path: '15', element: <LocalStoragePage /> },
   { id: 16, path: '16', element: <MouseMovePage /> },
   { id: 17, path: '17', element: <SortPage /> },
+  { id: 18, path: '18', element: <ReduceTimePage /> },
 ];
