@@ -14,12 +14,12 @@ $text_color: #fff;
 }
 
 .container {
-  @include more992 {
+  @include more768 {
     max-width: 700px;
     margin: 0 auto;
   }
 
-  @include more768 {
+  @include more992 {
     max-width: 700px;
     margin: 0 auto;
   }

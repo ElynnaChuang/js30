@@ -34,6 +34,7 @@ const HomePage = () => {
                 linkTo={`/${num}`}
                 title={`${num}. ${el.title}`}
                 images={el.images}
+                focus={el.focus}
               />
             );
           })}

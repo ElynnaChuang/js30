@@ -2,17 +2,20 @@ import { Link } from 'react-router-dom';
 import { Image } from '../Image/index.jsx';
 import styles from './styles.module.scss';
 
-export const Card = ({ linkTo, title, images }) => {
+export const Card = ({ linkTo, title, images, focus }) => {
   return (
-    <div className={styles.card}>
-      <Link to={linkTo} preventScrollReset={false}>
+    <Link to={linkTo} preventScrollReset={false}>
+      <div className={styles.card}>
         <div className={styles.card_img}>
           <div className={styles.img_container}>
             <Image images={images} />
           </div>
         </div>
-        <h2 className={styles.card_title}>{title}</h2>
-      </Link>
-    </div>
+        <div className={styles.card_info}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.focus}>focus : {focus}</p>
+        </div>
+      </div>
+    </Link>
   );
 };
