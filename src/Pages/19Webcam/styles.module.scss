@@ -1,0 +1,49 @@
+@import '../../scss/media';
+
+.page {
+  background: #fff;
+}
+
+.container {
+  @include more992 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  padding: 3rem 0;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.photobooth {
+  border: 1px solid #e64c4c;
+
+  & .controls {
+    background-color: #cecece;
+  }
+
+  & .photo {
+    background-color: #d5ecc3;
+  }
+
+  & .video {
+    width: 100%;
+    height: 200px;
+    background-color: #eccec3;
+  }
+
+  & .strip {
+    width: 100%;
+    height: 200px;
+    background-color: #b2e4f0;
+  }
+}
