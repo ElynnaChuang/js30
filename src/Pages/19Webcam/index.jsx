@@ -1,44 +1,34 @@
 import Webcam from 'react-webcam';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { RangeInput } from '@/Components';
 
 const videoConstraints = {
-  width: { min: 640, ideal: 1920 },
-  height: { min: 400, ideal: 1080 },
+  width: { ideal: 1920 },
+  height: { ideal: 1080 },
   aspectRatio: 0.6666666667,
   facingMode: 'user',
 };
+
 const WebCamPage = () => {
   const webcamRef = useRef(null);
-  const [screenshot, setScreenshot] = useState([]);
+  const imgCanvasRef = useRef(null);
   const [camOpen, setCamOpen] = useState(false);
 
-  const capture = useCallback(() => {
-    if (!webcamRef.current) return;
+  const takePhoto = () => {
     const imageSrc = webcamRef.current.getScreenshot();
-    const newScreenshot = { id: uuidv4(), src: imageSrc };
+    const image = new Image();
+    image.src = imageSrc;
+    image.onload = () => {
+      const canvas = imgCanvasRef.current;
+      const ctx = canvas.getContext('2d');
 
-    setScreenshot(prev => [newScreenshot, ...prev].slice(0, 10));
-  }, [webcamRef]);
+      canvas.width = image.width;
+      canvas.height = image.height;
 
-  useEffect(() => {
-    if (!webcamRef.current) return;
-    const getMedia = async () => {
-      try {
-        await navigator.mediaDevices.getUserMedia({
-          video: true,
-          audio: false,
-        });
-        setCamOpen(true);
-      } catch (err) {
-        setCamOpen(false);
-      }
+      ctx.drawImage(image, 0, 0);
     };
-
-    getMedia();
-  }, [webcamRef.current]);
+  };
 
   return (
     <section className={styles.page}>
@@ -62,23 +52,20 @@ const WebCamPage = () => {
             ref={webcamRef}
             audio={false}
             videoConstraints={videoConstraints}
+            onCanPlay={() => setCamOpen(true)}
+            minScreenshotWidth={1920}
+            minScreenshotHeight={1080}
+            screenshotFormat='image/jpeg'
           />
           {camOpen ? (
-            <button onClick={capture}>Take Photo</button>
+            <button onClick={takePhoto}>Take Photo</button>
           ) : (
             <h3>Camera Permission Denied</h3>
           )}
         </div>
         <div className={styles.screenshot}>
-          {screenshot.map(({ id, src }) => (
-            <img key={id} src={src} alt='screenshot' />
-          ))}
+          <canvas ref={imgCanvasRef} />
         </div>
-        {/* <div className={styles.strip}>{photos.map(photo => console.log(photo))}</div> */}
-
-        {/* <canvas className={styles.photo} />
-            height='100%' width='100%'
-          */}
       </div>
     </section>
   );
