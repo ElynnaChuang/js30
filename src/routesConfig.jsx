@@ -20,6 +20,7 @@ const MouseMovePage = lazy(() => import('./Pages/16MouseMove'));
 const SortPage = lazy(() => import('./Pages/17Sort'));
 const ReduceTimePage = lazy(() => import('./Pages/18Reduce'));
 const WebCamPage = lazy(() => import('./Pages/19Webcam'));
+const SpeechRecognitionPage = lazy(() => import('./Pages/20SpeechRecognition'));
 
 export const routes = [
   { id: 0, path: '/', element: <HomePage /> },
@@ -42,4 +43,5 @@ export const routes = [
   { id: 17, path: '17', element: <SortPage /> },
   { id: 18, path: '18', element: <ReduceTimePage /> },
   { id: 19, path: '19', element: <WebCamPage /> },
+  { id: 20, path: '20', element: <SpeechRecognitionPage /> },
 ];

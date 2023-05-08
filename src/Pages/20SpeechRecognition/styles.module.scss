@@ -1,0 +1,23 @@
+@import '../../scss/media';
+
+.page {
+  height: 100%;
+  padding: 2rem 4rem;
+  background: linear-gradient(#a7d8de, #3f4d75);
+}
+
+.words {
+  position: relative;
+
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0.5rem 2rem;
+
+  line-height: 3rem;
+
+  background: linear-gradient(to right, #fff0 24px, #d9eaf3 25px 27px, #fff0 27px),
+    repeating-linear-gradient(#fff 0 96%, #d9eaf3 96% 100%);
+  background-size: 100% 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 0 rgb(0 0 0 / 10%);
+}
