@@ -1,7 +1,7 @@
 import Webcam from 'react-webcam';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
-import { RangeInput } from '@/Components';
+import { filters } from './filter';
 
 const videoConstraints = {
   width: { ideal: 1920 },
@@ -13,7 +13,16 @@ const videoConstraints = {
 const WebCamPage = () => {
   const webcamRef = useRef(null);
   const imgCanvasRef = useRef(null);
+  const imgObject = useRef(null);
+
   const [camOpen, setCamOpen] = useState(false);
+  const [ctx, setCtx] = useState(null);
+  const [originalPixels, setOriginalPixels] = useState(null);
+  const [selectValue, setSelectedValue] = useState(filters[0].value);
+
+  useEffect(() => {
+    setCtx(imgCanvasRef.current.getContext('2d'));
+  }, []);
 
   const takePhoto = () => {
     const imageSrc = webcamRef.current.getScreenshot();
@@ -21,30 +30,36 @@ const WebCamPage = () => {
     image.src = imageSrc;
     image.onload = () => {
       const canvas = imgCanvasRef.current;
-      const ctx = canvas.getContext('2d');
-
-      canvas.width = image.width;
-      canvas.height = image.height;
+      const { width, height } = image;
+      canvas.width = width;
+      canvas.height = height;
 
       ctx.drawImage(image, 0, 0);
+      imgObject.current = image;
+      setOriginalPixels(ctx.getImageData(0, 0, width, height));
+      setSelectedValue(filters[0].value);
     };
   };
 
   return (
     <section className={styles.page}>
       <div className={styles.photobooth}>
-        <div className={styles.rgb}>
-          <RangeInput label='R Min' name='rmin' min={0} max={255} initialValue={0} />
-
-          <RangeInput label='R Max' name='rmax' min={0} max={255} initialValue={0} />
-
-          <RangeInput label='G Min' name='gmin' min={0} max={255} initialValue={0} />
-
-          <RangeInput label='G Max' name='gmax' min={0} max={255} initialValue={0} />
-
-          <RangeInput label='B Min' name='bmin' min={0} max={255} initialValue={0} />
-
-          <RangeInput label='B Max' name='bmax' min={0} max={255} initialValue={0} />
+        <div className={styles.filters}>
+          {filters.map(filter => {
+            const { id, value, label, func } = filter;
+            return (
+              <RadioInput
+                key={id}
+                label={label}
+                onClick={() => {
+                  setSelectedValue(value);
+                  func?.(ctx, originalPixels);
+                }}
+                isDisabled={!originalPixels}
+                isChecked={selectValue === value}
+              />
+            );
+          })}
         </div>
         <div className={styles.video_container}>
           <Webcam
@@ -64,6 +79,7 @@ const WebCamPage = () => {
           )}
         </div>
         <div className={styles.screenshot}>
+          {!originalPixels && <p>No Picture Now</p>}
           <canvas ref={imgCanvasRef} />
         </div>
       </div>
@@ -72,3 +88,17 @@ const WebCamPage = () => {
 };
 
 export default WebCamPage;
+
+const RadioInput = ({ label, onClick, isDisabled, isChecked }) => {
+  const className = `
+  ${styles.button}
+  ${isDisabled ? styles.disabled : ''}
+  ${isChecked ? styles.checked : ''}
+  `;
+
+  return (
+    <button className={className} onClick={() => onClick?.()}>
+      {label}
+    </button>
+  );
+};
