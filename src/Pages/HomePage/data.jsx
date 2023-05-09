@@ -291,7 +291,7 @@ export const data = [
       l1x: l1x19,
       l2x: l2x19,
     },
-    focus: '-',
+    focus: 'Package - react-webcam / Canvas',
   },
   {
     id: 20,
@@ -306,7 +306,7 @@ export const data = [
       l1x: l1x20,
       l2x: l2x20,
     },
-    focus: '-',
+    focus: 'Package - react-speech-recognition',
   },
   {
     id: 21,
