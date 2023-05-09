@@ -90,66 +90,10 @@ $btn_primary: #ffa845;
   box-shadow: 10px 10px 0 rgb(0 0 0 / 10%);
 }
 
-%base_btn {
-  padding: 0.5rem;
-
-  font-weight: 500;
-  color: #818ba7;
-
-  border: 3px solid $btn_primary;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 0 1px rgba($color: #e38d4c, $alpha: 100%);
-
-  &:active {
-    margin-top: 6px;
-    box-shadow: 0 1px 0 1px rgba($color: #e38d4c, $alpha: 100%);
-  }
+.default_text {
+  color: #a4a4a4;
 }
 
-.default_btn {
-  @extend %base_btn;
-}
-
-.danger_btn {
-  @extend %base_btn;
-
-  border-color: #e95f4d;
-  box-shadow: 0 4px 0 1px rgba($color: #af4e41, $alpha: 100%);
-
-  &:active {
-    box-shadow: 0 1px 0 1px rgba($color: #af4e41, $alpha: 100%);
-  }
-}
-
-.success_btn {
-  @extend %base_btn;
-
-  border-color: #70c8b2;
-  box-shadow: 0 4px 0 1px rgba($color: #42907c, $alpha: 100%);
-
-  &:active {
-    box-shadow: 0 1px 0 1px rgba($color: #42907c, $alpha: 100%);
-  }
-}
-
-.active {
-  margin-top: 6px;
-
-  color: #fff;
-
-  background-color: $btn_primary;
-  border-color: $btn_primary;
-  box-shadow: 0 1px 0 1px rgba($color: #cc8148, $alpha: 100%);
-}
-
-.select {
-  padding: 0.5rem;
-
-  font-weight: bold;
-  color: $btn_primary;
-
-  appearance: none;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 8px 0 rgba($color: #000, $alpha: 20%);
+.snack {
+  background-color: #42907c;
 }

@@ -1,7 +1,9 @@
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { useSnackbar } from 'notistack';
 import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './styles.module.scss';
+import { Button, Select } from './component';
 
 const languages = [
   { value: 'en-US', name: 'English(US)' },
@@ -16,6 +18,7 @@ const SpeechRecognitionPage = () => {
   const [recordStatus, setRecordStatus] = useState(false);
   const [startSpeak, setStartSpeak] = useState(false);
   const [language, setLanguage] = useState(languages[0].value);
+  const { enqueueSnackbar } = useSnackbar();
   const {
     resetTranscript,
     listening,
@@ -50,7 +53,16 @@ const SpeechRecognitionPage = () => {
     setStartSpeak(false);
   };
 
-  const handleCopy = () => console.log(transcript);
+  const handleCopy = () => {
+    const allText = transcript.map(el => el.text).join('\n');
+    navigator.clipboard.writeText(allText);
+    enqueueSnackbar('Copied!', {
+      className: styles.snack,
+      autoHideDuration: 2000,
+      anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
+      variant: 'success',
+    });
+  };
 
   useEffect(() => {
     if (interimTranscript || finalTranscript) {
@@ -66,7 +78,9 @@ const SpeechRecognitionPage = () => {
 
     if (!interimTranscript) {
       const finalIndex = allWords.current.length - 1;
-      const finalText = allWords.current?.[finalIndex];
+      const finalText = allWords.current[finalIndex];
+      if (!finalText) return;
+
       setTranscript(prev => [...prev, { id: uuidv4(), text: finalText }]);
       allWords.current = [];
     }
@@ -127,31 +141,3 @@ const SpeechRecognitionPage = () => {
 };
 
 export default SpeechRecognitionPage;
-
-const Button = ({ text, btnStyle, isActive, onClick }) => {
-  const className = `${styles[btnStyle]} ${isActive ? styles.active : ''}`;
-
-  return (
-    <button className={className} type='button' onClick={() => onClick?.()}>
-      {text}
-    </button>
-  );
-};
-
-const Select = ({ onChange, isDisable, options }) => {
-  return (
-    <select
-      name='language'
-      id='language'
-      className={styles.select}
-      onChange={e => onChange?.(e.target.value)}
-      disabled={isDisable}
-    >
-      {options.map(({ value, name }) => (
-        <option value={value} key={value}>
-          {name}
-        </option>
-      ))}
-    </select>
-  );
-};
