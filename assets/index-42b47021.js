@@ -1,1 +1,0 @@
-import{a}from"./index-fdb295de.js";const n="_page_15btn_1",t="_container_15btn_7",e={page:n,container:t},s=()=>a("section",{className:e.page,children:a("div",{className:e.container})});export{s as default};
