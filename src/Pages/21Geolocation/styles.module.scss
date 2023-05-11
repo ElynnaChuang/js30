@@ -1,19 +1,76 @@
 @import '../../scss/media';
 
 .page {
-  height: 100%;
+  display: flex;
+
+  min-height: 100vh;
   padding: 3rem;
-  background: #b1b1b1;
+
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(rgb(255 255 255 / 10%) 15%, transparent 20%) 0 1px;
+  background-color: #28282d;
+  background-attachment: fixed;
+  background-size: 20px 20px;
 }
 
 .container {
+  @include more992 {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #888;
+  text-align: center;
+
+  span {
+    color: #ffb05b;
+  }
+}
+
+.compass {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.info {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 
-  width: 100%;
-  max-width: 800px;
-  height: 100%;
-  margin: 0 auto;
+  & a {
+    cursor: pointer;
+    color: #45a7c8;
+    text-decoration: underline;
+  }
+}
 
-  border: 1px solid #000;
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+
+  width: 80%;
+  min-width: 350px;
+  height: 100px;
+  padding: 1rem;
+
+  color: #e45d4b;
+  text-align: center;
+
+  background-color: rgba($color: #fff, $alpha: 80%);
+  border-radius: 1rem;
 }
