@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useSnackbar } from 'notistack';
 import { useEffect, useRef, useState } from 'react';
@@ -28,9 +29,6 @@ const SpeechRecognitionPage = () => {
   } = useSpeechRecognition();
 
   if (!browserSupportsSpeechRecognition) {
-    console.error(
-      'Your browser does not support speech recognition software! Try Chrome desktop, maybe?',
-    );
     return (
       <p>
         Your browser does not support speech recognition software! Try Chrome desktop,
