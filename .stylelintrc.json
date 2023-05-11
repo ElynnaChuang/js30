@@ -8,6 +8,9 @@
     "scss/dollar-variable-pattern": null,
     "scss/percent-placeholder-pattern": null,
     "scss/no-global-function-names": null,
-    "property-no-vendor-prefix": [true, { "ignoreProperties": ["background-clip"] }]
+    "property-no-vendor-prefix": [
+      true,
+      { "ignoreProperties": ["background-clip", "backdrop-filter"] }
+    ]
   }
 }
