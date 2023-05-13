@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { data } from './data';
-import { CenterCol1Layout } from '@/layouts';
-import { CheckboxInput } from '@/components/10Checkbox';
-import { Title } from '@/components';
+import { LayoutCol1 } from '@/Layouts';
+import { CheckboxInput } from '@/Components/10Checkbox';
+import { Title } from '@/Components';
 
 const CheckboxPage = () => {
   const [inputData, setInputData] = useState(data);
@@ -39,7 +39,7 @@ const CheckboxPage = () => {
   }, []);
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title title='Checkbox Page' titleColor='#fff' size='m' />
       <div className={styles.items_container}>
         {inputData.map(el => (
@@ -51,7 +51,7 @@ const CheckboxPage = () => {
           />
         ))}
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

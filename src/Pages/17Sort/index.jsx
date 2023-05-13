@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 import { itemsData } from './data';
-import { images } from '@/assets/17bg';
-import { CenterCol1Layout } from '@/layouts';
-import { Title } from '@/components';
+import { images } from '@/Assets/17bg';
+import { LayoutCol1 } from '@/Layouts';
+import { Title } from '@/Components';
 
 const noAriticle = word => {
   return word.replace(/^(a |an |the )/i, '');
@@ -14,7 +14,7 @@ const SortPage = () => {
   );
 
   return (
-    <CenterCol1Layout bgImages={images}>
+    <LayoutCol1 bgImages={images}>
       <Title
         title='Sorted Bands'
         subtitle='sorting by name without articles'
@@ -22,7 +22,7 @@ const SortPage = () => {
         size='m'
       />
       <List items={sortedData} />
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

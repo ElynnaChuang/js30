@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './styles.module.scss';
 import { Button, Select } from './component';
-import { CenterCol1Layout } from '@/Layouts';
+import { LayoutCol1 } from '@/Layouts';
 
 const languages = [
   { value: 'en-US', name: 'English(US)' },
@@ -86,7 +86,7 @@ const SpeechRecognitionPage = () => {
   }, [interimTranscript]);
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <div className={styles.controls}>
         <div className={styles.controls_status}>
           <p>
@@ -129,7 +129,7 @@ const SpeechRecognitionPage = () => {
           )}
         </div>
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

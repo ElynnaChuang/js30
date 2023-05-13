@@ -1,1 +1,1 @@
-export { CenterCol1Layout } from './CenterCol_1';
+export { LayoutCol1 } from './LayoutCol1';

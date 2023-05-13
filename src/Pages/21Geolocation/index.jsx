@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { CompassSvg } from '@/assets/21Compass';
-import { CenterCol1Layout } from '@/layouts';
+import { CompassSvg } from '@/Assets/21Compass';
+import { LayoutCol1 } from '@/Layouts';
 
 const standardLatGap = 0.01;
 const standardLngGap = 0.01;
@@ -53,7 +53,7 @@ const GeolocationPage = () => {
   }, 1000);
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <div className={styles.compass}>
         {geoError && (
           <div className={styles.error}>Sorry, Your device does not support compass!</div>
@@ -78,7 +78,7 @@ const GeolocationPage = () => {
           Open Google Map
         </Link>
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import JSConfetti from 'js-confetti';
 import styles from './styles.module.scss';
 import confettiSetting from './confettiSetting';
+import { LayoutCol1 } from '@/Layouts';
 
 const SECRET_CODE = 'yay';
 let jsConfetti;
@@ -44,28 +45,18 @@ const KeyDetectionPage = () => {
   }, []);
 
   return (
-    <section className={styles.page}>
+    <LayoutCol1 baseClassName={styles.page} layout='full'>
       <div className={styles.info}>
-        <p>You can</p>
-        <div>
-          <p>Enter</p>
-          <span>{SECRET_CODE}</span>
-          <p>or Click</p>
-          <button className={styles.button} onClick={generateConfetti}>
-            Button
-          </button>
-        </div>
-        <p>to get happiness!</p>
+        You can enter <span>{SECRET_CODE}</span> or click{' '}
+        <button className={styles.button} onClick={generateConfetti}>
+          Button
+        </button>{' '}
+        to get happiness!
       </div>
       <div className={styles.canvas_container}>
-        <canvas
-          ref={canvasRef}
-          height='100%'
-          className={styles.canvas}
-          // className={animateStart ? styles.canvas_show : styles.canvas_hide}
-        />
+        <canvas ref={canvasRef} height='100%' className={styles.canvas} />
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

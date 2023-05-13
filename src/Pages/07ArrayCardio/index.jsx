@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { CenterCol1Layout } from '@/layouts';
-import { StyledTable, Title } from '@/components';
+import { LayoutCol1 } from '@/Layouts';
+import { StyledTable, Title } from '@/Components';
 import { people, comments } from './data';
 import styles from './styles.module.scss';
 
@@ -16,7 +16,7 @@ const ArrayCardioPage02 = () => {
   newArr.splice(deleteIndex, 1);
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title
         title='ArrayCardio v2'
         subtitle={<Link to='/04'>Go to ArrayCardio v1 page</Link>}
@@ -72,7 +72,7 @@ const ArrayCardioPage02 = () => {
           data={newArr}
         />
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

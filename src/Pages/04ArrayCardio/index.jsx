@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { CenterCol1Layout } from '@/Layouts';
-import { StyledTable, Title } from '@/components';
+import { LayoutCol1 } from '@/Layouts';
+import { StyledTable, Title } from '@/Components';
 import { inventors, people, transportation } from './data';
 import styles from './styles.module.scss';
 
@@ -30,7 +30,7 @@ const ArrayCardioPage01 = () => {
   const prinaryColor = '#2796b5';
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title
         title=' ArrayCardio v1'
         subtitle={<Link to='/07'>Go to ArrayCardio v2 page</Link>}
@@ -107,7 +107,7 @@ const ArrayCardioPage01 = () => {
           data={transArr.sort((a, b) => b.times - a.times)}
         />
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

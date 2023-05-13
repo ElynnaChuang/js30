@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { List, ListItemButton, ListItemText, Collapse } from '@mui/material';
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
-import { CenterCol1Layout } from '@/Layouts';
-import { Title } from '@/components';
+import { LayoutCol1 } from '@/Layouts';
+import { Title } from '@/Components';
 
 import styles from './styles.module.scss';
 
@@ -38,7 +38,7 @@ const ReduceTimePage = () => {
   }, [ref.current]);
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title
         title='Total Time'
         subtitle={`${totalTime.hour}:${totalTime.min}:${totalTime.sec}`}
@@ -115,7 +115,7 @@ const ReduceTimePage = () => {
           </ul>
         </Collapse>
       </List>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

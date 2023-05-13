@@ -8,7 +8,7 @@ import imageS1x from '@/Assets/03Image/image_s1x.webp';
 import imageS2x from '@/Assets/03Image/image_s2x.webp';
 import imageS3x from '@/Assets/03Image/image_s3x.webp';
 import styles from './styles.module.scss';
-import { CenterCol1Layout } from '@/Layouts';
+import { LayoutCol1 } from '@/Layouts';
 
 const CssPlaygroundPage = () => {
   const [padding, setPadding] = useState(10);
@@ -22,7 +22,7 @@ const CssPlaygroundPage = () => {
   };
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <h2 className={styles.title}>
         Update CSS Variables with
         <span style={{ color: `${imgStyle.background}` }}>JS</span>
@@ -66,7 +66,7 @@ const CssPlaygroundPage = () => {
         }}
         imgStyle={imgStyle}
       />
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

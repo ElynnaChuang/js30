@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FishIcon } from '@/Assets/09Icons';
 import { Form, List } from '@/Components';
 import styles from './styles.module.scss';
-import { CenterCol1Layout } from '@/Layouts';
+import { LayoutCol1 } from '@/Layouts';
 
 const LocalStoragePage = () => {
   const [listItems, setListItems] = useState(
@@ -36,7 +36,7 @@ const LocalStoragePage = () => {
   };
 
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <FishIcon />
 
       <div className={styles.wrapper}>
@@ -45,7 +45,7 @@ const LocalStoragePage = () => {
         <List items={listItems} onClick={handleDone} />
         {!!listItems.length && <button onClick={handleClear}>Clear All</button>}
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 

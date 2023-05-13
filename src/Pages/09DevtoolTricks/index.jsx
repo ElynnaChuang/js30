@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 import { data } from './data';
-import { CenterCol1Layout } from '@/Layouts';
-import { Title } from '@/components';
+import { LayoutCol1 } from '@/Layouts';
+import { Title } from '@/Components';
 
 const DevtoolTricksPage = () => (
-  <CenterCol1Layout baseClassName={styles.page}>
+  <LayoutCol1 baseClassName={styles.page}>
     <Title title='Devtool Tricks' titleColor='#55476b' size='m' />
     {data.map((el, i) => {
       const num = String(i + 1).padStart(2, '0');
@@ -19,7 +19,7 @@ const DevtoolTricksPage = () => (
         />
       );
     })}
-  </CenterCol1Layout>
+  </LayoutCol1>
 );
 
 const Trick = ({ title, info, example, btnInfo, func }) => (

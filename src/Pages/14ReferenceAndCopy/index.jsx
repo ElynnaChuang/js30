@@ -1,11 +1,11 @@
-import { Example, Title } from '@/components';
+import { Example, Title } from '@/Components';
 import { textExamples, arrayExamples, objectExamples, deepCopyExamples } from './data';
 import styles from './styles.module.scss';
-import { CenterCol1Layout } from '@/Layouts';
+import { LayoutCol1 } from '@/Layouts';
 
 const ReferenceAndCopyPage = () => {
   return (
-    <CenterCol1Layout baseClassName={styles.page}>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title
         title='Array and Object'
         subtitle='Reference vs Copy'
@@ -40,7 +40,7 @@ const ReferenceAndCopyPage = () => {
           <Example key={id} title={title} info={info} subInfo={subInfo} code={code} />
         ))}
       </div>
-    </CenterCol1Layout>
+    </LayoutCol1>
   );
 };
 
