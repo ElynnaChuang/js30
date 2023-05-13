@@ -11,5 +11,7 @@ export { Example } from './14Example';
 export { Form } from './15Form';
 export { List } from './15List';
 
+export { Title } from './Titles';
+
 export { Card } from './Card';
 export { Image } from './Image';

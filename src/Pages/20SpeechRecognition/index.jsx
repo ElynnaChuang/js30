@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './styles.module.scss';
 import { Button, Select } from './component';
+import { CenterCol1Layout } from '@/Layouts';
 
 const languages = [
   { value: 'en-US', name: 'English(US)' },
@@ -85,56 +86,50 @@ const SpeechRecognitionPage = () => {
   }, [interimTranscript]);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.controls}>
-          <div className={styles.controls_status}>
-            <p>
-              Microphone<span>{listening ? 'on' : 'off'}</span>
-            </p>
-            <p>
-              Language
-              <Select
-                onChange={setLanguage}
-                isDisable={recordStatus}
-                options={languages}
-              />
-            </p>
-          </div>
-          <div className={styles.controls_buttons}>
-            <Button
-              btnStyle='default_btn'
-              text='Start'
-              isActive={recordStatus}
-              onClick={handleStart}
-            />
-            <Button
-              btnStyle='default_btn'
-              text='Stop'
-              isActive={!recordStatus}
-              onClick={handleStop}
-            />
-            <Button btnStyle='success_btn' text='Copy' onClick={handleCopy} />
-            <Button btnStyle='danger_btn' text='Reset' onClick={handleReset} />
-          </div>
+    <CenterCol1Layout baseClassName={styles.page}>
+      <div className={styles.controls}>
+        <div className={styles.controls_status}>
+          <p>
+            Microphone<span>{listening ? 'on' : 'off'}</span>
+          </p>
+          <p>
+            Language
+            <Select onChange={setLanguage} isDisable={recordStatus} options={languages} />
+          </p>
         </div>
-        <div className={styles.words_container} ref={scrollDivRef}>
-          <div className={styles.words}>
-            {startSpeak ? (
-              <>
-                {transcript.map(({ id, text }) => {
-                  return <p key={id}>{text}</p>;
-                })}
-
-                <p key={uuidv4()}>{interimTranscript}</p>
-              </>
-            ) : (
-              <p className={styles.default_text}>尚無內容</p>
-            )}
-          </div>
+        <div className={styles.controls_buttons}>
+          <Button
+            btnStyle='default_btn'
+            text='Start'
+            isActive={recordStatus}
+            onClick={handleStart}
+          />
+          <Button
+            btnStyle='default_btn'
+            text='Stop'
+            isActive={!recordStatus}
+            onClick={handleStop}
+          />
+          <Button btnStyle='success_btn' text='Copy' onClick={handleCopy} />
+          <Button btnStyle='danger_btn' text='Reset' onClick={handleReset} />
         </div>
       </div>
-    </section>
+      <div className={styles.words_container} ref={scrollDivRef}>
+        <div className={styles.words}>
+          {startSpeak ? (
+            <>
+              {transcript.map(({ id, text }) => {
+                return <p key={id}>{text}</p>;
+              })}
+
+              <p key={uuidv4()}>{interimTranscript}</p>
+            </>
+          ) : (
+            <p className={styles.default_text}>尚無內容</p>
+          )}
+        </div>
+      </div>
+    </CenterCol1Layout>
   );
 };
 

@@ -1,45 +1,46 @@
-import { Example } from '@/Components';
+import { Example, Title } from '@/components';
 import { textExamples, arrayExamples, objectExamples, deepCopyExamples } from './data';
 import styles from './styles.module.scss';
+import { CenterCol1Layout } from '@/Layouts';
 
 const ReferenceAndCopyPage = () => {
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <h2>Array and Object</h2>
-          <p>Reference vs Copy</p>
-        </div>
+    <CenterCol1Layout baseClassName={styles.page}>
+      <Title
+        title='Array and Object'
+        subtitle='Reference vs Copy'
+        titleClassName={styles.title}
+        size='m'
+      />
 
-        <div className={styles.example_section}>
-          <h3>Text</h3>
-          {textExamples.map(({ id, title, info, code }) => (
-            <Example key={id} title={title} info={info} code={code} />
-          ))}
-        </div>
-
-        <div className={styles.example_section}>
-          <h3>Array</h3>
-          {arrayExamples.map(({ id, title, info, code }) => (
-            <Example key={id} title={title} info={info} code={code} />
-          ))}
-        </div>
-
-        <div className={styles.example_section}>
-          <h3>Object</h3>
-          {objectExamples.map(({ id, title, info, code }) => (
-            <Example key={id} title={title} info={info} code={code} />
-          ))}
-        </div>
-
-        <div className={styles.example_section}>
-          <h3>Notice!!</h3>
-          {deepCopyExamples.map(({ id, title, info, subInfo, code }) => (
-            <Example key={id} title={title} info={info} subInfo={subInfo} code={code} />
-          ))}
-        </div>
+      <div className={styles.example_section}>
+        <h3>Text</h3>
+        {textExamples.map(({ id, title, info, code }) => (
+          <Example key={id} title={title} info={info} code={code} />
+        ))}
       </div>
-    </section>
+
+      <div className={styles.example_section}>
+        <h3>Array</h3>
+        {arrayExamples.map(({ id, title, info, code }) => (
+          <Example key={id} title={title} info={info} code={code} />
+        ))}
+      </div>
+
+      <div className={styles.example_section}>
+        <h3>Object</h3>
+        {objectExamples.map(({ id, title, info, code }) => (
+          <Example key={id} title={title} info={info} code={code} />
+        ))}
+      </div>
+
+      <div className={styles.example_section}>
+        <h3>Notice!!</h3>
+        {deepCopyExamples.map(({ id, title, info, subInfo, code }) => (
+          <Example key={id} title={title} info={info} subInfo={subInfo} code={code} />
+        ))}
+      </div>
+    </CenterCol1Layout>
   );
 };
 

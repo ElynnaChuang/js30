@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ListItem } from '@/Components';
-import styles from './styles.module.scss';
+import { ListItem, Title } from '@/components';
 import { getData } from './api';
+import styles from './styles.module.scss';
+import { CenterCol1Layout } from '@/Layouts';
 
 const AjaxTypePage = () => {
   const [baseData, setBaseData] = useState([]);
@@ -32,20 +33,18 @@ const AjaxTypePage = () => {
   }, []);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Filter for a city or a state</h2>
-        <form className={styles.search_form}>
-          <input
-            type='text'
-            className={styles.search}
-            placeholder='Enter City or State'
-            onChange={e => handleChange(e.target.value)}
-          />
-          <List result={result} inputValue={inputValue} />
-        </form>
-      </div>
-    </section>
+    <CenterCol1Layout baseClassName={styles.page}>
+      <Title title='Filter for a city or a state' titleColor='#fff' size='s' />
+      <form className={styles.search_form}>
+        <input
+          type='text'
+          className={styles.search}
+          placeholder='Enter City or State'
+          onChange={e => handleChange(e.target.value)}
+        />
+        <List result={result} inputValue={inputValue} />
+      </form>
+    </CenterCol1Layout>
   );
 };
 

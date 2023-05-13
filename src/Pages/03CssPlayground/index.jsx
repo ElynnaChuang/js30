@@ -8,6 +8,7 @@ import imageS1x from '@/Assets/03Image/image_s1x.webp';
 import imageS2x from '@/Assets/03Image/image_s2x.webp';
 import imageS3x from '@/Assets/03Image/image_s3x.webp';
 import styles from './styles.module.scss';
+import { CenterCol1Layout } from '@/Layouts';
 
 const CssPlaygroundPage = () => {
   const [padding, setPadding] = useState(10);
@@ -21,53 +22,51 @@ const CssPlaygroundPage = () => {
   };
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>
-          Update CSS Variables with
-          <span style={{ color: `${imgStyle.background}` }}>JS</span>
-        </h2>
+    <CenterCol1Layout baseClassName={styles.page}>
+      <h2 className={styles.title}>
+        Update CSS Variables with
+        <span style={{ color: `${imgStyle.background}` }}>JS</span>
+      </h2>
 
-        <div className={styles.controls}>
-          <RangeInput
-            label='Spacing'
-            name='spacing'
-            min='10'
-            max='200'
-            initialValue={padding}
-            handleCgange={setPadding}
-          />
-          <RangeInput
-            label='Blur'
-            name='blur'
-            min='0'
-            max='25'
-            initialValue={blur}
-            handleCgange={setBlur}
-          />
-          <ColorInput
-            label='Base Color'
-            name='base'
-            initialValue={background}
-            handleCgange={setBackground}
-          />
-        </div>
-        <Image
-          className={styles.example_img}
-          images={{
-            base: imageBase,
-            l1x: imageL1x,
-            l2x: imageL2x,
-            m1x: imageL1x,
-            m2x: imageL2x,
-            s1x: imageS1x,
-            s2x: imageS2x,
-            s3x: imageS3x,
-          }}
-          imgStyle={imgStyle}
+      <div className={styles.controls}>
+        <RangeInput
+          label='Spacing'
+          name='spacing'
+          min='10'
+          max='200'
+          initialValue={padding}
+          handleCgange={setPadding}
+        />
+        <RangeInput
+          label='Blur'
+          name='blur'
+          min='0'
+          max='25'
+          initialValue={blur}
+          handleCgange={setBlur}
+        />
+        <ColorInput
+          label='Base Color'
+          name='base'
+          initialValue={background}
+          handleCgange={setBackground}
         />
       </div>
-    </section>
+      <Image
+        className={styles.example_img}
+        images={{
+          base: imageBase,
+          l1x: imageL1x,
+          l2x: imageL2x,
+          m1x: imageL1x,
+          m2x: imageL2x,
+          s1x: imageS1x,
+          s2x: imageS2x,
+          s3x: imageS3x,
+        }}
+        imgStyle={imgStyle}
+      />
+    </CenterCol1Layout>
   );
 };
 

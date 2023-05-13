@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { data } from './data';
-import { CheckboxInput } from '@/Components/10Checkbox';
+import { CenterCol1Layout } from '@/layouts';
+import { CheckboxInput } from '@/components/10Checkbox';
+import { Title } from '@/components';
 
 const CheckboxPage = () => {
   const [inputData, setInputData] = useState(data);
@@ -37,21 +39,19 @@ const CheckboxPage = () => {
   }, []);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Checkbox Page</h2>
-        <div className={styles.items_container}>
-          {inputData.map(el => (
-            <CheckboxInput
-              key={el.id}
-              id={el.id}
-              content={el.content}
-              checkedStatus={el.isCheck}
-            />
-          ))}
-        </div>
+    <CenterCol1Layout baseClassName={styles.page}>
+      <Title title='Checkbox Page' titleColor='#fff' size='m' />
+      <div className={styles.items_container}>
+        {inputData.map(el => (
+          <CheckboxInput
+            key={el.id}
+            id={el.id}
+            content={el.content}
+            checkedStatus={el.isCheck}
+          />
+        ))}
       </div>
-    </section>
+    </CenterCol1Layout>
   );
 };
 
