@@ -1,47 +1,13 @@
 .page {
-  position: relative;
-
-  width: 100%;
-  min-height: 100%;
-  padding: 2rem;
-
   background-color: #d3d5f0;
 }
 
-.title {
-  position: relative;
-  z-index: 99;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  margin-bottom: 2.5rem;
-
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 160%;
-  text-align: center;
-
-  .link {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 100%;
-    color: #747b88;
-    text-decoration: underline;
-  }
-}
-
-.container {
-  position: relative;
-  z-index: 99;
-
+.tables {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 
-  max-width: 800px;
-  margin: 0 auto 3rem;
+  width: 100%;
   padding: 3rem 2rem;
 
   background-color: #fff;

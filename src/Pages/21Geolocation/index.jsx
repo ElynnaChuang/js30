@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { CompassSvg } from '@/Assets/21Compass';
+import { LayoutCol1 } from '@/Layouts';
 
 const standardLatGap = 0.01;
 const standardLngGap = 0.01;
@@ -52,36 +53,32 @@ const GeolocationPage = () => {
   }, 1000);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.compass}>
-          {geoError && (
-            <div className={styles.error}>
-              Sorry, Your device does not support compass!
-            </div>
-          )}
-          <CompassSvg />
-        </div>
-
-        <div className={styles.info}>
-          <p>
-            Your Speed : <span>{speed}</span>
-          </p>
-          <p>
-            Latitude : <span>{position.latitude}</span>
-          </p>
-          <p>
-            Longitude : <span>{position.longitude}</span>
-          </p>
-          <Link
-            to={`https://maps.google.com/?ll=${position.latitude},${position.longitude}`}
-            target='_blank'
-          >
-            Open Google Map
-          </Link>
-        </div>
+    <LayoutCol1 baseClassName={styles.page}>
+      <div className={styles.compass}>
+        {geoError && (
+          <div className={styles.error}>Sorry, Your device does not support compass!</div>
+        )}
+        <CompassSvg />
       </div>
-    </section>
+
+      <div className={styles.info}>
+        <p>
+          Your Speed : <span>{speed}</span>
+        </p>
+        <p>
+          Latitude : <span>{position.latitude}</span>
+        </p>
+        <p>
+          Longitude : <span>{position.longitude}</span>
+        </p>
+        <Link
+          to={`https://maps.google.com/?ll=${position.latitude},${position.longitude}`}
+          target='_blank'
+        >
+          Open Google Map
+        </Link>
+      </div>
+    </LayoutCol1>
   );
 };
 

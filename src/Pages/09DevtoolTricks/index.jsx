@@ -1,25 +1,25 @@
 import styles from './styles.module.scss';
 import { data } from './data';
+import { LayoutCol1 } from '@/Layouts';
+import { Title } from '@/Components';
 
 const DevtoolTricksPage = () => (
-  <section className={styles.page}>
-    <div className={styles.container}>
-      <h2 className={styles.title}>Devtool Tricks</h2>
-      {data.map((el, i) => {
-        const num = String(i + 1).padStart(2, '0');
-        return (
-          <Trick
-            key={el.id}
-            title={`${num}. ${el.title}`}
-            info={`${el.info}`}
-            example={el.example}
-            btnInfo={el.btnInfo}
-            func={el.func}
-          />
-        );
-      })}
-    </div>
-  </section>
+  <LayoutCol1 baseClassName={styles.page}>
+    <Title title='Devtool Tricks' titleColor='#55476b' size='m' />
+    {data.map((el, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      return (
+        <Trick
+          key={el.id}
+          title={`${num}. ${el.title}`}
+          info={`${el.info}`}
+          example={el.example}
+          btnInfo={el.btnInfo}
+          func={el.func}
+        />
+      );
+    })}
+  </LayoutCol1>
 );
 
 const Trick = ({ title, info, example, btnInfo, func }) => (

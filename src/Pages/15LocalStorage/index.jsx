@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FishIcon } from '@/Assets/09Icons';
 import { Form, List } from '@/Components';
 import styles from './styles.module.scss';
+import { LayoutCol1 } from '@/Layouts';
 
 const LocalStoragePage = () => {
   const [listItems, setListItems] = useState(
@@ -35,18 +36,16 @@ const LocalStoragePage = () => {
   };
 
   return (
-    <section className={styles.page}>
-      <div className={styles.container}>
-        <FishIcon />
+    <LayoutCol1 baseClassName={styles.page}>
+      <FishIcon />
 
-        <div className={styles.wrapper}>
-          <h2 className={styles.title}>LOCAL TAPAS</h2>
-          <Form addItem={handleAddItem} />
-          <List items={listItems} onClick={handleDone} />
-          {!!listItems.length && <button onClick={handleClear}>Clear All</button>}
-        </div>
+      <div className={styles.wrapper}>
+        <h2 className={styles.title}>LOCAL TAPAS</h2>
+        <Form addItem={handleAddItem} />
+        <List items={listItems} onClick={handleDone} />
+        {!!listItems.length && <button onClick={handleClear}>Clear All</button>}
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

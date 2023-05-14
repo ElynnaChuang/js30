@@ -1,5 +1,3 @@
-@import '../../scss/color';
-
 .example {
   display: flex;
   flex-direction: column;
@@ -8,13 +6,13 @@
   & h4 {
     font-size: 1.25rem;
     font-weight: 500;
-    color: $primary;
+    color: #3479be;
   }
 
   & p {
     font-size: 1rem;
     line-height: 140%;
-    color: $primary;
+    color: #3479be;
     letter-spacing: 1px;
   }
 

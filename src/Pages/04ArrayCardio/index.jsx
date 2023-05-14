@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { StyledTable } from '@/Components';
+import { LayoutCol1 } from '@/Layouts';
+import { StyledTable, Title } from '@/Components';
 import { inventors, people, transportation } from './data';
 import styles from './styles.module.scss';
 
@@ -29,14 +30,14 @@ const ArrayCardioPage01 = () => {
   const prinaryColor = '#2796b5';
 
   return (
-    <section className={styles.page}>
-      <div className={styles.title} style={{ color: prinaryColor }}>
-        ArrayCardio v1
-        <Link to='/07' className={styles.link}>
-          Go to ArrayCardio v2 page
-        </Link>
-      </div>
-      <div className={styles.container}>
+    <LayoutCol1 baseClassName={styles.page}>
+      <Title
+        title=' ArrayCardio v1'
+        subtitle={<Link to='/07'>Go to ArrayCardio v2 page</Link>}
+        titleColor={prinaryColor}
+      />
+
+      <div className={styles.tables}>
         <StyledTable
           title='01. All inventors'
           titleColor={prinaryColor}
@@ -106,7 +107,7 @@ const ArrayCardioPage01 = () => {
           data={transArr.sort((a, b) => b.times - a.times)}
         />
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

@@ -1,21 +1,10 @@
 .page {
-  height: 100%;
-  padding: 2rem;
-
-  font-family: 'helvetica neue', sans-serif;
-  letter-spacing: 0.1rem;
-
   background: #0e3049;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  height: 100%;
-}
-
 .title {
+  // font-family: 'helvetica neue', sans-serif;
+  // letter-spacing: 0.1rem;
   font-size: 3rem;
   font-weight: 500;
   line-height: 160%;

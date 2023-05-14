@@ -1,21 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap';
 
 .page {
-  display: flex;
-  height: auto;
-  min-height: 100%;
   font-family: 'Signika Negative', sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-
-  width: 100%;
-  padding: 5rem 2rem;
-
   background-color: #efbf13;
 }
 

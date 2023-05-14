@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Key, Image } from '@/Components/index';
+import { Key } from '@/Components/index';
 import {
   clap,
   hihat,
@@ -15,6 +15,7 @@ import {
 import baseImg from '@/Assets/01bg/base.jpg';
 import webpImg from '@/Assets/01bg/base.webp';
 import styles from './styles.module.scss';
+import { LayoutCol1 } from '@/Layouts';
 
 const keys = [
   { keyNum: 65, keyName: 'a', soundTag: 'clap' },
@@ -38,6 +39,17 @@ const sounds = {
   j: new Audio(snare),
   k: new Audio(tom),
   l: new Audio(tink),
+};
+
+const images = {
+  base: baseImg,
+  l1x: webpImg,
+  l2x: webpImg,
+  m1x: webpImg,
+  m2x: webpImg,
+  s1x: webpImg,
+  s2x: webpImg,
+  s3x: webpImg,
 };
 
 const DrumPage = () => {
@@ -64,38 +76,21 @@ const DrumPage = () => {
   }, []);
 
   return (
-    <section className={styles.page}>
-      <Image
-        images={{
-          base: baseImg,
-          l1x: webpImg,
-          l2x: webpImg,
-          m1x: webpImg,
-          m2x: webpImg,
-          s1x: webpImg,
-          s2x: webpImg,
-          s3x: webpImg,
-        }}
-        className={styles.bg}
-      />
+    <LayoutCol1 baseClassName={styles.page} bgImages={images} layout='full'>
+      <p className={styles.caption}>Press your keyboard or tap the keys on the screen!</p>
 
-      <div className={styles.container}>
-        <h1 className={styles.caption}>
-          Press your keyboard or tap the keys on the screen!
-        </h1>
-        <div className={styles.keys}>
-          {keys.map(({ keyNum, keyName, soundTag }) => (
-            <Key
-              key={keyNum}
-              keyName={keyName}
-              soundTag={soundTag}
-              onClick={() => handlePlaySound(keyName)}
-              currentKey={currentKey}
-            />
-          ))}
-        </div>
+      <div className={styles.keys}>
+        {keys.map(({ keyNum, keyName, soundTag }) => (
+          <Key
+            key={keyNum}
+            keyName={keyName}
+            soundTag={soundTag}
+            onClick={() => handlePlaySound(keyName)}
+            currentKey={currentKey}
+          />
+        ))}
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { StyledTable } from '@/Components';
+import { LayoutCol1 } from '@/Layouts';
+import { StyledTable, Title } from '@/Components';
 import { people, comments } from './data';
 import styles from './styles.module.scss';
 
@@ -15,14 +16,14 @@ const ArrayCardioPage02 = () => {
   newArr.splice(deleteIndex, 1);
 
   return (
-    <section className={styles.page}>
-      <div className={styles.title} style={{ color: prinaryColor }}>
-        ArrayCardio v2
-        <Link to='/04' className={styles.link}>
-          Go to ArrayCardio v1 page
-        </Link>
-      </div>
-      <div className={styles.container}>
+    <LayoutCol1 baseClassName={styles.page}>
+      <Title
+        title='ArrayCardio v2'
+        subtitle={<Link to='/04'>Go to ArrayCardio v1 page</Link>}
+        titleColor={prinaryColor}
+      />
+
+      <div className={styles.tables}>
         <StyledTable
           title='01. All people'
           titleColor={prinaryColor}
@@ -71,7 +72,7 @@ const ArrayCardioPage02 = () => {
           data={newArr}
         />
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

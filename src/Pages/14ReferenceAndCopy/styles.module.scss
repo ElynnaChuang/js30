@@ -1,48 +1,20 @@
-@import '../../scss/media';
-@import '../../scss/color';
-
 .page {
-  padding: 2rem 0;
   background: #82bcc6;
-}
 
-.container {
-  @include more992 {
-    max-width: 700px;
-    margin: 0 auto;
+  & div:first-child {
+    background-color: #fff;
   }
-
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem 4px rgba($color: #000, $alpha: 10%);
 }
 
 .title {
-  text-align: center;
-
-  & h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
+  & > *:nth-child(1) {
     color: darken($color: #82bcc6, $amount: 20);
-  }
-
-  & p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #82bcc6;
   }
 }
 
 .example_section {
+  width: 100%;
+
   & h3 {
     margin-bottom: 0.75rem;
     padding: 0.75rem;

@@ -2,6 +2,7 @@ import Webcam from 'react-webcam';
 import { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { filters } from './filter';
+import { LayoutCol1 } from '@/Layouts';
 
 const videoConstraints = {
   width: { ideal: 1920 },
@@ -42,7 +43,7 @@ const WebCamPage = () => {
   };
 
   return (
-    <section className={styles.page}>
+    <LayoutCol1 layout='full' baseClassName={styles.page}>
       <div className={styles.photobooth}>
         <div className={styles.filters}>
           {filters.map(filter => {
@@ -83,7 +84,7 @@ const WebCamPage = () => {
           <canvas ref={imgCanvasRef} />
         </div>
       </div>
-    </section>
+    </LayoutCol1>
   );
 };
 

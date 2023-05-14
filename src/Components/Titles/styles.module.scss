@@ -1,0 +1,44 @@
+@use '../../scss/space' as space;
+@use '../../scss/font' as font;
+
+.title_container {
+  display: flex;
+  flex-direction: column;
+  gap: space.$space_1;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.title {
+  &_L {
+    font-size: font.$h1;
+    font-weight: 900;
+    line-height: 160%;
+  }
+
+  &_M {
+    font-size: font.$h2;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  &_S {
+    font-size: font.$h3;
+    font-weight: 700;
+    line-height: 120%;
+  }
+}
+
+.subtitle {
+  font-size: font.$h4;
+  font-weight: 500;
+  line-height: 100%;
+  color: #747b88;
+
+  & a {
+    color: #747b88;
+    text-decoration: underline;
+  }
+}
