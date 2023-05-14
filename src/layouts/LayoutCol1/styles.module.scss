@@ -23,11 +23,11 @@
 
   display: flex;
   flex-direction: column;
-  gap: space.$gap_3;
+  gap: space.$space_3;
   align-items: center;
 
   width: 100%;
-  padding: 2rem;
+  padding: space.$space_3;
 }
 
 .layout_full {
@@ -41,5 +41,5 @@
   @extend %base_layout;
 
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto space.$space_3;
 }
