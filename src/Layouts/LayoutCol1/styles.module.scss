@@ -1,0 +1,45 @@
+@use '../../scss/space' as space;
+
+.base {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+%base_layout {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: space.$space_3;
+  align-items: center;
+
+  width: 100%;
+  padding: space.$space_3;
+}
+
+.layout_full {
+  @extend %base_layout;
+
+  justify-content: center;
+  height: 100%;
+}
+
+.layout_center_col {
+  @extend %base_layout;
+
+  max-width: 800px;
+  margin: 0 auto space.$space_3;
+}

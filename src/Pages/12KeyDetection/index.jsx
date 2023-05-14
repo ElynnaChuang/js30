@@ -45,7 +45,7 @@ const KeyDetectionPage = () => {
   }, []);
 
   return (
-    <LayoutCol1 baseClassName={styles.page} layout='full'>
+    <LayoutCol1 baseClassName={styles.page}>
       <div className={styles.info}>
         You can enter <span>{SECRET_CODE}</span> or click{' '}
         <button className={styles.button} onClick={generateConfetti}>
