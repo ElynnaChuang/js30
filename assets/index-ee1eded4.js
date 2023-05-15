@@ -1,0 +1,1 @@
+import{a as l,a6 as m}from"./index-d4744ed8.js";const d=({name:s,selectClass:t,onChange:a,isDisable:r,options:c})=>l("select",{name:s,className:`${m.select} ${t}`,onChange:e=>a==null?void 0:a(e.target.value),disabled:r,children:c.map(e=>l("option",{value:e.value,children:e.name},e.value))});export{d as S};
