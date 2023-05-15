@@ -38,6 +38,11 @@ input[type='range'] {
     border-radius: 0.2rem;
     box-shadow: -101vw 0 0 100vw #78acd0;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 input[type='color'] {

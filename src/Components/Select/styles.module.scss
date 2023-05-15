@@ -1,0 +1,13 @@
+.select {
+  cursor: pointer;
+
+  padding: 0.5rem;
+
+  font-weight: bold;
+
+  appearance: none;
+  background-color: rgb(255 255 255);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px 0 rgba($color: #000, $alpha: 20%);
+}

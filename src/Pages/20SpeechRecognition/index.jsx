@@ -4,8 +4,9 @@ import { useSnackbar } from 'notistack';
 import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './styles.module.scss';
-import { Button, Select } from './component';
 import { LayoutCol1 } from '@/Layouts';
+import { Select } from '@/Components';
+import { Button } from './component';
 
 const languages = [
   { value: 'en-US', name: 'English(US)' },
@@ -94,7 +95,13 @@ const SpeechRecognitionPage = () => {
           </p>
           <p>
             Language
-            <Select onChange={setLanguage} isDisable={recordStatus} options={languages} />
+            <Select
+              name='language'
+              selectClass={styles.select}
+              onChange={setLanguage}
+              isDisable={recordStatus}
+              options={languages}
+            />
           </p>
         </div>
         <div className={styles.controls_buttons}>
