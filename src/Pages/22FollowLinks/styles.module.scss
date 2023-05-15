@@ -1,3 +1,53 @@
 .page {
-  background: #b1b1b1;
+  background: #7d414c;
+}
+
+.menu {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+
+  padding: 1rem 4rem;
+
+  list-style: none;
+
+  border: 2px solid #ffffff43;
+  border-radius: 1rem;
+}
+
+.title {
+  color: #ffffff7f;
+}
+
+.item {
+  cursor: pointer;
+
+  position: relative;
+
+  height: 100%;
+  padding: 0 1rem;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 160%;
+  color: #fff;
+
+  box-shadow: 0 0 0 8px #fff0;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #7d414c;
+  }
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: #fff;
+  border-radius: 2rem;
+
+  transition: all 0.2s ease-in-out;
 }

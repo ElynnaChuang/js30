@@ -27,7 +27,6 @@
   align-items: center;
 
   width: 100%;
-  height: 100%;
   padding: space.$space_3;
 }
 
@@ -35,11 +34,14 @@
   @extend %base_layout;
 
   justify-content: center;
+  height: 100%;
+  padding-bottom: space.$space_5;
 }
 
 .layout_center_col {
   @extend %base_layout;
 
   max-width: 800px;
-  margin: 0 auto space.$space_3;
+  min-height: 100%;
+  margin: 0 auto;
 }
