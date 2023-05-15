@@ -1,6 +1,16 @@
 @import 'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap';
 @import '../../scss/media';
 
+%text_break {
+  overflow: hidden;
+  display: -webkit-box;
+
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .card {
   @include more768 {
     flex-direction: column;
@@ -18,31 +28,14 @@
   transition: all ease-out 0.3s;
 
   &_img {
-    @include more576 {
-      width: 40%;
-      padding-top: 25%;
-    }
-
     @include more768 {
       width: 100%;
-      padding-top: 60%;
     }
 
     position: relative;
     width: 40%;
-    height: 0;
-    padding-top: 40%;
-
-    & .img_container {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      overflow: hidden;
-
-      width: 100%;
-      height: 100%;
-    }
+    min-width: 140px;
+    height: 100%;
   }
 
   &_info {
@@ -61,16 +54,21 @@
     background-color: rgba($color: #fff, $alpha: 40%);
 
     & .title {
-      font-size: 1.2rem;
+      @extend %text_break;
+
+      font-size: 1rem;
       font-weight: 600;
       line-height: 140%;
       color: #5b6777;
     }
 
     & .focus {
+      @extend %text_break;
+
+      width: 100%;
       padding-left: 2px;
 
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 600;
       line-height: 140%;
       color: #8090a6;

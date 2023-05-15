@@ -321,7 +321,7 @@ export const data = [
       l1x: l1x21,
       l2x: l2x21,
     },
-    focus: '-',
+    focus: 'Geolocation API',
   },
   {
     id: 22,
@@ -336,7 +336,7 @@ export const data = [
       l1x: l1x22,
       l2x: l2x22,
     },
-    focus: '-',
+    focus: 'DOM - getBoundingClientRect()',
   },
   {
     id: 23,

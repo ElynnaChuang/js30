@@ -7,9 +7,7 @@ export const Card = ({ linkTo, title, images, focus }) => {
     <Link to={linkTo} preventScrollReset={false}>
       <div className={styles.card}>
         <div className={styles.card_img}>
-          <div className={styles.img_container}>
-            <Image images={images} />
-          </div>
+          <Image images={images} />
         </div>
         <div className={styles.card_info}>
           <h2 className={styles.title}>{title}</h2>

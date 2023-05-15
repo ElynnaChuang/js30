@@ -22,6 +22,7 @@ const ReduceTimePage = lazy(() => import('./Pages/18Reduce'));
 const WebCamPage = lazy(() => import('./Pages/19Webcam'));
 const SpeechRecognitionPage = lazy(() => import('./Pages/20SpeechRecognition'));
 const GeolocationPage = lazy(() => import('./Pages/21Geolocation'));
+const FollowLinksPage = lazy(() => import('./Pages/22FollowLinks'));
 
 export const routes = [
   { id: 0, path: '/', element: <HomePage /> },
@@ -46,4 +47,5 @@ export const routes = [
   { id: 19, path: '19', element: <WebCamPage /> },
   { id: 20, path: '20', element: <SpeechRecognitionPage /> },
   { id: 21, path: '21', element: <GeolocationPage /> },
+  { id: 22, path: '22', element: <FollowLinksPage /> },
 ];
