@@ -1,8 +1,10 @@
 .input_container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: flex-start;
+
+  width: 100%;
 
   & input {
     cursor: pointer;
@@ -15,17 +17,23 @@
   }
 }
 
-$control_height: 1.2rem;
+$control_height: 1.5rem;
+$border_radius: 0.5rem;
 
 input[type='range'] {
+  overflow: hidden;
+
+  height: $control_height;
+
   background: none; // 清除不必要的東西
+  border: 1px solid #dedede;
+  border-radius: $border_radius;
 
   // 進度條背景
   &::-webkit-slider-runnable-track {
     overflow: hidden;
     height: $control_height;
     background-color: #bcbcbc;
-    border-radius: 0.2rem;
   }
 
   // 調整拖曳鈕
@@ -35,7 +43,7 @@ input[type='range'] {
 
     appearance: none;
     background-color: #fff;
-    border-radius: 0.2rem;
+    border-radius: $border_radius;
     box-shadow: -101vw 0 0 100vw #78acd0;
   }
 
@@ -47,7 +55,8 @@ input[type='range'] {
 
 input[type='color'] {
   height: $control_height;
-  border-radius: 0.2rem;
+  border: 1px solid #eaeaea;
+  border-radius: $border_radius;
 
   &::-webkit-color-swatch-wrapper {
     padding: 0;

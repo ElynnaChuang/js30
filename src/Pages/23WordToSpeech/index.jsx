@@ -66,46 +66,49 @@ const WordToSpeechPage = () => {
   return (
     <LayoutCol1 baseClassName={styles.page}>
       <div className={styles.card}>
-        <Title title='23 page' />
-        <Select
-          name='voice'
-          options={options}
-          selectClass={styles.select}
-          onChange={handleChange}
-        />
-        <RangeInput
-          min={0}
-          max={3}
-          step={0.1}
-          initialValue={1}
-          label='Rate'
-          name='rate'
-          isDisabled={isSpeak}
-        />
-        <RangeInput
-          min={0}
-          max={2}
-          step={0.1}
-          initialValue={0}
-          label='Pitch'
-          name='pitch'
-          isDisabled={isSpeak}
-        />
-        <div className={styles.buttons}>
-          <button disabled={!options.length || !isSpeak} onClick={stopSpeak}>
-            Stop
-          </button>
-          <button disabled={!options.length || isSpeak} onClick={speak}>
-            Speak
-          </button>
+        <Title title='Word to Speech' titleClassName={styles.card_header} size='s' />
+        <div className={styles.card_body}>
+          <Select
+            name='voice'
+            options={options}
+            selectClass={styles.select}
+            onChange={handleChange}
+          />
+          <div className={styles.ranges}>
+            <RangeInput
+              min={0}
+              max={3}
+              step={0.1}
+              initialValue={1}
+              label='Rate'
+              name='rate'
+              isDisabled={isSpeak}
+            />
+            <RangeInput
+              min={0}
+              max={2}
+              step={0.1}
+              initialValue={0}
+              label='Pitch'
+              name='pitch'
+              isDisabled={isSpeak}
+            />
+          </div>
+          <div className={styles.buttons}>
+            <button disabled={!options.length || !isSpeak} onClick={stopSpeak}>
+              Stop
+            </button>
+            <button disabled={!options.length || isSpeak} onClick={speak}>
+              Speak
+            </button>
+          </div>
+          <Textarea
+            textRef={textRef}
+            name='text'
+            initialValue='Hello'
+            isDisabled={isSpeak}
+          />
         </div>
-        <Textarea
-          textRef={textRef}
-          name='text'
-          rows='10'
-          initialValue='Hello'
-          isDisabled={isSpeak}
-        />
       </div>
     </LayoutCol1>
   );
