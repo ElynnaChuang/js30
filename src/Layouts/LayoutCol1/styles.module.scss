@@ -1,10 +1,12 @@
 @use '../../scss/space' as space;
 
+@import '../../scss/media';
+
 .base {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 100vh;
+  display: flex;
+  min-height: 100%;
+  padding: space.$space_3;
 
   &::-webkit-scrollbar {
     display: none;
@@ -22,19 +24,18 @@
   position: relative;
 
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: space.$space_3;
   align-items: center;
 
   width: 100%;
-  padding: space.$space_3;
 }
 
 .layout_full {
   @extend %base_layout;
 
   justify-content: center;
-  height: 100%;
   padding-bottom: space.$space_5;
 }
 
@@ -42,6 +43,5 @@
   @extend %base_layout;
 
   max-width: 800px;
-  min-height: 100%;
   margin: 0 auto;
 }

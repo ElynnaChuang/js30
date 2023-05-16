@@ -11,6 +11,7 @@
     "property-no-vendor-prefix": [
       true,
       { "ignoreProperties": ["background-clip", "backdrop-filter"] }
-    ]
+    ],
+    "value-no-vendor-prefix": [true, { "ignoreValues": ["sticky", "box"] }]
   }
 }
