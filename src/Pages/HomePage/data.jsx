@@ -366,7 +366,7 @@ export const data = [
       l1x: l1x24,
       l2x: l2x24,
     },
-    focus: '-',
+    focus: 'CSS position sticky / Package - react-slideshow-image',
   },
   {
     id: 25,
