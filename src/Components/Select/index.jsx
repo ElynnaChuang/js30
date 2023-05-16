@@ -9,8 +9,8 @@ export const Select = ({ name, selectClass, onChange, isDisable, options }) => {
       disabled={isDisable}
     >
       {options.map(option => (
-        <option value={option.value} key={option.value}>
-          {option.name}
+        <option value={option.value} key={option.key}>
+          {option.optionName || option.name}
         </option>
       ))}
     </select>

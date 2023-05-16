@@ -12,7 +12,7 @@ const languages = [
   { value: 'en-US', name: 'English(US)' },
   { value: 'zh-CN', name: '中文' },
   { value: 'ja', name: '日本語' },
-];
+].map(el => ({ ...el, key: el.value }));
 
 const SpeechRecognitionPage = () => {
   const allWords = useRef([]);
