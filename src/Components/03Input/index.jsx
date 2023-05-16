@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import styles from './styles.module.scss';
 
-export const RangeInput = ({ label, name, initialValue, min, max, handleCgange }) => {
+export const RangeInput = ({
+  label,
+  name,
+  initialValue,
+  min,
+  max,
+  step,
+  isDisabled = false,
+  handleCgange,
+}) => {
   const [value, setValue] = useState(initialValue);
   const onChange = e => {
     setValue(e.target.value);
@@ -18,7 +27,9 @@ export const RangeInput = ({ label, name, initialValue, min, max, handleCgange }
         min={min}
         max={max}
         value={value}
+        step={step || 1}
         onChange={e => onChange(e)}
+        disabled={isDisabled}
       />
     </div>
   );

@@ -1,0 +1,96 @@
+.page {
+  background: #99c1d0;
+  background-image: radial-gradient(
+      circle at 50% 25%,
+      rgba($color: #fff, $alpha: 20%) 10%,
+      #fff0 10%
+    ),
+    radial-gradient(circle at 50% 75%, rgba($color: #fff, $alpha: 20%) 10%, #fff0 10%),
+    radial-gradient(circle at 25% 50%, rgba($color: #fff, $alpha: 40%) 10%, #fff0 10%),
+    radial-gradient(circle at 75% 50%, rgba($color: #fff, $alpha: 40%) 10%, #fff0 10%);
+  background-size: 40px 40px;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: 1rem;
+
+  &_header {
+    padding: 1rem;
+    color: #fff;
+    background-color: #4886a5;
+  }
+
+  &_body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1rem;
+
+    height: 100%;
+    padding: 2rem;
+  }
+}
+
+.select {
+  width: 100%;
+  color: #4886a5;
+}
+
+.ranges {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  button {
+    padding: 0.5rem;
+
+    font-weight: 700;
+    color: #fff;
+
+    background-color: #6b99b0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0 rgba($color: #000, $alpha: 20%);
+
+    &:disabled {
+      background-color: #b1d1e1;
+      box-shadow: 0 0 0 0 rgba($color: #000, $alpha: 20%);
+    }
+  }
+}
+
+.textarea {
+  flex: 1;
+
+  min-height: 200px;
+  padding: 1rem;
+
+  font-size: 1rem;
+  line-height: 160%;
+  color: #505050;
+
+  appearance: none;
+  border: 2px solid #9abccd;
+  border-radius: 0.5rem;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #9b9b9b;
+    background-color: #ededed;
+    border: 2px solid #bfbfbf;
+  }
+}

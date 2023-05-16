@@ -15,3 +15,5 @@ export { Title } from './Titles';
 
 export { Card } from './Card';
 export { Image } from './Image';
+
+export { Select } from './Select';
