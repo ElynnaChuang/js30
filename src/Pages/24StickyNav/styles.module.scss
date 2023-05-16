@@ -1,0 +1,17 @@
+.container {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.content_section {
+  background: #b1b1b1;
+}
+
+.nav {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 99;
+  top: 0;
+
+  background-color: #fff;
+}
