@@ -1,1 +1,0 @@
-import{a7 as t,j as n,a as i}from"./index-8bf4165c.js";const m=({title:a,subtitle:s,titleColor:r,titleClassName:c,size:l})=>{let e=t.title_L;return l==="m"&&(e=t.title_M),l==="s"&&(e=t.title_S),n("div",{className:`${t.title_container} ${c}`,children:[i("h1",{className:e,style:{color:r},children:a}),s&&i("p",{className:t.subtitle,children:s})]})};export{m as T};
