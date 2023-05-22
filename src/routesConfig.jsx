@@ -25,6 +25,7 @@ const GeolocationPage = lazy(() => import('./Pages/21Geolocation'));
 const FollowLinksPage = lazy(() => import('./Pages/22FollowLinks'));
 const WordToSpeechPage = lazy(() => import('./Pages/23WordToSpeech'));
 const StickyNavPage = lazy(() => import('./Pages/24StickyNav'));
+const EventPage = lazy(() => import('./Pages/25Event'));
 
 export const routes = [
   { id: 0, path: '/', element: <HomePage /> },
@@ -52,4 +53,5 @@ export const routes = [
   { id: 22, path: '22', element: <FollowLinksPage /> },
   { id: 23, path: '23', element: <WordToSpeechPage /> },
   { id: 24, path: '24', element: <StickyNavPage /> },
+  { id: 25, path: '25', element: <EventPage /> },
 ];

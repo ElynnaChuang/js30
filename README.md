@@ -92,7 +92,7 @@ You're going to need : Node.js v18.16.0 or newer
 - [x] Day 22 - Follow Along Links
 - [x] Day 23 - Speech Synthesis
 - [x] Day 24 - Sticky Nav
-- [ ] Day 25 - Event Capture, Propagation, Bubbling and Once
+- [x] Day 25 - Event Capture, Propagation, Bubbling and Once
 - [ ] Day 26 - Stripe Follow Along Dropdown
 - [ ] Day 27 - Click and Drag to Scroll
 - [ ] Day 28 - Video Speed Controller UI
