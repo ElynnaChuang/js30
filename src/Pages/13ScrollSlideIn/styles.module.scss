@@ -1,8 +1,14 @@
 .page {
+  overflow: hidden;
+  height: 100vh;
   padding-top: 3rem;
   background: #e2e2e2;
 
   & > div:first-child {
+    overflow-y: scroll;
+
+    padding: 2rem;
+
     background: linear-gradient(white 30%, hsl(0deg 0% 100% / 0%)),
       linear-gradient(hsl(0deg 0% 100% / 0%), white 70%) bottom,
       linear-gradient(to bottom, rgb(0 0 0 / 20%), transparent),
@@ -11,5 +17,14 @@
     background-repeat: no-repeat;
     background-attachment: local, local, scroll, scroll;
     background-size: 100% 40px, 100% 40px, 100% 1rem, 100% 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
+}
+
+.content {
+  height: 100%;
+  border: 1px solid #000;
 }
