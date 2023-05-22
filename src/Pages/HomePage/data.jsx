@@ -370,7 +370,7 @@ export const data = [
   },
   {
     id: 25,
-    title: 'Event Capture, Propagation, Bubbling and Once',
+    title: 'Event Capture',
     images: {
       base: base25,
       s1x: s1x25,
@@ -381,7 +381,7 @@ export const data = [
       l1x: l1x25,
       l2x: l2x25,
     },
-    focus: '-',
+    focus: 'Event Propagation',
   },
   {
     id: 26,
