@@ -1,0 +1,99 @@
+.page {
+  background: #fff;
+}
+
+.container {
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  background: #c2c2c2;
+  border-radius: 0.5rem;
+}
+
+.shadow {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  box-shadow: inset 0 0 1rem 4px rgba($color: #000, $alpha: 40%);
+}
+
+.scroll_items {
+  user-select: none;
+
+  position: relative;
+
+  overflow-x: overlay;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding-left: 6rem;
+
+  perspective: 300px;
+  perspective-origin: center 60%;
+
+  &::-webkit-scrollbar {
+    height: 16px;
+    appearance: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #737373;
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff0;
+  }
+}
+
+.item {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: calc(100% - 100px);
+
+  box-shadow: inset 0 0 0 4px #fff;
+
+  & > p {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  &:nth-child(even) {
+    transform: scaleX(1.07) rotateY(-20deg);
+  }
+
+  &:nth-child(odd) {
+    transform: scaleX(1.07) rotateY(20deg);
+  }
+
+  &:nth-child(3n + 1) {
+    background: rgb(254 171 144);
+  }
+
+  &:nth-child(3n + 2) {
+    background: rgb(175 232 232);
+  }
+
+  &:nth-child(3n + 3) {
+    background: rgb(237 211 108);
+  }
+}
