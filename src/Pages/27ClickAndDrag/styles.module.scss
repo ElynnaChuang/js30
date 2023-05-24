@@ -4,6 +4,7 @@
 
 .container {
   position: relative;
+  z-index: 99;
 
   overflow: hidden;
   display: flex;
@@ -29,9 +30,8 @@
 }
 
 .scroll_items {
+  cursor: grab;
   user-select: none;
-
-  position: relative;
 
   overflow-x: overlay;
   display: flex;
@@ -39,7 +39,7 @@
 
   width: 100%;
   height: 100%;
-  padding-left: 6rem;
+  padding: 1rem 5rem 1rem 0;
 
   perspective: 300px;
   perspective-origin: center 60%;
@@ -61,6 +61,11 @@
   }
 }
 
+.active {
+  cursor: grabbing;
+  background-color: #ddd;
+}
+
 .item {
   display: flex;
   flex-shrink: 0;
@@ -78,11 +83,11 @@
   }
 
   &:nth-child(even) {
-    transform: scaleX(1.07) rotateY(-20deg);
+    transform: scaleX(1.07) rotateY(20deg);
   }
 
   &:nth-child(odd) {
-    transform: scaleX(1.07) rotateY(20deg);
+    transform: scaleX(1.07) rotateY(-20deg);
   }
 
   &:nth-child(3n + 1) {
