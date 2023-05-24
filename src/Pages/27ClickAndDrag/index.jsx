@@ -53,7 +53,15 @@ const ClickAndDragPage = () => {
 
   return (
     <LayoutCol1 baseClassName={styles.page}>
-      <Title title='27 page' />
+      <Title
+        title={
+          <>
+            <span>Click</span> <span>and</span> <span>Drag</span>
+          </>
+        }
+        size='m'
+        titleClassName={styles.title}
+      />
       <div className={styles.container}>
         <div
           ref={scrollAreaRef}
