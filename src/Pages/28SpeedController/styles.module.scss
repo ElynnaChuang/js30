@@ -9,27 +9,3 @@
   gap: 1rem;
   height: max-content;
 }
-
-.speed {
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-
-  height: auto;
-
-  border: 1px solid #000;
-  border-radius: 99px;
-
-  &_bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 100px;
-    padding: 0.5rem;
-
-    vertical-align: bottom;
-
-    background-color: #fff;
-  }
-}

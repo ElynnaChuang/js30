@@ -10,6 +10,7 @@ export { Paragraph } from './13Paragraph';
 export { Example } from './14Example';
 export { Form } from './15Form';
 export { List } from './15List';
+export { Slider } from './28Slider';
 
 export { Title } from './Titles';
 
