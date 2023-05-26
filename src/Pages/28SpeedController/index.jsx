@@ -12,7 +12,7 @@ const SpeedControllerPage = () => {
 
   return (
     <LayoutCol1 baseClassName={styles.page}>
-      <Title title='Video Speed Slider' size='s' />
+      <Title title='Video Speed Slider' size='s' titleClassName={styles.title} />
       <div className={styles.content}>
         <ReactPlayer
           url={video}
