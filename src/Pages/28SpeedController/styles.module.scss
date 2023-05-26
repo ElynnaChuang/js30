@@ -1,0 +1,18 @@
+.page {
+  align-items: center;
+  justify-content: center;
+  background: #f6d49a;
+}
+
+.title {
+  padding: 0.5rem;
+  color: #629fd5;
+  background: linear-gradient(to right, #fff0, #fff, #fff, #fff0);
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  height: max-content;
+  margin-bottom: 160px;
+}
