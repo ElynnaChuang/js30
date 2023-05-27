@@ -1,11 +1,12 @@
 import { LayoutCol1 } from '@/Layouts';
-import { Title } from '@/Components';
+import { Timer, Title } from '@/Components';
 import styles from './styles.module.scss';
 
 const CountdownPage = () => {
   return (
     <LayoutCol1 baseClassName={styles.page} layout='full'>
       <Title title='Countdown' />
+      <Timer />
     </LayoutCol1>
   );
 };
