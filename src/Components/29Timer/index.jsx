@@ -7,6 +7,11 @@ function secToMin(secLeft) {
   return { min, sec };
 }
 
+function padStart(num) {
+  if (num >= 10) return num;
+  return String(num).padStart(2, 0);
+}
+
 export const Timer = () => {
   const [start, setStart] = useState(false);
 
@@ -79,7 +84,7 @@ export const Timer = () => {
         type='number'
         min={0}
         max={59}
-        value={start ? timeLeft.min : timeValue.min}
+        value={start ? padStart(timeLeft.min) : padStart(timeValue.min)}
         onChange={start ? () => {} : handleInputValue}
         disabled={start}
       />
@@ -90,7 +95,7 @@ export const Timer = () => {
         type='number'
         min={0}
         max={59}
-        value={start ? timeLeft.sec : timeValue.sec}
+        value={start ? padStart(timeLeft.sec) : padStart(timeValue.sec)}
         onChange={start ? () => {} : handleInputValue}
         disabled={start}
       />
