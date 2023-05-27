@@ -53,6 +53,24 @@ export const Timer = () => {
     setStart(false);
   };
 
+  const handleAdjustTime = secAdjust => {
+    const maxTotalSec = 59 * 60 + 59;
+    const nowTotalSec = timeValue.min * 60 + timeValue.sec;
+
+    if (nowTotalSec === 0 && secAdjust < 0) return;
+    if (nowTotalSec === maxTotalSec && secAdjust > 0) return;
+
+    const newTotalSec = nowTotalSec + secAdjust;
+
+    if (newTotalSec < 0) {
+      setTimeValue({ min: 0, sec: 0 });
+    } else if (newTotalSec > maxTotalSec) {
+      setTimeValue({ min: 59, sec: 59 });
+    } else {
+      setTimeValue(secToMin(newTotalSec));
+    }
+  };
+
   return (
     <div className={styles.timer}>
       <label htmlFor='min'>Min</label>
@@ -87,6 +105,20 @@ export const Timer = () => {
 
       <button className={styles.btn} onClick={handleReset}>
         Reset
+      </button>
+
+      <button className={styles.btn} onClick={() => handleAdjustTime(15)}>
+        +15s
+      </button>
+      <button className={styles.btn} onClick={() => handleAdjustTime(-15)}>
+        -15s
+      </button>
+
+      <button className={styles.btn} onClick={() => handleAdjustTime(120)}>
+        +2m
+      </button>
+      <button className={styles.btn} onClick={() => handleAdjustTime(-120)}>
+        -2m
       </button>
     </div>
   );
