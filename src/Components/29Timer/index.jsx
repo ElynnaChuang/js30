@@ -10,13 +10,13 @@ function secToMin(secLeft) {
 export const Timer = () => {
   const [start, setStart] = useState(false);
 
-  const [secValue, setSecValue] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(() => secToMin(0));
+  const [timeValue, setTimeValue] = useState({ min: 0, sec: 0 });
+  const [timeLeft, setTimeLeft] = useState({ min: 0, sec: 0 });
 
   useEffect(() => {
     let countDown;
     if (start) {
-      let secLeft = secValue;
+      let secLeft = timeValue.min * 60 + timeValue.sec;
       setTimeLeft(() => secToMin(secLeft));
 
       countDown = setInterval(() => {
@@ -35,8 +35,8 @@ export const Timer = () => {
   }, [start]);
 
   const handleInputValue = e => {
-    const newSec = Number(e.target.value);
-    setSecValue(newSec);
+    const { id, value } = e.target;
+    setTimeValue(prev => ({ ...prev, [id]: Number(value) }));
   };
 
   const handleStart = () => {
@@ -44,24 +44,35 @@ export const Timer = () => {
   };
 
   const handlePause = () => {
+    setTimeValue(timeLeft);
     setStart(false);
-    setSecValue(timeLeft.sec);
   };
 
   const handleReset = () => {
-    setSecValue(0);
+    setTimeValue({ min: 0, sec: 0 });
     setStart(false);
   };
 
   return (
     <div className={styles.timer}>
-      <label htmlFor='second'>Sec</label>
+      <label htmlFor='min'>Min</label>
       <input
-        id='second'
+        id='min'
         type='number'
         min={0}
         max={59}
-        value={start ? timeLeft.sec : secValue}
+        value={start ? timeLeft.min : timeValue.min}
+        onChange={start ? () => {} : handleInputValue}
+        disabled={start}
+      />
+
+      <label htmlFor='sec'>Sec</label>
+      <input
+        id='sec'
+        type='number'
+        min={0}
+        max={59}
+        value={start ? timeLeft.sec : timeValue.sec}
         onChange={start ? () => {} : handleInputValue}
         disabled={start}
       />
