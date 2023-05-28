@@ -1,12 +1,14 @@
+@use '../../Components/29Timer/color' as c;
+
 @import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap';
 
-$primary: #7cfffd;
-
 .page {
+  align-items: center;
+  padding-bottom: 6rem;
   font-family: 'Roboto Mono', monospace;
-  background: #0b141f;
+  background: c.$black;
 }
 
 .title {
-  color: $primary;
+  color: c.$primary_500;
 }

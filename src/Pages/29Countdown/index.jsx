@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const CountdownPage = () => {
   return (
-    <LayoutCol1 baseClassName={styles.page} layout='full'>
+    <LayoutCol1 baseClassName={styles.page}>
       <Title title='Countdown' titleClassName={styles.title} />
       <Timer />
     </LayoutCol1>
