@@ -11,6 +11,7 @@ export { Example } from './14Example';
 export { Form } from './15Form';
 export { List } from './15List';
 export { Slider } from './28Slider';
+export { Timer } from './29Timer';
 
 export { Title } from './Titles';
 

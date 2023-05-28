@@ -1,0 +1,39 @@
+@use '../color' as c;
+
+.btn {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  font-weight: 500;
+  color: #fff;
+
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0 2px c.$normal;
+
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: rgba($color: c.$normal, $alpha: 20%);
+    box-shadow: inset 0 0 0 2px c.$normal, 0 0 8px 0 c.$normal;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+}
+
+.primary {
+  box-shadow: inset 0 0 0 2px c.$primary_500;
+
+  &:hover {
+    background-color: rgba($color: c.$primary_500, $alpha: 20%);
+    box-shadow: inset 0 0 0 2px c.$primary_500, 0 0 8px 0 c.$primary_500;
+  }
+}
