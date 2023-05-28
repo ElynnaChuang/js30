@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { PlayArrowRounded, PauseRounded, RestartAltRounded } from '@mui/icons-material';
 import styles from './styles.module.scss';
 
 import { Button } from './Button';
@@ -79,18 +80,35 @@ export const Timer = () => {
     <div className={styles.timer}>
       <div className={styles.controls}>
         <div className={styles.time_value}>
-          <Button text='-2m' onClick={() => handleAdjustTime(-120)} />
-          <Button text='-15s' onClick={() => handleAdjustTime(-15)} />
-          <Button text='-1s' onClick={() => handleAdjustTime(-1)} />
-          <Button text='+1s' onClick={() => handleAdjustTime(1)} />
-          <Button text='+15s' onClick={() => handleAdjustTime(15)} />
-          <Button text='+2m' onClick={() => handleAdjustTime(120)} />
+          <Button text='-2m' onClick={() => handleAdjustTime(-120)} disabled={start} />
+          <Button text='-15s' onClick={() => handleAdjustTime(-15)} disabled={start} />
+          <Button text='-1s' onClick={() => handleAdjustTime(-1)} disabled={start} />
+          <Button text='+1s' onClick={() => handleAdjustTime(1)} disabled={start} />
+          <Button text='+15s' onClick={() => handleAdjustTime(15)} disabled={start} />
+          <Button text='+2m' onClick={() => handleAdjustTime(120)} disabled={start} />
         </div>
 
         <div className={styles.time_run}>
-          <Button text='Start' onClick={handleStart} btnStyle='primary' />
-          <Button text='Pause' onClick={handlePause} btnStyle='primary' />
-          <Button text='Reset' onClick={handleReset} btnStyle='primary' />
+          <Button
+            icon={<RestartAltRounded />}
+            text='Reset'
+            onClick={handleReset}
+            btnStyle='primary'
+          />
+          <Button
+            btnStyle='primary'
+            icon={<PlayArrowRounded />}
+            text='Start'
+            onClick={handleStart}
+            disabled={start}
+          />
+          <Button
+            btnStyle='primary'
+            icon={<PauseRounded />}
+            text='Pause'
+            onClick={handlePause}
+            disabled={!start}
+          />
         </div>
       </div>
 
@@ -100,7 +118,7 @@ export const Timer = () => {
           label='Minutes'
           min={0}
           max={59}
-          start={start}
+          startCount={start}
           countdownValue={padStart(timeLeft.min)}
           inputValue={padStart(timeValue.min)}
           onChange={handleInputValue}
@@ -111,7 +129,7 @@ export const Timer = () => {
           label='Seconds'
           min={0}
           max={59}
-          start={start}
+          startCount={start}
           countdownValue={padStart(timeLeft.sec)}
           inputValue={padStart(timeValue.sec)}
           onChange={handleInputValue}

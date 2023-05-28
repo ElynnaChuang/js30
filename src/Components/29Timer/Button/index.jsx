@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-export const Button = ({ text, btnStyle = 'normal', disabled, onClick }) => {
+export const Button = ({ text, icon, btnStyle = 'normal', disabled, onClick }) => {
   const btnStyleClass = styles[btnStyle];
   return (
     <button
@@ -8,7 +8,7 @@ export const Button = ({ text, btnStyle = 'normal', disabled, onClick }) => {
       onClick={onClick}
       disabled={disabled}
     >
-      {text}
+      {icon} {text}
     </button>
   );
 };

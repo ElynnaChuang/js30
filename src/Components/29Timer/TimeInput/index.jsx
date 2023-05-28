@@ -5,7 +5,7 @@ export const TimeInput = ({
   min,
   max,
   label,
-  start,
+  startCount,
   countdownValue,
   inputValue,
   onChange,
@@ -18,9 +18,9 @@ export const TimeInput = ({
         type='number'
         min={min}
         max={max}
-        value={start ? countdownValue : inputValue}
-        onChange={start ? () => {} : onChange}
-        disabled={start}
+        value={startCount ? countdownValue : inputValue}
+        onChange={startCount ? () => {} : onChange}
+        disabled={startCount}
       />
     </div>
   );
