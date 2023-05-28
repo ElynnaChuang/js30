@@ -30,6 +30,7 @@ const NavDropdownPage = lazy(() => import('./Pages/26NavDropdown'));
 const ClickAndDragPage = lazy(() => import('./Pages/27ClickAndDrag'));
 const SpeedControllerPage = lazy(() => import('./Pages/28SpeedController'));
 const CountdownPage = lazy(() => import('./Pages/29Countdown'));
+const MoleGamePage = lazy(() => import('./Pages/30MoleGame'));
 
 export const routes = [
   { id: 0, path: '/', element: <HomePage /> },
@@ -62,4 +63,5 @@ export const routes = [
   { id: 27, path: '27', element: <ClickAndDragPage /> },
   { id: 28, path: '28', element: <SpeedControllerPage /> },
   { id: 29, path: '29', element: <CountdownPage /> },
+  { id: 30, path: '30', element: <MoleGamePage /> },
 ];
