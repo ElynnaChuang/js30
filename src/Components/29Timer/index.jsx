@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
-function secToMin(secLeft) {
-  const min = Math.floor(secLeft / 60);
-  const sec = secLeft % 60;
-  return { min, sec };
-}
-
-function padStart(num) {
-  if (num >= 10) return num;
-  return String(num).padStart(2, 0);
-}
+import { Button } from '@/Components';
+import { TimeInput } from './TimeInput';
+import { secToMin, padStart } from './helpers';
 
 export const Timer = () => {
   const [start, setStart] = useState(false);
@@ -40,8 +33,14 @@ export const Timer = () => {
   }, [start]);
 
   const handleInputValue = e => {
-    const { id, value } = e.target;
-    setTimeValue(prev => ({ ...prev, [id]: Number(value) }));
+    const { id, value, max, min } = e.target;
+    if (value > Number(max))
+      return setTimeValue(prev => ({ ...prev, [id]: Number(max) }));
+
+    if (value < Number(min))
+      return setTimeValue(prev => ({ ...prev, [id]: Number(min) }));
+
+    return setTimeValue(prev => ({ ...prev, [id]: Number(value) }));
   };
 
   const handleStart = () => {
@@ -78,53 +77,46 @@ export const Timer = () => {
 
   return (
     <div className={styles.timer}>
-      <label htmlFor='min'>Min</label>
-      <input
-        id='min'
-        type='number'
-        min={0}
-        max={59}
-        value={start ? padStart(timeLeft.min) : padStart(timeValue.min)}
-        onChange={start ? () => {} : handleInputValue}
-        disabled={start}
-      />
+      <div className={styles.controls}>
+        <div className={styles.time_value}>
+          <Button text='-2m' onClick={() => handleAdjustTime(-120)} btnStyle='info' />
+          <Button text='-15s' onClick={() => handleAdjustTime(-15)} btnStyle='info' />
+          <Button text='-1s' onClick={() => handleAdjustTime(-1)} btnStyle='info' />
+          <Button text='+1s' onClick={() => handleAdjustTime(1)} btnStyle='info' />
+          <Button text='+15s' onClick={() => handleAdjustTime(15)} btnStyle='info' />
+          <Button text='+2m' onClick={() => handleAdjustTime(120)} btnStyle='info' />
+        </div>
 
-      <label htmlFor='sec'>Sec</label>
-      <input
-        id='sec'
-        type='number'
-        min={0}
-        max={59}
-        value={start ? padStart(timeLeft.sec) : padStart(timeValue.sec)}
-        onChange={start ? () => {} : handleInputValue}
-        disabled={start}
-      />
+        <div className={styles.time_run}>
+          <Button text='Start' onClick={handleStart} btnStyle='success' />
+          <Button text='Pause' onClick={handlePause} />
+          <Button text='Reset' onClick={handleReset} btnStyle='danger' />
+        </div>
+      </div>
 
-      <button className={styles.btn} onClick={handleStart}>
-        Start
-      </button>
+      <div className={styles.inputs}>
+        <TimeInput
+          id='min'
+          label='Minutes'
+          min={0}
+          max={59}
+          start={start}
+          countdownValue={padStart(timeLeft.min)}
+          inputValue={padStart(timeValue.min)}
+          onChange={handleInputValue}
+        />
 
-      <button className={styles.btn} onClick={handlePause}>
-        Pause
-      </button>
-
-      <button className={styles.btn} onClick={handleReset}>
-        Reset
-      </button>
-
-      <button className={styles.btn} onClick={() => handleAdjustTime(15)}>
-        +15s
-      </button>
-      <button className={styles.btn} onClick={() => handleAdjustTime(-15)}>
-        -15s
-      </button>
-
-      <button className={styles.btn} onClick={() => handleAdjustTime(120)}>
-        +2m
-      </button>
-      <button className={styles.btn} onClick={() => handleAdjustTime(-120)}>
-        -2m
-      </button>
+        <TimeInput
+          id='sec'
+          label='Seconds'
+          min={0}
+          max={59}
+          start={start}
+          countdownValue={padStart(timeLeft.sec)}
+          inputValue={padStart(timeValue.sec)}
+          onChange={handleInputValue}
+        />
+      </div>
     </div>
   );
 };
