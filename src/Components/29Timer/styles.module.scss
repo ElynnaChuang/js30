@@ -1,27 +1,29 @@
+@use './color' as c;
+
 .timer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-
+  gap: 2.5rem;
   width: 100%;
-
-  border: 2px solid #5a5a5a;
 }
 
 .controls {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 
-  .time_run {
-    display: flex;
-    gap: 1rem;
+  .time_value {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 0.75rem;
     width: 100%;
   }
 
-  .time_value {
-    display: flex;
-    gap: 1rem;
+  .time_run {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 0.75rem;
     width: 100%;
   }
 }
@@ -29,6 +31,10 @@
 .inputs {
   display: flex;
   gap: 1rem;
+  align-items: center;
 
-  // border: 1px solid #000;
+  span {
+    font-size: 3rem;
+    color: #fff;
+  }
 }

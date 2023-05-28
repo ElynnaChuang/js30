@@ -1,3 +1,12 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap';
+
+$primary: #7cfffd;
+
 .page {
-  background: #b1b1b1;
+  font-family: 'Roboto Mono', monospace;
+  background: #0b141f;
+}
+
+.title {
+  color: $primary;
 }

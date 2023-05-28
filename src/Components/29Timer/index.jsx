@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
-import { Button } from '@/Components';
+import { Button } from './Button';
 import { TimeInput } from './TimeInput';
 import { secToMin, padStart } from './helpers';
 
@@ -79,18 +79,18 @@ export const Timer = () => {
     <div className={styles.timer}>
       <div className={styles.controls}>
         <div className={styles.time_value}>
-          <Button text='-2m' onClick={() => handleAdjustTime(-120)} btnStyle='info' />
-          <Button text='-15s' onClick={() => handleAdjustTime(-15)} btnStyle='info' />
-          <Button text='-1s' onClick={() => handleAdjustTime(-1)} btnStyle='info' />
-          <Button text='+1s' onClick={() => handleAdjustTime(1)} btnStyle='info' />
-          <Button text='+15s' onClick={() => handleAdjustTime(15)} btnStyle='info' />
-          <Button text='+2m' onClick={() => handleAdjustTime(120)} btnStyle='info' />
+          <Button text='-2m' onClick={() => handleAdjustTime(-120)} />
+          <Button text='-15s' onClick={() => handleAdjustTime(-15)} />
+          <Button text='-1s' onClick={() => handleAdjustTime(-1)} />
+          <Button text='+1s' onClick={() => handleAdjustTime(1)} />
+          <Button text='+15s' onClick={() => handleAdjustTime(15)} />
+          <Button text='+2m' onClick={() => handleAdjustTime(120)} />
         </div>
 
         <div className={styles.time_run}>
-          <Button text='Start' onClick={handleStart} btnStyle='success' />
-          <Button text='Pause' onClick={handlePause} />
-          <Button text='Reset' onClick={handleReset} btnStyle='danger' />
+          <Button text='Start' onClick={handleStart} btnStyle='primary' />
+          <Button text='Pause' onClick={handlePause} btnStyle='primary' />
+          <Button text='Reset' onClick={handleReset} btnStyle='primary' />
         </div>
       </div>
 
@@ -105,7 +105,7 @@ export const Timer = () => {
           inputValue={padStart(timeValue.min)}
           onChange={handleInputValue}
         />
-
+        <span>:</span>
         <TimeInput
           id='sec'
           label='Seconds'

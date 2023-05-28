@@ -1,16 +1,29 @@
+@use '../color' as c;
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap';
+
+$input_border: c.$primary_500;
+
 .time_input {
+  overflow: hidden;
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 0.5rem;
 
-  border: 2px solid #57a6e2;
+  border: 2px solid $input_border;
+  border-radius: 1rem;
 }
 
 label {
+  padding: 0.5rem 1rem;
+
   font-size: 1.25rem;
   font-weight: 500;
+  color: c.$black;
   text-align: center;
+
+  background-color: c.$primary_500;
+  border-bottom: 2px solid $input_border;
 }
 
 input[type='number'] {
@@ -18,10 +31,13 @@ input[type='number'] {
 
   padding: 1rem;
 
+  font-family: 'Roboto Mono', monospace;
   font-size: 3rem;
+  color: c.$normal;
   text-align: center;
 
   appearance: none;
+  background-color: rgba($color: c.$primary_500, $alpha: 5%);
   border: none;
 
   &::-webkit-outer-spin-button,
@@ -32,7 +48,7 @@ input[type='number'] {
 
   &:disabled {
     cursor: not-allowed;
-    color: #be6060;
-    background-color: #fff;
+    color: c.$primary_900;
+    background-color: rgba($color: c.$primary_500, $alpha: 20%);
   }
 }
