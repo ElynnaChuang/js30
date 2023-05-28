@@ -2,20 +2,45 @@ $size: 100px;
 
 .hole {
   position: relative;
+
+  overflow: hidden;
+
   width: $size;
   height: $size;
-  border: 1px solid #000;
+
+  border-radius: 0.25rem;
 }
 
 .dirt {
   position: absolute;
-  bottom: 0;
+  z-index: 3;
+  bottom: -15px;
   left: 0;
+
   width: 100%;
 }
 
-.mole {
+%base_mole {
   cursor: pointer;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+
   width: 100%;
   height: 100%;
+
+  transition: bottom 0.2s ease-out;
+}
+
+.mole_show {
+  @extend %base_mole;
+
+  bottom: -5%;
+}
+
+.mole_hide {
+  @extend %base_mole;
+
+  bottom: -90%;
 }
