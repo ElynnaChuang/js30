@@ -5,9 +5,11 @@ import styles from './styles.module.scss';
 import { Button } from './Button';
 import { TimeInput } from './TimeInput';
 import { secToMin, padStart } from './helpers';
+import { TimeNotification } from './Model';
 
 export const Timer = () => {
   const [start, setStart] = useState(false);
+  const [end, setEnd] = useState(false);
 
   const [timeValue, setTimeValue] = useState({ min: 0, sec: 0 });
   const [timeLeft, setTimeLeft] = useState({ min: 0, sec: 0 });
@@ -23,6 +25,10 @@ export const Timer = () => {
 
         if (secLeft < 0) {
           setStart(false);
+
+          setEnd(true);
+          setTimeout(() => setEnd(false), 1500);
+
           return clearInterval(countDown);
         }
 
@@ -135,6 +141,8 @@ export const Timer = () => {
           onChange={handleInputValue}
         />
       </div>
+
+      <TimeNotification open={end} />
     </div>
   );
 };
