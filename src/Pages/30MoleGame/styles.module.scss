@@ -1,14 +1,68 @@
+@use './color' as c;
+
+%base_item {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding: 0.5rem 1rem;
+
+  font-weight: 700;
+  color: c.$primary_900;
+
+  background-color: c.$white;
+  border: 2px solid c.$primary_500;
+  border-radius: 0.25rem;
+
+  transition: all 0.3s ease-out;
+}
+
 .page {
-  background: #b1b1b1;
+  background: c.$primary_500;
+}
+
+.title {
+  color: c.$primary_900;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background-color: c.$primary_100;
+  border-radius: 0.5rem;
+
+  .time {
+    @extend %base_item;
+  }
+
+  .score {
+    @extend %base_item;
+  }
+
+  .btn {
+    @extend %base_item;
+
+    box-shadow: 0 0 8px 0 rgba($color: #000, $alpha: 20%);
+
+    &:hover {
+      color: #fff;
+      background-color: c.$primary_500;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
 }
 
 .holes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid #000;
 }
