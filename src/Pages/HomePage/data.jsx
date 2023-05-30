@@ -396,7 +396,7 @@ export const data = [
       l1x: l1x26,
       l2x: l2x26,
     },
-    focus: '-',
+    focus: 'DOM - getBoundingClientRect()',
   },
   {
     id: 27,
@@ -411,7 +411,7 @@ export const data = [
       l1x: l1x27,
       l2x: l2x27,
     },
-    focus: '-',
+    focus: 'Mouse event',
   },
   {
     id: 28,
@@ -426,7 +426,7 @@ export const data = [
       l1x: l1x28,
       l2x: l2x28,
     },
-    focus: '-',
+    focus: 'React Player',
   },
   {
     id: 29,
@@ -441,7 +441,7 @@ export const data = [
       l1x: l1x29,
       l2x: l2x29,
     },
-    focus: '-',
+    focus: 'API - setInterval / React dom portal',
   },
   {
     id: 30,
@@ -456,6 +456,6 @@ export const data = [
       l1x: l1x30,
       l2x: l2x30,
     },
-    focus: '-',
+    focus: 'API - setInterval / React dom portal',
   },
 ];
